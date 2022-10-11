@@ -13,7 +13,8 @@ public class PlacaTrackedImages : MonoBehaviour
     public GameObject[] ArPrefabs;
 
     // Keep dictionary array of created prefabs
-    private readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
+    private readonly Dictionary<string, GameObject> _instantiatedPrefabs =
+        new Dictionary<string, GameObject>();
 
     void Awake()
     {
@@ -45,7 +46,11 @@ public class PlacaTrackedImages : MonoBehaviour
             foreach (var curPrefab in ArPrefabs)
             {
                 // Check whether this prefab mathes tracked image name and that prefab hasnt already been created
-                if (string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase) == 0 && !_instantiatedPrefabs.ContainsKey(imageName))
+                if (
+                    string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase)
+                        == 0
+                    && !_instantiatedPrefabs.ContainsKey(imageName)
+                )
                 {
                     // Instantiate the prefab, parenting it to the ARTrackedImage
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
@@ -59,7 +64,9 @@ public class PlacaTrackedImages : MonoBehaviour
         // whether their corresponding image is currently being tracked
         foreach (var trackedImage in eventArgs.updated)
         {
-            _instantiatedPrefabs[trackedImage.referenceImage.name].SetActive(trackedImage.trackingState == TrackingState.Tracking);
+            _instantiatedPrefabs[trackedImage.referenceImage.name].SetActive(
+                trackedImage.trackingState == TrackingState.Tracking
+            );
         }
 
         // If the AR subsystem has given up looking for a tracked image
@@ -71,5 +78,4 @@ public class PlacaTrackedImages : MonoBehaviour
             _instantiatedPrefabs.Remove(trackedImage.referenceImage.name);
         }
     }
-
 }

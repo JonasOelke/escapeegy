@@ -45,6 +45,11 @@ but its easier to help each other if we used all the same tools.
 #### CSharpier
 To enforce a consistent code style, we use the CSharpier Plugin. 
 Using it ensures we are consistent with our code style and avoids unnecessary code changes. 
+After installing the plugin make sure to enable it in the settings. You can find the settings under 
+```
+Tools -> CSharpier -> Run on save
+```
+
 See more: [https://plugins.jetbrains.com/plugin/18243-csharpier](https://plugins.jetbrains.com/plugin/18243-csharpier)
 
 #### SonarLint

@@ -70,6 +70,7 @@ public class PlacaTrackedImages : MonoBehaviour
         }
 
         // If the AR subsystem has given up looking for a tracked image
+        //Test Git
         foreach (var trackedImage in eventArgs.removed)
         {
             // Destroy the prefab, removes object from scene

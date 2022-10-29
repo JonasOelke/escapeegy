@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/Stylesheet.uss?fileID=7433441132597879392&amp;guid=a572e4e18994dc343b43aeb594f74a5a&amp;type=3#Stylesheet" />
-    <ui:VisualElement style="height: 100%; width: 100%; background-color: rgb(49, 255, 69); justify-content: flex-start; align-items: stretch;">
+    <Style src="project://database/Assets/User%20Interface/Stylesheet.uss?fileID=7433441132597879392&amp;guid=a572e4e18994dc343b43aeb594f74a5a&amp;type=3#Stylesheet" />
+    <ui:VisualElement style="height: 100%; width: 100%; background-color: rgba(49, 255, 69, 0); justify-content: flex-start; align-items: stretch;">
         <ui:VisualElement name="Container" style="justify-content: space-around; align-items: center; flex-direction: row; height: 15%; flex-basis: auto; bottom: 0; top: auto; width: 100%; padding-left: 0; padding-right: 0; padding-bottom: 0; background-color: rgba(0, 0, 0, 0.65); border-top-color: rgb(0, 0, 0); border-top-width: 15px; min-height: auto; min-width: 100%; position: absolute;">
             <ui:Button text="Button" display-tooltip-when-elided="true" class="button mainButton" style="align-items: flex-start;" />
             <ui:Button text="INVENTAR" display-tooltip-when-elided="true" name="InventoryButton" class="button mainButton" style="font-size: 60%;" />
@@ -23,7 +23,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="InventoryContainer" style="border-left-color: rgba(0, 0, 0, 0.71); border-right-color: rgba(0, 0, 0, 0.71); border-top-color: rgba(0, 0, 0, 0.71); border-bottom-color: rgba(0, 0, 0, 0.71); background-color: rgba(0, 0, 0, 0.62); height: 85%; justify-content: flex-start; visibility: visible; padding-left: 90px; padding-right: 90px; padding-top: 91px; flex-direction: column; display: none;">
             <ui:Label text="Dein Inventar" display-tooltip-when-elided="true" name="InventoryHeadline" class="h1" />
-            <ui:Label text="Hier herscht gähnende Leere.\n\nSammel doch ein paar\nspannende Objekte auf! " display-tooltip-when-elided="true" name="EmptyInventoryLabel" style="justify-content: center; font-size: 75px; -unity-text-align: upper-center; margin-top: 562px; color: rgba(255, 255, 255, 255);" />
+            <ui:Label text="Hier herscht gähnende Leere.\n\nSammel doch ein paar\nspannende Objekte auf! " display-tooltip-when-elided="true" name="EmptyInventoryLabel" style="justify-content: center; font-size: 75px; -unity-text-align: upper-center; margin-top: 562px; color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement />

@@ -128,3 +128,8 @@ Escapeegy_BackUpThisFolder_ButDontShipItWithYourGame/**/*.*
 
 InitCodeMarker
 ProjectSettings/ProjectSettings.asset
+
+Assets/Plugins/Android
+Assets/Plugins/Android.meta
+Assets/ExtensionsAssets
+Assets/ExtensionsAssets.meta

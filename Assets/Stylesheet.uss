@@ -1,13 +1,17 @@
-.button {
-    width: auto;
-    height: auto;
-    font-size: 20px;
+:root {
+    --primary-color: rgb(56, 134, 217);
+}
+
+.mainButton {
+    width: 23%;
+    height: 48%;
+    font-size: 60px;
     padding-left: 27px;
     padding-right: 27px;
     padding-top: 27px;
     padding-bottom: 27px;
     color: rgb(255, 255, 255);
-    background-color: rgb(229, 154, 55);
+    background-color: var(--primary-color);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
@@ -17,4 +21,74 @@
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
     -unity-font: url('project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&guid=4beb055f07aaff244873dec698d0363e&type=3#Roboto-Bold');
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.chatSpeechBubbleSender {
+    font-size: 136px;
+    align-items: flex-end;
+}
+
+.mainButton:hover {
+    background-color: rgb(231, 73, 73);
+}
+
+.mainButton:active {
+    scale: 0.95 0.95;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.chatSuggestion {
+    font-size: 52px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    margin-top: 68px;
+}
+
+.chatMessage {
+    padding-left: 89px;
+    padding-right: 89px;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 55%;
+    background-color: rgba(253, 253, 253, 0.77);
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+}
+
+.chatMessageContainer {
+    align-items: flex-end;
+    font-size: 974%;
+}
+
+.h1 {
+    font-size: 78px;
+    color: rgba(255, 255, 255, 255);
+    -unity-font-style: bold;
 }

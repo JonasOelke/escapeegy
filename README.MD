@@ -1,5 +1,7 @@
 # Escapeegy
 
+keystore password ist AmLH6f33mA7VNN and project key is 48yXbkBE6pN9Sg
+
 ## How to get started
 
 The following steps assume you have cloned the repository locally. 

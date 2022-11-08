@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class UI : MonoBehaviour
@@ -26,6 +27,7 @@ public class UI : MonoBehaviour
 
         inventoryButton.clicked += () =>
         {
+            SceneManager.LoadScene("Main");
             chatContainer.style.display = DisplayStyle.None;
             inventoryContainer.style.display =
                 inventoryContainer.style.display == DisplayStyle.Flex

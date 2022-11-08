@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/User%20Interface/Stylesheet.uss?fileID=7433441132597879392&amp;guid=a572e4e18994dc343b43aeb594f74a5a&amp;type=3#Stylesheet" />
+    <ui:VisualElement name="Slide1" style="height: 100%; width: 100%; background-color: rgba(49, 255, 69, 0); justify-content: space-between; align-items: stretch;">
+        <ui:VisualElement name="Slide1-Text" style="border-left-color: rgba(0, 0, 0, 0.71); border-right-color: rgba(0, 0, 0, 0.71); border-top-color: rgba(0, 0, 0, 0.71); border-bottom-color: rgba(0, 0, 0, 0.71); background-color: rgba(0, 0, 0, 0.62); height: 1957px; justify-content: space-around; visibility: visible; display: flex; flex-direction: column; align-items: stretch; width: auto; background-image: none;" />
+    </ui:VisualElement>
+</ui:UXML>

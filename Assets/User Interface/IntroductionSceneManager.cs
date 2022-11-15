@@ -10,7 +10,10 @@ public class IntroductionSceneManager : MonoBehaviour
 {   
     public GameObject[] screenArray;
     public GameObject nextIndicator;
-     public float timeRemaining = 10;
+    public GameObject readableDeathAnnouncement;
+    public GameObject tap;
+    public float timeRemaining = 10;
+    public float timeRemainingShowTap=0;
     int currentSlide=0;
     public string sceneToLoad;
     
@@ -30,6 +33,17 @@ public class IntroductionSceneManager : MonoBehaviour
          }else if(currentSlide==7){
             SceneManager.LoadScene(sceneToLoad);
          }
+         if(currentSlide==2){
+           tap.SetActive(false);
+            timeRemainingShowTap=3;
+         }
+    }
+
+    public void showOrHideDeathAnnouncement(){
+        tap.SetActive(false);
+        if(readableDeathAnnouncement.active==false){
+            readableDeathAnnouncement.SetActive(true);
+        }else{readableDeathAnnouncement.SetActive(false);}
     }
     
     
@@ -62,6 +76,13 @@ public class IntroductionSceneManager : MonoBehaviour
                     timeRemaining = 0;
                 }
             }
+        }
+        if(timeRemainingShowTap>=0.0){
+            timeRemainingShowTap-=Time.deltaTime;
+            Debug.Log("minus"+timeRemainingShowTap);
+        }else if( timeRemainingShowTap<0.5 && timeRemaining>0){
+            Debug.Log("TTTTTTTTTTTAP");
+            tap.SetActive(true);
         }
         
     }

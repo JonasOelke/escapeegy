@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawnable
+  - Floor
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Floor
+  - Wall
+  - Object
   - 
   - 
   - 

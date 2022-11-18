@@ -4,8 +4,16 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class PlacaTrackedImages : MonoBehaviour
+public class TrackedImages : MonoBehaviour
 {
+    [SerializeField]
+    private ARSession session;
+    [SerializeField]
+    private ARSessionOrigin sessionOrigin;
+    [SerializeField]
+    private List<Target> navigationTargetObjects = new List<Target>();
+
+
     // Reference to AR Tracked Image Manager component
     private ARTrackedImageManager _trackImageManager;
 
@@ -45,7 +53,7 @@ public class PlacaTrackedImages : MonoBehaviour
             // Now loop over the array of prefabs
             foreach (var curPrefab in ArPrefabs)
             {
-                // Check whether this prefab mathes tracked image name and that prefab hasnt already been created
+                // Check whether this prefab matches tracked image name and that prefab hasnt already been created
                 if (
                     string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase)
                         == 0
@@ -76,6 +84,17 @@ public class PlacaTrackedImages : MonoBehaviour
             Destroy(_instantiatedPrefabs[trackedImage.referenceImage.name]);
             // Also remove the instance from array that keeps track
             _instantiatedPrefabs.Remove(trackedImage.referenceImage.name);
+        }
+    }
+
+    private void RecenterSessionOrigin(string targetText)
+    {
+        Target currentTarget = navigationTargetObjects.Find(x => x.Name.ToLower().Equals(targetText.ToLower()));
+        if (currentTarget != null)
+        {
+            session.Reset();
+            sessionOrigin.transform.position = currentTarget.PositionObject.transform.position;
+            sessionOrigin.transform.rotation = currentTarget.PositionObject.transform.rotation;
         }
     }
 }

@@ -1,11 +1,12 @@
 :root {
-    --primary-color: rgb(143,98,42);
-    --dark-brown: rgb(143,98,42);
-    --middle-brown:rgb(219,190,154);
-    --beige:rgb(255,232,204);
-    --light-blue: rgb(154,198,219);
-    --dark-blue:rgb(71,123,191);
+    --primary-color: rgb(143, 98, 42);
+    --dark-brown: rgb(143, 98, 42);
+    --middle-brown: rgb(219, 190, 154);
+    --beige: rgb(255, 232, 204);
+    --light-blue: rgb(154, 198, 219);
+    --dark-blue: rgb(71, 123, 191);
 }
+
 .mainButton {
     width: 23%;
     height: 48%;
@@ -47,13 +48,12 @@
 }
 
 .chatSuggestion {
-    
     font-size: 52px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
     border-left-color: var(--beige);
-    border-right-color: rvar(--beige);
-    border-top-color: rvar(--beige);
+    border-right-color: var(--beige);
+    border-top-color: var(--beige);
     border-bottom-color: var(--beige);
     border-left-width: 7px;
     border-right-width: 7px;
@@ -68,35 +68,63 @@
     border-top-right-radius: 32px;
     border-bottom-right-radius: 32px;
     margin-top: 68px;
-    
 }
 
-.chatMessage {
-    
+.chatMessageRight {
+    padding-left: 89px;
+    padding-right: 89px;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    margin-left: 200px;
+    margin-right: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 402%;
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    background-color: var(--middle-brown);
+    white-space: normal;
+    -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Regular%20SDF.asset?fileID=11400000&guid=5d79111f0d4e4fd418d87625e58ae730&type=2#OpenSans-Regular SDF');
+}
+
+.chatMessageLeft {
     background-color: var(--beige);
     padding-left: 89px;
     padding-right: 89px;
     padding-top: 37px;
     padding-bottom: 37px;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 200px;
     margin-top: 30px;
     margin-bottom: 30px;
-    font-size: 55%;
+    font-size: 402%;
     border-top-left-radius: 44px;
     border-bottom-left-radius: 44px;
     border-top-right-radius: 44px;
     border-bottom-right-radius: 44px;
-    background-color: var(--beige);
-}
-
-.chatMessageContainer {
-    align-items: flex-end;
-    font-size: 974%;
+    white-space: normal;
+    -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Regular%20SDF.asset?fileID=11400000&guid=5d79111f0d4e4fd418d87625e58ae730&type=2#OpenSans-Regular SDF');
+    min-width: initial;
+    width: auto;
+    align-items: flex-start;
 }
 
 .h1 {
     font-size: 78px;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
     -unity-font-style: bold;
+}
+
+.primaryBackgroundColor {
+    background-color: var(--primary-color);
+}
+
+.chatMessageRightContainer {
+    align-items: flex-end;
+}
+
+.chatMessageLeftContainer {
+    margin-right: 200px;
 }

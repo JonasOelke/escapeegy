@@ -17,7 +17,6 @@ public class IntroductionSceneManager : MonoBehaviour
     public float timeRemainingShowTap=60;
     int currentSlide=0;
     public string sceneToLoad;
-    
     int StartTapTimer=0;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,7 @@ public class IntroductionSceneManager : MonoBehaviour
          screenArray[currentSlide].SetActive(true);
          if(currentSlide==1){
             nextIndicator.SetActive(false);
-         }else if(currentSlide>8){
+         }else if(currentSlide>9){
             SceneManager.LoadScene(sceneToLoad);
          }
          if(currentSlide==2 || currentSlide==3){
@@ -42,16 +41,24 @@ public class IntroductionSceneManager : MonoBehaviour
     }
 
     public void showOrHideDeathAnnouncement(){
-        tap.SetActive(false);
+        //tap.SetActive(false);
         if(readableDeathAnnouncement.active==false){
             readableDeathAnnouncement.SetActive(true);
-        }else{readableDeathAnnouncement.SetActive(false);}
+            tap.SetActive(false);
+            StartTapTimer=0;
+        }else{
+            readableDeathAnnouncement.SetActive(false);
+            }
     }
     
     public void showOrHideDiaryentry(){
         if(readableDiary.active==false){
             readableDiary.SetActive(true);
-        }else{readableDiary.SetActive(false);}
+            tap.SetActive(false); 
+            StartTapTimer=0;
+        }else{
+            readableDiary.SetActive(false);
+            }
     }
     
     

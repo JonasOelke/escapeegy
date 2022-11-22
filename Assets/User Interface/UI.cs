@@ -46,7 +46,7 @@ public class UI : MonoBehaviour
         {
             VisualElement msgContainer = new VisualElement();
             msgContainer.AddToClassList("chatMessageContainer");
-            Label msg = new Label("Hast du noch einen\nHinweis für mich?");
+            Label msg = new Label("Hallo du, ich habe ein Foto\n gefunden, zu dem Papa meinte,\n dass du mehr wissen könntest.");
             msg.AddToClassList("chatMessage");
             msgContainer.Add(msg);
 

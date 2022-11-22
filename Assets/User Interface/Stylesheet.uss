@@ -1,7 +1,11 @@
 :root {
-    --primary-color: rgb(56, 134, 217);
+    --primary-color: rgb(143,98,42);
+    --dark-brown: rgb(143,98,42);
+    --middle-brown:rgb(219,190,154);
+    --beige:rgb(255,232,204);
+    --light-blue: rgb(154,198,219);
+    --dark-blue:rgb(71,123,191);
 }
-
 .mainButton {
     width: 23%;
     height: 48%;
@@ -31,7 +35,7 @@
 }
 
 .mainButton:hover {
-    background-color: rgb(231, 73, 73);
+    background-color: var(--dark-brown);
 }
 
 .mainButton:active {
@@ -43,13 +47,14 @@
 }
 
 .chatSuggestion {
+    
     font-size: 52px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
-    border-left-color: rgb(255, 255, 255);
-    border-right-color: rgb(255, 255, 255);
-    border-top-color: rgb(255, 255, 255);
-    border-bottom-color: rgb(255, 255, 255);
+    border-left-color: var(--beige);
+    border-right-color: rvar(--beige);
+    border-top-color: rvar(--beige);
+    border-bottom-color: var(--beige);
     border-left-width: 7px;
     border-right-width: 7px;
     border-top-width: 7px;
@@ -63,9 +68,12 @@
     border-top-right-radius: 32px;
     border-bottom-right-radius: 32px;
     margin-top: 68px;
+    
 }
 
 .chatMessage {
+    
+    background-color: var(--beige);
     padding-left: 89px;
     padding-right: 89px;
     padding-top: 37px;
@@ -75,11 +83,11 @@
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 55%;
-    background-color: rgba(253, 253, 253, 0.77);
     border-top-left-radius: 44px;
     border-bottom-left-radius: 44px;
     border-top-right-radius: 44px;
     border-bottom-right-radius: 44px;
+    background-color: var(--beige);
 }
 
 .chatMessageContainer {

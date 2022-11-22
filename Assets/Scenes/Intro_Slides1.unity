@@ -170,7 +170,7 @@ MonoBehaviour:
   tap: {fileID: 2016684002}
   timeRemaining: 10
   timeRemainingShowTap: 0
-  sceneToLoad: Intro-Scene
+  sceneToLoad: Main
 --- !u!4 &52153391
 Transform:
   m_ObjectHideFlags: 0

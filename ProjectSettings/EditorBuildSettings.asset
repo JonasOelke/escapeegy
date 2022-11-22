@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: a084b40f86b16574793a37fdd6916750
   - enabled: 0
-    path: Assets/Scenes/Intro-Scene.unity
-    guid: 8da0bf35b5100e7419386ba3a96d99cb
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Intro_Slides1.unity
     guid: 4aa2ed77f9fd1934a8da90fea7f2f61c
+  - enabled: 1
+    path: Assets/Scenes/NavMesh.unity
+    guid: b8460f38bb24bbd41b616b7ea9708b5e
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

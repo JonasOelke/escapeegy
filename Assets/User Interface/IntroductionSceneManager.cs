@@ -11,13 +11,14 @@ public class IntroductionSceneManager : MonoBehaviour
     public GameObject[] screenArray;
     public GameObject nextIndicator;
     public GameObject readableDeathAnnouncement;
+    public GameObject readableDiary;
     public GameObject tap;
     public float timeRemaining = 10;
-    public float timeRemainingShowTap=0;
+    public float timeRemainingShowTap=60;
     int currentSlide=0;
     public string sceneToLoad;
     
-
+    int StartTapTimer=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +31,12 @@ public class IntroductionSceneManager : MonoBehaviour
          screenArray[currentSlide].SetActive(true);
          if(currentSlide==1){
             nextIndicator.SetActive(false);
-         }else if(currentSlide==7){
+         }else if(currentSlide>8){
             SceneManager.LoadScene(sceneToLoad);
          }
-         if(currentSlide==2){
-           tap.SetActive(false);
+         if(currentSlide==2 || currentSlide==3){
+            tap.SetActive(false);
+            StartTapTimer=1;
             timeRemainingShowTap=3;
          }
     }
@@ -46,11 +48,15 @@ public class IntroductionSceneManager : MonoBehaviour
         }else{readableDeathAnnouncement.SetActive(false);}
     }
     
+    public void showOrHideDiaryentry(){
+        if(readableDiary.active==false){
+            readableDiary.SetActive(true);
+        }else{readableDiary.SetActive(false);}
+    }
+    
     
     //Method for setting the current slide inactive and the previous active
     public void PreviousSlide(){
-        Debug.Log("PreV"+currentSlide);
-
         if(currentSlide>0){currentSlide--;}
         screenArray[currentSlide].SetActive(true);
         screenArray[currentSlide+1].SetActive(false);
@@ -71,18 +77,17 @@ public class IntroductionSceneManager : MonoBehaviour
             }
             else
             {   if(currentSlide==0){
-                    Debug.Log("Time has run out!");
                     nextIndicator.SetActive(true);
                     timeRemaining = 0;
                 }
             }
         }
-        if(timeRemainingShowTap>=0.0){
-            timeRemainingShowTap-=Time.deltaTime;
-            Debug.Log("minus"+timeRemainingShowTap);
-        }else if( timeRemainingShowTap<0.5 && timeRemaining>0){
-            Debug.Log("TTTTTTTTTTTAP");
-            tap.SetActive(true);
+        if(StartTapTimer==1){
+            if(timeRemainingShowTap>=0.0){
+                timeRemainingShowTap-=Time.deltaTime;
+            }else if( timeRemainingShowTap<0.5 ){
+                tap.SetActive(true);
+            }
         }
         
     }

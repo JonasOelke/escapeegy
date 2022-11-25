@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/User Interface/Fonts/Open Sans.meta
 guid: e6c7f1578934c9f4999520da649bc8b1
 folderAsset: yes
+========
+guid: 602c2718c060e5a4a98b4909a9fbae1c
+>>>>>>>> origin/main:Assets/Scenes/Intro_Slides1.unity.meta~Stashed changes.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

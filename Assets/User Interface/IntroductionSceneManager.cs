@@ -26,11 +26,13 @@ public class IntroductionSceneManager : MonoBehaviour
     //Method for setting the next slide active and the current inactive
     public void NextSlide(){
         currentSlide++;
+        Debug.Log(currentSlide+ "currentSlide");
         screenArray[currentSlide-1].SetActive(false);
          screenArray[currentSlide].SetActive(true);
          if(currentSlide==1){
             nextIndicator.SetActive(false);
          }else if(currentSlide>9){
+            Debug.Log("Change szene");
             SceneManager.LoadScene(sceneToLoad);
          }
          if(currentSlide==2 || currentSlide==3){

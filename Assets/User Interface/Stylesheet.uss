@@ -7,29 +7,6 @@
     --dark-blue: rgb(71, 123, 191);
 }
 
-.mainButton {
-    width: 23%;
-    height: 48%;
-    font-size: 60px;
-    padding-left: 27px;
-    padding-right: 27px;
-    padding-top: 27px;
-    padding-bottom: 27px;
-    color: rgb(255, 255, 255);
-    background-color: var(--primary-color);
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-    border-top-left-radius: 13px;
-    border-bottom-left-radius: 13px;
-    border-top-right-radius: 13px;
-    border-bottom-right-radius: 13px;
-    -unity-font: url('project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Roboto-Bold.ttf?fileID=12800000&guid=4beb055f07aaff244873dec698d0363e&type=3#Roboto-Bold');
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-}
-
 .chatSpeechBubbleSender {
     font-size: 136px;
     align-items: flex-end;
@@ -127,4 +104,37 @@
 
 .chatMessageLeftContainer {
     margin-right: 200px;
+}
+
+.mainMenuButtonContainer {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background-color: rgba(143, 98, 42, 0.9);
+    background-image: none;
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.mainMenuButton {
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }

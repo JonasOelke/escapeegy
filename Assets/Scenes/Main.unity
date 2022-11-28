@@ -279,7 +279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 80857294}
   - component: {fileID: 80857293}
-  - component: {fileID: 80857292}
+  - component: {fileID: 80857295}
+  - component: {fileID: 80857296}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -287,18 +288,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &80857292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80857291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c515a2426701a5042bc37949ed2f5f0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &80857293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +320,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &80857295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80857291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74beec537e94ac5458f238d11e68655f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messagesScript: {fileID: 80857296}
+--- !u!114 &80857296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80857291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2fcc93ab9e2644f8c5e1733a106743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +360,6 @@ GameObject:
   - component: {fileID: 388525036}
   - component: {fileID: 388525035}
   - component: {fileID: 388525034}
-  - component: {fileID: 388525037}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -441,20 +454,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PointCloudPrefab: {fileID: 4784857267994682871, guid: 82729c0ca2edbf246877c957105f611a,
     type: 3}
---- !u!114 &388525037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa40b5ca1f1b9694188a62e962ac7c6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arCamera: {fileID: 0}
-  resolveAnchorPassedTimeout: 10
 --- !u!114 &388525038
 MonoBehaviour:
   m_ObjectHideFlags: 0

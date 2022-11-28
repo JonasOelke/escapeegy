@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.UIElements;
 public class ChatController : MonoBehaviour
 {
     ScrollView chatMessagesContainer;
+    VisualElement messageSuggestionsContainer;
+    public Messages messagesScript;
+    private ChatMessage[] _messages;
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +17,8 @@ public class ChatController : MonoBehaviour
         Debug.Log("ChatController Start");
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
+        messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
+        _messages = messagesScript.getChatMessages();
         ChatResponse chatResponse = new ChatResponse("ICH BIN RESPONSE A");
         ChatResponse chatResponse2 = new ChatResponse("ICH BIN RESPONSE B");
 
@@ -23,6 +29,7 @@ public class ChatController : MonoBehaviour
             new[] { chatResponse, chatResponse2 }
         );
         AddToChatMessagesContainer(message);
+        addMessagetoSuggestionsContainer(1);
         // Load first Suggestions
     }
 
@@ -67,5 +74,11 @@ public class ChatController : MonoBehaviour
     {
         // Searches for new suggestion with noted ID
         // Puts the text into suggestionBox
+
+        var chatMessage = Array.Find(_messages, e => e.id == id);
+        Button messageSuggestion = new Button();
+        messageSuggestion.text = chatMessage.text;
+        messageSuggestion.AddToClassList("chatSuggestion");
+        messageSuggestionsContainer.Add(messageSuggestion);
     }
 }

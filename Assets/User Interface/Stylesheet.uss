@@ -64,6 +64,7 @@
     background-color: var(--middle-brown);
     white-space: normal;
     -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Regular%20SDF.asset?fileID=11400000&guid=5d79111f0d4e4fd418d87625e58ae730&type=2#OpenSans-Regular SDF');
+    color: rgba(27, 27, 27, 255);
 }
 
 .chatMessageLeft {
@@ -86,6 +87,7 @@
     min-width: initial;
     width: auto;
     align-items: flex-start;
+    color: rgba(27, 27, 27, 255);
 }
 
 .h1 {

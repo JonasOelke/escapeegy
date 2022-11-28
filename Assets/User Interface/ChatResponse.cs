@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class ChatResponse : MonoBehaviour
+public class ChatResponse
 {
     public GameObject photo;
-    string text;
+    public string text;
 
-    GameObject GetMessage(){
+    GameObject GetMessage()
+    {
+        return null;
+    }
 
-
-        return 
+    public ChatResponse(string text)
+    {
+        this.text = text;
     }
 }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-public class ChatMessage : MonoBehaviour
+public class ChatMessage
 {
     int id;
     int[] nextIds;
     bool sent = false;
     public string text;
     bool available = false;
-    ChatResponse[] responses;
+    public ChatResponse[] responses;
     public GameObject photo;
 
     public ChatMessage(

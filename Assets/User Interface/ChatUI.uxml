@@ -15,7 +15,7 @@
                     <ui:Label text=" Mal gucken was passiert wen ich jeztzt immer mehr text da rein schreibe" display-tooltip-when-elided="true" class="chatMessageLeft" style="margin-right: 0; -unity-text-align: upper-left; align-items: flex-start; justify-content: flex-start; white-space: normal; -unity-background-scale-mode: scale-to-fit; width: auto; min-width: 0; min-height: 0; max-width: none; flex-wrap: wrap;" />
                 </ui:VisualElement>
                 <ui:VisualElement class="chatMessageRightContainer">
-                    <ui:Label text="Label" display-tooltip-when-elided="true" class="chatMessage chatMessageRight" style="align-items: flex-end; justify-content: flex-start;" />
+                    <ui:Label text="Label" display-tooltip-when-elided="true" class="chatMessage chatMessageRight" />
                 </ui:VisualElement>
             </ui:ScrollView>
             <ui:VisualElement name="MessageSuggestionsContainer" style="align-items: flex-end; margin-top: 50px; -unity-text-align: upper-center; bottom: 0; position: absolute; margin-bottom: 85px; flex-direction: row-reverse; justify-content: flex-start; padding-right: 90px; flex-wrap: wrap;">

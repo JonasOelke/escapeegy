@@ -14,23 +14,35 @@ public class ChatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("ChatController Start");
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
-        _messages = messagesScript.getChatMessages();
-        ChatResponse chatResponse = new ChatResponse("ICH BIN RESPONSE A");
-        ChatResponse chatResponse2 = new ChatResponse("ICH BIN RESPONSE B");
+        var backButton = root.Q<Button>("BackButton");
+        backButton.clicked += () =>
+        {
+            GetComponentInParent<UIController>().BackToMenu();
+        };
 
-        ChatMessage message = new ChatMessage(
-            1,
-            new[] { 1, 2, 3 },
-            "Hello World",
-            new[] { chatResponse, chatResponse2 }
-        );
-        AddToChatMessagesContainer(message);
+        ClearChat();
+        _messages = messagesScript.getChatMessages();
         addMessagetoSuggestionsContainer(1);
-        // Load first Suggestions
+    }
+
+    void ClearChat()
+    {
+        var children = new List<VisualElement>();
+        foreach (var visualElement in chatMessagesContainer.Children())
+        {
+            children.Add(visualElement);
+        }
+        children.ForEach(child => chatMessagesContainer.Remove(child));
+
+        children = new List<VisualElement>();
+        foreach (var visualElement in messageSuggestionsContainer.Children())
+        {
+            children.Add(visualElement);
+        }
+        children.ForEach(child => messageSuggestionsContainer.Remove(child));
     }
 
     void AddToChatMessagesContainer(ChatMessage chatMessage)
@@ -64,7 +76,7 @@ public class ChatController : MonoBehaviour
             }
             else
             {
-                //IDK please add what to do when image added
+                // TODO: what to do when image added
             }
             chatMessagesContainer.Add(responseContainer);
         }
@@ -79,6 +91,11 @@ public class ChatController : MonoBehaviour
         Button messageSuggestion = new Button();
         messageSuggestion.text = chatMessage.text;
         messageSuggestion.AddToClassList("chatSuggestion");
+        messageSuggestion.clicked += () =>
+        {
+            AddToChatMessagesContainer(chatMessage);
+            messageSuggestion.parent.Remove(messageSuggestion);
+        };
         messageSuggestionsContainer.Add(messageSuggestion);
     }
 }

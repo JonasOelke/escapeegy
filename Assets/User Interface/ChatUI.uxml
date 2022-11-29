@@ -5,7 +5,7 @@
     <ui:VisualElement style="height: 100%; width: 100%; justify-content: flex-start; align-items: stretch; opacity: 1;">
         <ui:VisualElement name="ChatContainer" style="border-left-color: rgba(0, 0, 0, 0.71); border-right-color: rgba(0, 0, 0, 0.71); border-top-color: rgba(0, 0, 0, 0.71); border-bottom-color: rgba(0, 0, 0, 0.71); height: 100%; justify-content: flex-start; visibility: visible; display: flex; align-items: stretch;">
             <ui:VisualElement name="ChatHeader" class="primaryBackgroundColor" style="margin-top: 0; padding-top: 70px; flex-direction: row; min-height: 250px; padding-left: 70px; padding-right: 70px; padding-bottom: 70px; align-items: center; opacity: 0.8;">
-                <ui:VisualElement name="BackButton" text="Tante Emma" style="background-image: url(&apos;project://database/Assets/Pictures/arrow.png?fileID=21300000&amp;guid=12eb642a912794042ba2a578ae37aeb7&amp;type=3#arrow&apos;); width: 50px; height: 50px; rotate: 90deg; -unity-font: url(&apos;project://database/Assets/User%20Interface/Fonts/FleurDeLeah-Regular.ttf?fileID=12800000&amp;guid=ae0bb9a6c47c8d44ea6380f0505d038e&amp;type=3#FleurDeLeah-Regular&apos;);" />
+                <ui:Button display-tooltip-when-elided="true" name="BackButton" style="width: 50px; height: 50px; background-image: url(&apos;project://database/Assets/Pictures/arrow.png?fileID=21300000&amp;guid=12eb642a912794042ba2a578ae37aeb7&amp;type=3#arrow&apos;); rotate: 90deg; background-color: rgba(255, 255, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
                 <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Pictures/Tante%20Emma.PNG?fileID=21300000&amp;guid=844f9f3cc9c57484e846f10649b1c3b7&amp;type=3#Tante Emma&apos;); width: 150px; height: 150px; padding-top: 0; padding-left: 0; padding-right: 0; margin-left: 30px; margin-right: 30px;" />
                 <ui:Label text="Tante Emma" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/User%20Interface/Fonts/FleurDeLeah-Regular.ttf?fileID=12800000&amp;guid=ae0bb9a6c47c8d44ea6380f0505d038e&amp;type=3#FleurDeLeah-Regular&apos;); -unity-font-style: normal; font-size: 118px; -unity-font-definition: url(&apos;project://database/Assets/User%20Interface/Fonts/FleurDeLeah-Regular%20SDF.asset?fileID=11400000&amp;guid=77987df44ac04eb4882d36d8ac782442&amp;type=2#FleurDeLeah-Regular SDF&apos;); color: rgb(255, 232, 204); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 20px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
             </ui:VisualElement>
@@ -19,9 +19,9 @@
                 </ui:VisualElement>
             </ui:ScrollView>
             <ui:VisualElement name="MessageSuggestionsContainer" style="align-items: flex-end; margin-top: 50px; -unity-text-align: upper-center; bottom: 0; position: absolute; margin-bottom: 85px; flex-direction: row-reverse; justify-content: flex-start; padding-right: 90px; flex-wrap: wrap;">
+                <ui:Button text="Erzähl doch mal von Früherwie es so war und es wahr bestimmt auch alles nicht immer einfach, aber ich brauche jedenfalls einen langen text" display-tooltip-when-elided="false" name="Suggestion2" enable-rich-text="false" class="chatSuggestion" />
+                <ui:Button text="Erzähl doch mal von Früher" display-tooltip-when-elided="true" name="Suggestion2" class="chatSuggestion" />
                 <ui:Button text="Hast du einen Hinweis für mich?" display-tooltip-when-elided="true" name="Suggestion1" class="chatSuggestion" />
-                <ui:Button text="Erzähl doch mal von Früher" display-tooltip-when-elided="true" name="Suggestion2" class="chatSuggestion" />
-                <ui:Button text="Erzähl doch mal von Früher" display-tooltip-when-elided="true" name="Suggestion2" class="chatSuggestion" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

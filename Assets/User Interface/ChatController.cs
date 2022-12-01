@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+using System.Threading;
 public class ChatController : MonoBehaviour
 {
     ScrollView chatMessagesContainer;
@@ -25,9 +26,20 @@ public class ChatController : MonoBehaviour
 
         ClearChat();
         _messages = messagesScript.getChatMessages();
-        addMessagetoSuggestionsContainer(1);
+        addMessagetoSuggestionsContainer(2);
     }
 
+        IEnumerator Wait(Action Callback)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 1 second.
+        yield return new WaitForSeconds(1);
+        Callback();
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
     void ClearChat()
     {
         var children = new List<VisualElement>();
@@ -78,9 +90,12 @@ public class ChatController : MonoBehaviour
             {
                 // TODO: what to do when image added
             }
-            chatMessagesContainer.Add(responseContainer);
+            Debug.Log("Delay starts");
+            StartCoroutine(Wait(()=>chatMessagesContainer.Add(responseContainer)));
+            Debug.Log("Delay ends");
         }
     }
+    
 
     void addMessagetoSuggestionsContainer(int id)
     {

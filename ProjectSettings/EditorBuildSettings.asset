@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro_Slides1.unity
     guid: 4aa2ed77f9fd1934a8da90fea7f2f61c
   - enabled: 1
-    path: Assets/Scenes/NavMeshTest.unity
+    path: Assets/Scenes/UniEG.unity
     guid: b8460f38bb24bbd41b616b7ea9708b5e
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,

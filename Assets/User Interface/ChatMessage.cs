@@ -6,7 +6,7 @@ using UnityEngine;
 public class ChatMessage
 {
     public int id;
-    int[] nextIds;
+    public int[] nextIds;
     bool sent = false;
     public string text;
     bool available = false;

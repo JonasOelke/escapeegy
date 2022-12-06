@@ -35,11 +35,12 @@ public class ChatController : MonoBehaviour
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 1 second.
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Callback();
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
+
     void ClearChat()
     {
         var children = new List<VisualElement>();
@@ -78,24 +79,39 @@ public class ChatController : MonoBehaviour
 
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
-            VisualElement responseContainer = new VisualElement();
-            responseContainer.AddToClassList("chatMessageContainer");
-            if (chatResponse.text != "")
-            {
-                Label response = new Label(chatResponse.text);
-                response.AddToClassList("chatMessageLeft");
-                responseContainer.Add(response);
+            if(chatResponse.text!="NEE"){
+                VisualElement responseContainer = new VisualElement();
+                responseContainer.AddToClassList("chatMessageContainer");
+                if (chatResponse.text != "")
+                {
+                    Label response = new Label(chatResponse.text);
+                    response.AddToClassList("chatMessageLeft");
+                    responseContainer.Add(response);
+                }
+                else
+                {
+                    // TODO: what to do when image added
+                }
+                StartCoroutine(Wait(()=> chatMessagesContainer.Add(responseContainer)));
             }
-            else
-            {
-                // TODO: what to do when image added
-            }
+                
             Debug.Log("Delay starts");
-            StartCoroutine(Wait(()=>chatMessagesContainer.Add(responseContainer)));
+            StartCoroutine(Wait(()=>AddMessageToContainerAndSetNextSuggestion(chatMessage)));
             Debug.Log("Delay ends");
         }
+        
     }
     
+    void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
+    {
+        foreach (int nextSuggestion in chatMessage.nextIds){
+            if(nextSuggestion!=0){
+                addMessagetoSuggestionsContainer(nextSuggestion);
+                Debug.Log(nextSuggestion);
+            }
+        }
+        
+    }
 
     void addMessagetoSuggestionsContainer(int id)
     {

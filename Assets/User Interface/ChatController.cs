@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+using System.Threading;
 public class ChatController : MonoBehaviour
 {
     ScrollView chatMessagesContainer;
@@ -25,7 +26,19 @@ public class ChatController : MonoBehaviour
 
         ClearChat();
         _messages = messagesScript.getChatMessages();
-        addMessagetoSuggestionsContainer(1);
+        addMessagetoSuggestionsContainer(2);
+    }
+
+        IEnumerator Wait(Action Callback)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 1 second.
+        yield return new WaitForSeconds(2);
+        Callback();
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
     void ClearChat()
@@ -66,20 +79,38 @@ public class ChatController : MonoBehaviour
 
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
-            VisualElement responseContainer = new VisualElement();
-            responseContainer.AddToClassList("chatMessageContainer");
-            if (chatResponse.text != "")
-            {
-                Label response = new Label(chatResponse.text);
-                response.AddToClassList("chatMessageLeft");
-                responseContainer.Add(response);
+            if(chatResponse.text!="NEE"){
+                VisualElement responseContainer = new VisualElement();
+                responseContainer.AddToClassList("chatMessageContainer");
+                if (chatResponse.text != "")
+                {
+                    Label response = new Label(chatResponse.text);
+                    response.AddToClassList("chatMessageLeft");
+                    responseContainer.Add(response);
+                }
+                else
+                {
+                    // TODO: what to do when image added
+                }
+                StartCoroutine(Wait(()=> chatMessagesContainer.Add(responseContainer)));
             }
-            else
-            {
-                // TODO: what to do when image added
-            }
-            chatMessagesContainer.Add(responseContainer);
+                
+            Debug.Log("Delay starts");
+            StartCoroutine(Wait(()=>AddMessageToContainerAndSetNextSuggestion(chatMessage)));
+            Debug.Log("Delay ends");
         }
+        
+    }
+    
+    void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
+    {
+        foreach (int nextSuggestion in chatMessage.nextIds){
+            if(nextSuggestion!=0){
+                addMessagetoSuggestionsContainer(nextSuggestion);
+                Debug.Log(nextSuggestion);
+            }
+        }
+        
     }
 
     void addMessagetoSuggestionsContainer(int id)

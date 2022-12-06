@@ -11,6 +11,8 @@ public class ChatController : MonoBehaviour
     VisualElement messageSuggestionsContainer;
     public Messages messagesScript;
     private ChatMessage[] _messages;
+    public Messages emmasPic;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -82,15 +84,36 @@ public class ChatController : MonoBehaviour
             if(chatResponse.text!="NEE"){
                 VisualElement responseContainer = new VisualElement();
                 responseContainer.AddToClassList("chatMessageContainer");
-                if (chatResponse.text != "")
+                if (chatResponse.photo == "")
                 {
                     Label response = new Label(chatResponse.text);
                     response.AddToClassList("chatMessageLeft");
                     responseContainer.Add(response);
                 }
                 else
-                {
-                    // TODO: what to do when image added
+                {   Label response = new Label(chatResponse.text);
+                    switch(chatResponse.photo){
+                        case "Lochkarte":
+                            response.AddToClassList("emmasFirstPic");
+                            break;
+                        case "Tagebucheintrag25.April":
+                            response.AddToClassList("emmasSecondPic");
+                            break;
+                        case "Tagebucheintrag26.Dezember":
+                            response.AddToClassList("emmasThirdPic");
+                            break;
+                        case "decryptedLetter":
+                            response.AddToClassList("emmasFourthPic");
+                            break;
+                        case "Tagebucheintrag10.Mai":
+                            response.AddToClassList("emmasFifthPic");
+                            break;
+                        
+
+
+                    }
+                    
+                    responseContainer.Add(response);
                 }
                 StartCoroutine(Wait(()=> chatMessagesContainer.Add(responseContainer)));
             }

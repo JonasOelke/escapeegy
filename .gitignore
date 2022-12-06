@@ -125,6 +125,7 @@ $RECYCLE.BIN/
 # ---- Jetbrains specific ignores ----
 .idea/**/*.*
 Escapeegy_BackUpThisFolder_ButDontShipItWithYourGame/**/*.*
+_build*
 
 InitCodeMarker
 ProjectSettings/ProjectSettings.asset

@@ -22,6 +22,12 @@ public class ScriptForClickingBall : MonoBehaviour
     //Position wo der Finger touched
     private Vector2 touchPosition = default;
 
+    private int ScreenWidth = Screen.width / 2;
+
+    private int ScreenHeight = Screen.height / 2;
+
+    private Vector3 oldPosition;
+
     void Awake()
     {
         ChangeSelectedObject(placedObject[0]);
@@ -51,6 +57,17 @@ public class ScriptForClickingBall : MonoBehaviour
                     //Wir gucken, ob das getroffene Object das PlacementObject - Script attached hat
                     PlacementObject placementObject =
                         hitObject.transform.GetComponent<PlacementObject>();
+
+                    oldPosition = hitObject.transform.position;
+
+                    // Get the transform of the hit object
+                    var ball = hitObject.transform;
+
+                    // make it a child of the camera
+                    ball.parent = arCamera.transform;
+
+                    // place it behind the camera
+                    ball.localPosition = Vector3.forward;
 
                     // wenn es das Script hat dann...
                     if (placementObject != null)

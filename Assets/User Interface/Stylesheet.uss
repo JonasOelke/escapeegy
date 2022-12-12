@@ -146,3 +146,118 @@
     border-top-width: 0;
     border-bottom-width: 0;
 }
+
+.emmasFirstPic {
+    background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    align-items: flex-start;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-color: rgb(255, 232, 204);
+    border-right-color: rgb(255, 232, 204);
+    border-top-color: rgb(255, 232, 204);
+    border-bottom-color: rgb(255, 232, 204);
+    color: rgb(248, 30, 30);
+    font-size: 402px;
+}
+
+.emmasSecondPic {
+    background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    align-items: flex-start;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-color: rgb(255, 232, 204);
+    border-right-color: rgb(255, 232, 204);
+    border-top-color: rgb(255, 232, 204);
+    border-bottom-color: rgb(255, 232, 204);
+    color: rgba(210, 210, 210, 0);
+    font-size: 402px;
+}
+
+.emmasThirdPic {
+    background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    align-items: flex-start;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-color: rgb(255, 232, 204);
+    border-right-color: rgb(255, 232, 204);
+    border-top-color: rgb(255, 232, 204);
+    border-bottom-color: rgb(255, 232, 204);
+    color: rgba(210, 210, 210, 0);
+    font-size: 402px;
+}
+
+.emmasFourthPic {
+    background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    align-items: flex-start;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-color: rgb(255, 232, 204);
+    border-right-color: rgb(255, 232, 204);
+    border-top-color: rgb(255, 232, 204);
+    border-bottom-color: rgb(255, 232, 204);
+    color: rgba(210, 210, 210, 0);
+    font-size: 402px;
+}
+
+.emmasFifthPic {
+    background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    align-items: flex-start;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: auto;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-color: rgb(255, 232, 204);
+    border-right-color: rgb(255, 232, 204);
+    border-top-color: rgb(255, 232, 204);
+    border-bottom-color: rgb(255, 232, 204);
+    color: rgba(210, 210, 210, 0);
+    font-size: 402px;
+}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChatResponse
 {
-    public GameObject photo;
+    public string photo;
     public string text;
 
     GameObject GetMessage()
@@ -12,8 +12,9 @@ public class ChatResponse
         return null;
     }
 
-    public ChatResponse(string text)
+    public ChatResponse(string text,string photo)
     {
         this.text = text;
+        this.photo =photo;
     }
 }

@@ -69,7 +69,7 @@ public class Messages : MonoBehaviour
             new[] { 6 },
             "Bin angekommen, was kann ich tun?",
             "",
-            new[] { message3Response }
+            new[] { message5Response }
         );
 
           ChatResponse message6Response = new ChatResponse(
@@ -787,6 +787,8 @@ public class Messages : MonoBehaviour
         message38,message39,message40,message41,message42,message43, message44, message45, message46,message47, 
         message48,message49,message50,message51,message52,message53, message54, message55, message56,message57, 
         message58,message59,message60,message61, };
-        return chatMessageArray;
+
+        ChatResponse[] chatResponseArray = {message8Response,message10Response,message44Response};
+        return chatMessageArray, chatResponseArray
     }
 }

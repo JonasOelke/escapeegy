@@ -143,7 +143,11 @@ public class ChatController : MonoBehaviour
 
         var chatMessage = Array.Find(_messages, e => e.id == id);
         Button messageSuggestion = new Button();
-        messageSuggestion.text = chatMessage.text;
+        if(chatMessage.summary==""){
+            messageSuggestion.text = chatMessage.text;
+        }else{
+            messageSuggestion.text = chatMessage.summary;
+        }
         messageSuggestion.AddToClassList("chatSuggestion");
         messageSuggestion.clicked += () =>
         {

@@ -9,6 +9,7 @@ public class ChatMessage
     public int[] nextIds;
     bool sent = false;
     public string text;
+    public string summary;
     bool available = false;
     public ChatResponse[] responses;
     public GameObject photo;
@@ -17,6 +18,7 @@ public class ChatMessage
         int id,
         int[] nextIds,
         string text,
+        string summary,
         ChatResponse[] responses,
         GameObject photo = null
     )
@@ -24,6 +26,7 @@ public class ChatMessage
         this.id = id;
         this.nextIds = nextIds;
         this.text = text;
+        this.summary= summary;
         this.responses = responses;
         this.photo = photo;
     }

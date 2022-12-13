@@ -58,16 +58,11 @@ public class ScriptForClickingBall : MonoBehaviour
                     PlacementObject placementObject =
                         hitObject.transform.GetComponent<PlacementObject>();
 
-                    // Fürs Child der Kamera setzen
-                    // Parent entfernen passiert im Moment in PlacementObject.cs
-                    // Get the transform of the hit object
-                    var object = hitObject.transform;
-
                     // make it a child of the camera
-                    object.parent = arCamera.transform;
+                    hitObject.transform.parent = arCamera.transform;
 
                     // place it behind the camera
-                    object.localPosition = Vector3.forward;
+                    hitObject.transform.localPosition = Vector3.forward;
 
                     // wenn das getroffene Objekt das Script hat dann...
                     if (placementObject != null)

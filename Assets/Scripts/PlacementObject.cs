@@ -21,6 +21,10 @@ public class PlacementObject : MonoBehaviour
 
     private float rotationSpeed = 0.001f;
 
+    // Kamera
+    [SerializeField]
+    private Camera arCamera;
+
     void Awake()
     {
         // initiale Werte des Objekts speichern

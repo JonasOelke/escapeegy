@@ -26,7 +26,7 @@ public class ChatMessage
         this.id = id;
         this.nextIds = nextIds;
         this.text = text;
-        this.summary= summary;
+        this.summary = summary;
         this.responses = responses;
         this.photo = photo;
     }

@@ -147,6 +147,20 @@
     border-bottom-width: 0;
 }
 
+.inventoryItemContainer {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left-color: rgba(255, 0, 0, 255);
+    border-right-color: rgba(255, 0, 0, 255);
+    border-top-color: rgba(255, 0, 0, 255);
+    border-bottom-color: rgba(255, 0, 0, 255);
+    background-color: rgba(69, 59, 46, 0.25);
+    height: 100%;
+    margin-bottom: 60px;
+}
+
 .emmasFirstPic {
     background-image: url('project://database/Assets/Pictures/tagebucheintrag_bethallen.png?fileID=21300000&guid=08f20c8be22dba14c8482cc2953e8b92&type=3#tagebucheintrag_bethallen');
     border-top-left-radius: 44px;

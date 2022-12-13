@@ -354,6 +354,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196760444}
+  - component: {fileID: 196760445}
+  - component: {fileID: 196760446}
   m_Layer: 0
   m_Name: InventoryUI
   m_TagString: Untagged
@@ -376,6 +378,36 @@ Transform:
   m_Father: {fileID: 1998012743}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196760445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196760443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 3299809d7e426e148a632ded065fb74f, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 8473cecfc7ebabc42855cb83c1b7a05b,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!114 &196760446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196760443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1179b063bcca3b4e90e391f0d98f850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiController: {fileID: 1998012744}
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161021711}
   - component: {fileID: 1161021712}
+  - component: {fileID: 1161021713}
   m_Layer: 0
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -739,6 +772,19 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 26db15eb89d8aa74d8b6c6e6290093e4,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &1161021713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161021710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20efdae17e280144ba086a8f69773b66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIController: {fileID: 1998012744}
 --- !u!1 &1998012742
 GameObject:
   m_ObjectHideFlags: 0

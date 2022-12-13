@@ -11,28 +11,8 @@ public class UIController : MonoBehaviour
     public GameObject mainMenuUi;
     public GameObject inventoryUi;
 
-    private void OnEnable()
+    private void Start()
     {
-        VisualElement root = GameObject
-            .Find("MainMenuUI")
-            .GetComponent<UIDocument>()
-            .rootVisualElement;
-
-        Button inventoryButton = root.Q<Button>("InventoryButton");
-        Button chatButton = root.Q<Button>("ChatButton");
-
-        inventoryButton.clicked += () =>
-        {
-            inventoryUi.SetActive(true);
-            mainMenuUi.SetActive(false);
-        };
-
-        chatButton.clicked += () =>
-        {
-            chatUi.gameObject.SetActive(true);
-            mainMenuUi.gameObject.SetActive(false);
-        };
-
         chatUi.gameObject.SetActive(false);
         inventoryUi.gameObject.SetActive(false);
     }
@@ -42,5 +22,18 @@ public class UIController : MonoBehaviour
         chatUi.gameObject.SetActive(false);
         inventoryUi.gameObject.SetActive(false);
         mainMenuUi.gameObject.SetActive(true);
+    }
+
+    public void OpenChat()
+    {
+        Debug.Log("UIController: OpenChat");
+        chatUi.gameObject.SetActive(true);
+        mainMenuUi.gameObject.SetActive(false);
+    }
+
+    public void OpenInventory()
+    {
+        inventoryUi.SetActive(true);
+        mainMenuUi.SetActive(false);
     }
 }

@@ -31,7 +31,7 @@ public class ChatController : MonoBehaviour
         addMessagetoSuggestionsContainer(2);
     }
 
-        IEnumerator Wait(Action Callback)
+    IEnumerator Wait(Action Callback)
     {
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
@@ -41,6 +41,18 @@ public class ChatController : MonoBehaviour
         Callback();
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
+
+    private void OnEnable()
+    {
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
+        messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
+        var backButton = root.Q<Button>("BackButton");
+        backButton.clicked += () =>
+        {
+            GetComponentInParent<UIController>().BackToMenu();
+        };
     }
 
     void ClearChat()
@@ -81,7 +93,8 @@ public class ChatController : MonoBehaviour
 
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
-            if(chatResponse.text!="NEE"){
+            if (chatResponse.text != "NEE")
+            {
                 VisualElement responseContainer = new VisualElement();
                 responseContainer.AddToClassList("chatMessageContainer");
                 if (chatResponse.photo == "")
@@ -115,25 +128,25 @@ public class ChatController : MonoBehaviour
                     
                     responseContainer.Add(response);
                 }
-                StartCoroutine(Wait(()=> chatMessagesContainer.Add(responseContainer)));
+                StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
             }
-                
+
             Debug.Log("Delay starts");
-            StartCoroutine(Wait(()=>AddMessageToContainerAndSetNextSuggestion(chatMessage)));
+            StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
             Debug.Log("Delay ends");
         }
-        
     }
-    
+
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
     {
-        foreach (int nextSuggestion in chatMessage.nextIds){
-            if(nextSuggestion!=0){
+        foreach (int nextSuggestion in chatMessage.nextIds)
+        {
+            if (nextSuggestion != 0)
+            {
                 addMessagetoSuggestionsContainer(nextSuggestion);
                 Debug.Log(nextSuggestion);
             }
         }
-        
     }
 
     void addMessagetoSuggestionsContainer(int id)

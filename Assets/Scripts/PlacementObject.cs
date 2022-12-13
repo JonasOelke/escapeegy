@@ -23,6 +23,7 @@ public class PlacementObject : MonoBehaviour
 
     void Awake()
     {
+        // initiale Werte des Objekts speichern
         initialScale = transform.localScale;
         initialPosition = transform.position;
         initialRotation = transform.rotation;
@@ -31,11 +32,16 @@ public class PlacementObject : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        // wenn Objekt ausgewäglt wird
         if (IsSelected)
         {
+            // wenn einmal getouched wird
             if (Input.touchCount == 1)
             {
+                //Touch Referenz
                 touch = Input.GetTouch(0);
+
+                //Rotation des Objekts
                 if (touch.phase == TouchPhase.Moved)
                 {
                     float XaxisRotation = touch.deltaPosition.x * rotationSpeed;
@@ -44,7 +50,7 @@ public class PlacementObject : MonoBehaviour
                     transform.RotateAround(Vector3.down, XaxisRotation);
                     transform.RotateAround(Vector3.right, YaxisRotation);
                 }
-            } // Zoomen
+            } // Zoomen:
             else if (Input.touchCount == 2)
             {
                 // Referenzen für die beiden Touches
@@ -74,7 +80,7 @@ public class PlacementObject : MonoBehaviour
                         .Log("Initial distance " +
                         initialDistance +
                         initialScale);
-                } //if touch is moved
+                } //wenn man beide Finger bewegt:
                 else
                 {
                     var currentDistance =
@@ -93,6 +99,7 @@ public class PlacementObject : MonoBehaviour
         }
         else
         {
+            // Zurücksetzen der Werte
             transform.SetParent(null);
             transform.localScale = initialScale;
             transform.rotation = initialRotation;

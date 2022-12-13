@@ -789,6 +789,6 @@ public class Messages : MonoBehaviour
         message58,message59,message60,message61, };
 
         ChatResponse[] chatResponseArray = {message8Response,message10Response,message44Response};
-        return  chatMessageArray, chatResponseArray;
+        return chatMessageArray;
     }
 }

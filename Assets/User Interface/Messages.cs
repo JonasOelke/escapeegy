@@ -28,6 +28,8 @@ public class Messages : MonoBehaviour
             1,
             new[] { 2, },
             "Hallo du, ich habe ein Foto gefunden, zu dem Papa meinte, dass du mehr wissen könntest. Ich interessiere mich für unsere Familiengeschichte, weil ich das für die Schule machen muss. Hast du noch mehr Infos dazu? Wer waren die beiden?",
+            "Ich habe ein Foto gefunden!",
+           
             new[] { startMessageResponse1, startMessageResponse2 }
         );
 
@@ -40,6 +42,7 @@ public class Messages : MonoBehaviour
             2,
             new[] { 3 },
             "Oh wild. Weißt du, von welcher Anstalt die Rede ist, oder warum Lieselotte zweifelt? Und wer bitteschön ist Fiete?",
+            "Weißt du mehr zur Anstalt oder den Menschen?",
             new[] { message2Response }
         );
 
@@ -52,6 +55,7 @@ public class Messages : MonoBehaviour
             3,
             new[] { 0 },
             "Ich hab’ herausgefunden, dass die Geburtsklinik inzwischen der Kunst- und Mediencampus Hamburg ist. Denkst du, ich kann da einfach hingehen?",
+            "Die Geburtsklinik ist jetzt ein Campus.",
             new[] { message3Response }
         );
 
@@ -64,7 +68,8 @@ public class Messages : MonoBehaviour
             5,
             new[] { 6 },
             "Bin angekommen, was kann ich tun?",
-            new[] { message3Response }
+            "",
+            new[] { message5Response }
         );
 
           ChatResponse message6Response = new ChatResponse(
@@ -75,6 +80,7 @@ public class Messages : MonoBehaviour
             6,
             new[] { 7 },
             "Ich habe was gefunden!",
+            "",
             new[] { message6Response }
         );
 
@@ -86,6 +92,7 @@ public class Messages : MonoBehaviour
             7,
             new[] { 8 },
             "Ich habe was gefunden!",
+            "",
             new[] { message7Response }
         );
 
@@ -98,6 +105,7 @@ public class Messages : MonoBehaviour
             8,
             new[] { 0 },
             "",
+            "",
             new[] { message8Response }
         );
 
@@ -107,6 +115,7 @@ public class Messages : MonoBehaviour
             9,
             new[] { 10 },
             "Da ist schon wieder dieser Fiete. Wer ist das? ",
+            "",
             new[] { noResponse}
         );
 
@@ -118,6 +127,7 @@ public class Messages : MonoBehaviour
             10,
             new[] { 7 },
             "",//Hier Bild anfügen
+            "",
             new[] { message10Response }
         );
 
@@ -128,7 +138,8 @@ public class Messages : MonoBehaviour
         ChatMessage message11 = new ChatMessage(
             11,
             new[] {0},
-            "Aber die scheint ihn ja nicht mal zu mögen? Die kann ja anscheinend nichts mit ihm anfangen?",
+            "Aber die scheint ihn ja nicht mal zu mögen?",
+            "",
             new[] { message11Response }
         );
 
@@ -143,6 +154,7 @@ public class Messages : MonoBehaviour
             12,
             new[] { 0},
             "Ich weiß nicht weiter...",
+            "",
             new[] { message12Response }
         );
 
@@ -157,6 +169,7 @@ public class Messages : MonoBehaviour
             13,
             new[] { 14},
             "Ich weiß nicht weiter...",
+            "",
             new[] { message13Response }
         );
 
@@ -169,6 +182,7 @@ public class Messages : MonoBehaviour
             14,
             new[] {0},
             "Wo denn?",
+            "",
             new[] { message14Response }
         );
 
@@ -178,6 +192,7 @@ public class Messages : MonoBehaviour
             15,
             new[] { 16 },
             "",//Hier Bild vom Brief anfügen
+            "",
             new[] {noResponse }
         );
 
@@ -194,6 +209,7 @@ public class Messages : MonoBehaviour
             16,
             new[] { 17 },
             "Diese Ellie scheint auch nicht viel von Fiete zu halten.",
+            "",
             new[] { message16Response,message16Response2}
         );
 
@@ -202,6 +218,7 @@ public class Messages : MonoBehaviour
             17,
             new[] { 18 },
             "",//Hier Bild von Lochkarte anfügen Brief anfügen
+            "",
             new[] {noResponse }
         );
         
@@ -213,6 +230,7 @@ public class Messages : MonoBehaviour
             18,
             new[] { 19 },
             "Weißt du, was das ist?",
+            "",
             new[] { message18Response}
         );
 
@@ -224,6 +242,7 @@ public class Messages : MonoBehaviour
             19,
             new[] { 0 },
             "Was mach ich damit?",
+            "",
             new[] { message19Response}
         );
 
@@ -237,6 +256,7 @@ public class Messages : MonoBehaviour
             20,
             new[] { 21 },
             "Das ist nur Kaudawelsch. Was mach ich damit?",
+            "",
             new[] { message20Response}
         );
         
@@ -245,6 +265,7 @@ public class Messages : MonoBehaviour
             21,
             new[] { 22 },
             "",//Hier Bild einfügen
+            "",
             new[] { noResponse}
         );
 
@@ -257,6 +278,7 @@ public class Messages : MonoBehaviour
             22,
             new[] { 0 },
             "Was meinst du heißt das?",
+            "",
             new[] { message22Response}
         );
         
@@ -270,6 +292,7 @@ public class Messages : MonoBehaviour
             23,
             new[] { 0 },
             "Ich weiß nicht weiter!",
+            "",
             new[] { message23Response}
         );
 
@@ -279,6 +302,7 @@ public class Messages : MonoBehaviour
             24,
             new[] { 25 },
             "",//Hier Bild einfügen
+            "",
             new[] { noResponse}
         );
 
@@ -294,6 +318,7 @@ public class Messages : MonoBehaviour
             25,
             new[] { 26 },
             "Wer ist denn Helmut? Und was ist da passiert?",
+            "Wer ist denn Helmut?",
             new[] { message25Response, message25Response2}
         );
 
@@ -305,13 +330,15 @@ public class Messages : MonoBehaviour
             26,
             new[] { 27 },
             "Von wem kommt dieser Tagebucheintrag?",
+            "",
             new[] { message26Response}
         );
 
         ChatMessage message27 = new ChatMessage(
             27,
             new[] { 0 },
-            "Hm. Scheinbar vermutet Liselotte, dass was auf dem Geburtstag passiert sein könnte.",
+            "Liselotte denkt wohl, dass was auf dem Geburtstag passiert sein könnte.",
+            "",
             new[] { noResponse}
         );
 
@@ -321,6 +348,7 @@ public class Messages : MonoBehaviour
             28,
             new[] { 29 },
             "", //Hier Bild einfügen
+            "",
             new[] { noResponse}
         );
 
@@ -332,6 +360,7 @@ public class Messages : MonoBehaviour
             29,
             new[] { 30 },
             "Hysterisch? Was ist passiert?",
+            "",
             new[] { message29Response}
         );
 
@@ -343,6 +372,7 @@ public class Messages : MonoBehaviour
             30,
             new[] { 0 },
             "Alles an diesem Bericht ist scheiße. Was soll das bitte mit der Hysterie?",
+            "Der Bericht ist kacke...",
             new[] { message30Response}
         );
 
@@ -355,6 +385,7 @@ public class Messages : MonoBehaviour
             31,
             new[] { 32 },
             "Welcher Spind ist wohl ihrer?",
+            "",
             new[] { message31Response}
         );
         ChatResponse message32Response = new ChatResponse(
@@ -369,6 +400,7 @@ public class Messages : MonoBehaviour
             32,
             new[] { 0 },
             "Oh mist, ich brauche den Spindcode",
+            "",
             new[] { message32Response, message32Response2}
         );
 
@@ -378,6 +410,7 @@ public class Messages : MonoBehaviour
             33,
             new[] { 0 },
             "Es war das Geburtsdatum des Kindes",
+            "",
             new[] { noResponse}
         );
 
@@ -387,6 +420,7 @@ public class Messages : MonoBehaviour
             34,
             new[] { 35 },
             "",//Hier Bild einfügen
+            "",
             new[] { noResponse}
         );
 
@@ -397,7 +431,8 @@ public class Messages : MonoBehaviour
         ChatMessage message35 = new ChatMessage(
             35,
             new[] { 36 },
-            "Fiete is arschloch. Kein Wunder dass sie aufgelöst war. Furchtbar, dass die Schwestern sie als Hysterisch eingestuft haben",
+            "Fiete is Arschloch. Kein Wunder dass sie aufgelöst war. Furchtbar, dass die Schwestern sie als Hysterisch eingestuft haben",
+           "Fiete ist ein Arsch",
             new[] { message35Response}
         );
 
@@ -413,6 +448,7 @@ public class Messages : MonoBehaviour
             36,
             new[] { 37,38,39 },
             "Scheiße... Das darf doch nicht wahr sein",
+            "Scheiße..",
             new[] { message36Response, message36Response2}
         );
 
@@ -420,18 +456,21 @@ public class Messages : MonoBehaviour
             37,
             new[] { 0 },
             "Geht so",
+            "",
             new[] { noResponse}
         );
           ChatMessage message38 = new ChatMessage(
             38,
             new[] { 0 },
             "Alles gut",
+            "",
             new[] { noResponse}
         );
           ChatMessage message39 = new ChatMessage(
             39,
             new[] { 0 },
             "Ich brauch ne kurze Pause",
+            "",
             new[] { noResponse}
         );
 
@@ -447,7 +486,8 @@ public class Messages : MonoBehaviour
         ChatMessage message40 = new ChatMessage(
             40,
             new[] { 41 },
-            "Hast du auch einen Eintrag zu Weihnachten?",
+            "Hast du einen Eintrag zu Weihnachten?",
+            "",
             new[] { message40Response, message40Response2}
         );
 
@@ -459,6 +499,7 @@ public class Messages : MonoBehaviour
             41,
             new[] { 0 },
             "Boah, die Familie klingt ja nicht so nice. Und Fiete wirkt sehr übergriffig…",
+            "Die Familie klingt uncool...",
             new[] { message41Response}
         );
 
@@ -472,6 +513,7 @@ public class Messages : MonoBehaviour
             42,
             new[] { 43 },
             "Ich weiß nicht weiter",
+            "",
             new[] { message42Response}
         );
 
@@ -483,6 +525,7 @@ public class Messages : MonoBehaviour
             43,
             new[] { 44 },
             "Ich hab nichts weiter gefunden",
+            "",
             new[] { message43Response}
         );
 
@@ -494,6 +537,7 @@ public class Messages : MonoBehaviour
             44,
             new[] { 0 },
             "", //Hier Bild einfügen
+            "",
             new[] { message44Response}
         );
 
@@ -503,6 +547,7 @@ public class Messages : MonoBehaviour
             45,
             new[] { 46 },
             "", //Hier Bild einfügen
+            "",
             new[] { noResponse}
         );
 
@@ -515,6 +560,7 @@ public class Messages : MonoBehaviour
             46,
             new[] { 47 },
             "Was soll das denn sein?",
+            "",
             new[] { message46Response}
         );
 
@@ -536,6 +582,7 @@ public class Messages : MonoBehaviour
             47,
             new[] { 0 },
             "Ich weiß nicht, was ich machen soll",
+            "",
             new[] { message47Response, message47Response2}
         );
 
@@ -545,6 +592,7 @@ public class Messages : MonoBehaviour
             48,
             new[] { 49 },
             "",//Hier Bild einfügen
+            "",
             new[] {  noResponse}
         );
 
@@ -561,6 +609,7 @@ public class Messages : MonoBehaviour
             49,
             new[] { 50 },
             "Herzversagen?! Jetzt verstehe ich, warum Lieselotte das alles verdächtig findet",
+            "Herzversagen?! SUS",
             new[] { message49Response,message49Response2}
         );
 
@@ -572,6 +621,7 @@ public class Messages : MonoBehaviour
             50,
             new[] { 51 },
             "Das bricht mir das Herz",
+            "",
             new[] { message50Response}
         );
 
@@ -579,6 +629,7 @@ public class Messages : MonoBehaviour
             51,
             new[] { 0 },
             "Hier habe ich kein Empfang. Ich ruf dich an sobald ich draußen bin. ",
+            "Ich hab grade keinen Empfang...",
             new[] { noResponse}
         );
 
@@ -593,6 +644,7 @@ public class Messages : MonoBehaviour
             52,
             new[] { 0 },
             "Fiete war “drauf”? Drogen-drauf? ",
+            "",
             new[] { message52Response}
         );
 
@@ -606,6 +658,7 @@ public class Messages : MonoBehaviour
             53,
             new[] { 0 },
             "Schau was ich gefunden habe ",
+            "",
             new[] { message53Response}
         );
 
@@ -620,6 +673,7 @@ public class Messages : MonoBehaviour
             54,
             new[] { 0 },
             "Schau was ich gefunden habe ",
+            "",
             new[] { message54Response}
         );
 
@@ -634,6 +688,7 @@ public class Messages : MonoBehaviour
             55,
             new[] { 0 },
             "Was ist das denn?",
+            "",
             new[] { message55Response}
         );
 
@@ -646,6 +701,7 @@ public class Messages : MonoBehaviour
             56,
             new[] { 0 },
             " Ich hab alle Schnipsel gefunden! Maggie sieht aber nicht so glücklich aus.",
+            "Ich hab alle Schnipsel gefunden!...",
             new[] { message56Response}
         );
 
@@ -659,6 +715,7 @@ public class Messages : MonoBehaviour
             57,
             new[] { 0 },
             " Guck mal!",
+            "",
             new[] { message57Response}
         );
 
@@ -672,6 +729,7 @@ public class Messages : MonoBehaviour
             58,
             new[] { 0 },
             "Die scheinen sich schon gut auf das Kind vorzubereiten. Auf der Rückseite habe ich ein Datum gefunden",
+            "Die bereiten sich auf das Kind vor!...",
             new[] { message58Response}
         );
 
@@ -686,6 +744,7 @@ public class Messages : MonoBehaviour
             59,
             new[] { 0 },
             "Sieht aus wie eine Abschiedsparty",
+            "",
             new[] { message59Response}
         );
 
@@ -700,6 +759,7 @@ public class Messages : MonoBehaviour
             60,
             new[] { 0 },
             "Das ist wohl das Merkblatt, das Maggie bekommen hat",
+            "",
             new[] { message60Response}
         );
 
@@ -713,6 +773,7 @@ public class Messages : MonoBehaviour
             61,
             new[] { 0 },
             "Warte mal, damals wurden Drogen einfach als Medizin verteilt?",
+            "",
             new[] { message61Response}
         );
 
@@ -726,6 +787,8 @@ public class Messages : MonoBehaviour
         message38,message39,message40,message41,message42,message43, message44, message45, message46,message47, 
         message48,message49,message50,message51,message52,message53, message54, message55, message56,message57, 
         message58,message59,message60,message61, };
-        return chatMessageArray;
+
+        ChatResponse[] chatResponseArray = {message8Response,message10Response,message44Response};
+        return  chatMessageArray, chatResponseArray;
     }
 }

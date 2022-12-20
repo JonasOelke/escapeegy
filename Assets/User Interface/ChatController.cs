@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 using System.Threading;
 public class ChatController : MonoBehaviour
@@ -15,10 +17,27 @@ public class ChatController : MonoBehaviour
     private Item[] _items;
     public Messages emmasPic;
     
+    
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //Sektion für stored Object bei Start
+        try
+        {
+            StoredObject storedObject =DataPersistanceController.LoadData();
+            LoadScore(storedObject);
+        }catch(FileNotFoundException e)
+        {
+            SceneManager.LoadScene("Intro_Slides1");
+            StoredObject storedObject = new StoredObject(new int[0]{}, new int[0]{});
+            DataPersistanceController.PersistData(storedObject); 
+        }
+        
+
+
+
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
@@ -205,13 +224,7 @@ void LoadScore(StoredObject myObject)
                 
             }
         }
-   foreach (int questionMark in myObject.questionMarks)
-        {
-         
-           /* foreach(Item item in itemArray){
-                    //
-            }*/
-        }
+
     foreach(int itemID in myObject.collectedObjects){
         foreach(Item item in _items){
             if(item.id==itemID){

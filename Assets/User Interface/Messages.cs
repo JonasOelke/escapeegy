@@ -789,6 +789,30 @@ public class Messages : MonoBehaviour
         message58,message59,message60,message61, };
 
         ChatResponse[] chatResponseArray = {message8Response,message10Response,message44Response};
+
         return chatMessageArray;
+
+    }
+
+     public ChatResponse[] getChatResponses()
+    {
+          ChatResponse message8Response = new ChatResponse(
+            "Oh das ist ja nett von Ellie. Vielleicht solltest du dir erstmal einen Überblick verschaffen. Guck mal nach einem Gebäudeplan",
+            ""
+        );
+
+         ChatResponse message10Response = new ChatResponse(
+            "Vielleicht ist das der Vater?",
+            ""
+        );
+
+          ChatResponse message44Response = new ChatResponse(
+           "Was soll man dazu noch sagen...",
+            ""
+        );
+        ChatResponse[] chatResponseArray = {message8Response,message10Response,message44Response};
+
+        return chatResponseArray;
+
     }
 }

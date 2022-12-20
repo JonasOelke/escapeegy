@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-public class storedObject
+public class StoredObject
 {
-    int[] collectedObjects;
-	int[] sentMessages;
-	int[] questionMarks;
+    public int[] collectedObjects;
+	public int[] sentMessages;
+	public int[] questionMarks;
+
 	float spentTime;
 
-    public storedObject(
+    public StoredObject(
         int[] collectedObjects,
 	    int[] sentMessages,
 	    int[] questionMarks,
+
 	    float spentTime
     )
     {
@@ -22,4 +24,5 @@ public class storedObject
         this.questionMarks=questionMarks;
         this.spentTime=spentTime;
     }
+   
 }

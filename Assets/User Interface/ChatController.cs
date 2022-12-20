@@ -10,7 +10,9 @@ public class ChatController : MonoBehaviour
     ScrollView chatMessagesContainer;
     VisualElement messageSuggestionsContainer;
     public Messages messagesScript;
+    public Items itemsScript;
     private ChatMessage[] _messages;
+    private Item[] _items;
     public Messages emmasPic;
     
 
@@ -28,6 +30,7 @@ public class ChatController : MonoBehaviour
 
         ClearChat();
         _messages = messagesScript.getChatMessages();
+        _items = itemsScript.getItems();
         addMessagetoSuggestionsContainer(2);
     }
 
@@ -72,7 +75,7 @@ public class ChatController : MonoBehaviour
         children.ForEach(child => messageSuggestionsContainer.Remove(child));
     }
 
-    void AddToChatMessagesContainer(ChatMessage chatMessage)
+    public void AddToChatMessagesContainer(ChatMessage chatMessage)
     {
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
@@ -169,4 +172,53 @@ public class ChatController : MonoBehaviour
         };
         messageSuggestionsContainer.Add(messageSuggestion);
     }
+
+
+    
+void LoadScore(StoredObject myObject)
+{
+    
+    foreach (int chatMessageID in myObject.sentMessages)
+        {
+            if(chatMessageID<100){
+                foreach(ChatMessage chatMessage in _messages){
+                    if(chatMessage.id==chatMessageID){
+                        AddToChatMessagesContainer(chatMessage);
+                    }
+                }
+            }else{
+                //Wenn id >100 ist es keine Message, sondern ein bild. Dann muss auf das zugehörige Item zugegriffen werden und die Responses da rausgesucht werden
+                foreach(Item item in _items){
+                    //Item aus Item Array raussuchen
+                    if(item.id==chatMessageID){
+                       
+                        //Und die Message zum Container hinzufügen
+                        VisualElement responseContainer = new VisualElement();
+                        responseContainer.AddToClassList("chatMessageContainer");
+                        Label response = new Label(item.response);
+                        response.AddToClassList("chatMessageLeft");
+                        responseContainer.Add(response);
+                        chatMessagesContainer.Add(responseContainer);
+                
+                    }
+                }
+                
+            }
+        }
+   foreach (int questionMark in myObject.questionMarks)
+        {
+         
+           /* foreach(Item item in itemArray){
+                    //
+            }*/
+        }
+    foreach(int itemID in myObject.collectedObjects){
+        foreach(Item item in _items){
+            if(item.id==itemID){
+                item.setFound(true);
+            }
+        }
+    }   
+
+}
 }

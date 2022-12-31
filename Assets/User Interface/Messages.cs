@@ -26,7 +26,7 @@ public class Messages : MonoBehaviour
         );
         ChatMessage startMessage = new ChatMessage(
             1,
-            new[] { 2, },
+            new[] { 2 },
             "Hallo du, ich habe ein Foto gefunden, zu dem Papa meinte, dass du mehr wissen könntest. Ich interessiere mich für unsere Familiengeschichte, weil ich das für die Schule machen muss. Hast du noch mehr Infos dazu? Wer waren die beiden?",
             "Ich habe ein Foto gefunden!",
            
@@ -34,10 +34,16 @@ public class Messages : MonoBehaviour
         );
 
         // Second Message
-        ChatResponse message2Response = new ChatResponse(
+        /*ChatResponse message2Response = new ChatResponse(
             "\n\n\n",
             "Lochkarte"
+        );*/
+
+         ChatResponse message2Response = new ChatResponse(
+            "Ich glaube Lieselotte meint das Insititut für Geburtshilfe in Uhlenhorst, zumindest geht das aus ihren anderen Tagebucheinträgen hervor. Ich weiß nicht wer Fiete ist, vielleicht finde ich noch was dazu.",
+            ""
         );
+
         ChatMessage message2 = new ChatMessage(
             2,
             new[] { 3 },

@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-public class StoredObject : MonoBehaviour
+[System.Serializable]
+public class StoredObject 
 {   
-    bool opened=false;
-    public int[] collectedObjects;
-	public int[] sentMessages;
+    public bool firstOpened=true;
+    public List<int> collectedObjects=new List<int>();
+    public List<int> sentMessages = new List<int>();
 
     public StoredObject(
-        int[] collectedObjects,
-	    int[] sentMessages
+        List<int> collectedObjects
     )
     {
         this.collectedObjects= collectedObjects;
-        this.sentMessages=sentMessages;
     }
 
     public void setOpened(bool opened){
-        this.opened=opened;
+        this.firstOpened=opened;
     }
    
 }

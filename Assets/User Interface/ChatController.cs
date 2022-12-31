@@ -16,8 +16,9 @@ public class ChatController : MonoBehaviour
     private ChatMessage[] _messages;
     private Item[] _items;
     public Messages emmasPic;
-    
-    
+    private bool firstOpened=true;
+    public UIController uiController;
+    StoredObject storedObject;
 
     // Start is called before the first frame update
     void Start()
@@ -26,15 +27,14 @@ public class ChatController : MonoBehaviour
         //Sektion für stored Object bei Start
         try
         {
-            StoredObject storedObject =DataPersistanceController.LoadData();
+            storedObject =DataPersistanceController.LoadData();
             LoadScore(storedObject);
         }catch(FileNotFoundException e)
         {
+            StoredObject storedObject = new StoredObject(new List<int>());
+            DataPersistanceController.PersistData(storedObject);  
             SceneManager.LoadScene("Intro_Slides1");
-            StoredObject storedObject = new StoredObject(new int[0]{}, new int[0]{});
-            DataPersistanceController.PersistData(storedObject); 
         }
-        
 
 
 
@@ -50,7 +50,7 @@ public class ChatController : MonoBehaviour
         ClearChat();
         _messages = messagesScript.getChatMessages();
         _items = itemsScript.getItems();
-        addMessagetoSuggestionsContainer(2);
+        addMessagetoSuggestionsContainer(1);
     }
 
     IEnumerator Wait(Action Callback)
@@ -71,10 +71,34 @@ public class ChatController : MonoBehaviour
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
         var backButton = root.Q<Button>("BackButton");
+        
+         //Sektion für stored Object bei Start
+        try
+        {
+            storedObject =DataPersistanceController.LoadData();
+            LoadScore(storedObject);
+        }catch(FileNotFoundException e)
+        {
+            StoredObject storedObject = new StoredObject(new List<int>());
+            DataPersistanceController.PersistData(storedObject);  
+            SceneManager.LoadScene("Intro_Slides1");
+        }
+
+
+        Debug.Log("BBBBBBBBBBBBBBBB"+ storedObject);
         backButton.clicked += () =>
         {
             GetComponentInParent<UIController>().BackToMenu();
         };
+
+        if (storedObject.firstOpened)
+        { 
+            Debug.Log("DDDDDDDDDDDDDDDDDD");
+          //  uiController.BackToMenu();
+           // uiController.OpenChat();
+            storedObject.setOpened(false);
+            DataPersistanceController.PersistData(storedObject); 
+        }
     }
 
     void ClearChat()
@@ -96,6 +120,8 @@ public class ChatController : MonoBehaviour
 
     public void AddToChatMessagesContainer(ChatMessage chatMessage)
     {
+        //Storing stuff
+        StateControl.AddWrittenMessage(chatMessage.id);
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
         // Searches for noted answer and sets it into Chat Box too
@@ -153,10 +179,10 @@ public class ChatController : MonoBehaviour
                 StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
             }
 
-            Debug.Log("Delay starts");
+           
+        } Debug.Log("Delay starts");
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
             Debug.Log("Delay ends");
-        }
     }
 
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
@@ -166,7 +192,7 @@ public class ChatController : MonoBehaviour
             if (nextSuggestion != 0)
             {
                 addMessagetoSuggestionsContainer(nextSuggestion);
-                Debug.Log(nextSuggestion);
+                
             }
         }
     }
@@ -196,8 +222,8 @@ public class ChatController : MonoBehaviour
     
 void LoadScore(StoredObject myObject)
 {
-    
-    foreach (int chatMessageID in myObject.sentMessages)
+    Debug.Log("LOOOOOOOOOOOOOOOOOOOOOOAD");
+    foreach (var chatMessageID in myObject.sentMessages)
         {
             if(chatMessageID<100){
                 foreach(ChatMessage chatMessage in _messages){

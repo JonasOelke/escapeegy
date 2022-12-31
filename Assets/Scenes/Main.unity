@@ -336,6 +336,7 @@ MonoBehaviour:
   messagesScript: {fileID: 80857296}
   itemsScript: {fileID: 80857297}
   emmasPic: {fileID: 0}
+  uiController: {fileID: 1998012744}
 --- !u!114 &80857296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d152aa0720cd54db51a12425e222f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messagesScript: {fileID: 0}
 --- !u!4 &1548894470
 Transform:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,8 +155,6 @@ MonoBehaviour:
   screenArray:
   - {fileID: 478881030}
   - {fileID: 250658338}
-  - {fileID: 277005244}
-  - {fileID: 1911669409}
   - {fileID: 1271775772}
   - {fileID: 531741449}
   - {fileID: 593200305}
@@ -2092,6 +2090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c515a2426701a5042bc37949ed2f5f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chatUi: {fileID: 0}
+  mainMenuUi: {fileID: 0}
+  inventoryUi: {fileID: 0}
 --- !u!1 &1048398497
 GameObject:
   m_ObjectHideFlags: 0

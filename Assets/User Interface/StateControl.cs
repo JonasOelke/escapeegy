@@ -7,53 +7,47 @@ using System.IO;
 public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        
         try
         {
-            StoredObject storedObject =DataPersistanceController.LoadData();
-          
-            //ChatController.LoadScore(storedObject,  _messages, messagesScript);
-        }catch(FileNotFoundException e)
+            DataPersistanceController.LoadData();
+        }
+        catch (FileNotFoundException e)
         {
             Debug.Log("No Object found");
         }
     }
 
-    public static int foundObject(int id){
-         Debug.Log("Found Object, adding to storedobject");
-          try
+    public static void FoundObject(int id)
+    {
+        Debug.Log("Found Object, adding to storedobject");
+        try
         {
-            StoredObject storedObject =DataPersistanceController.LoadData(); 
+            StoredObject storedObject = DataPersistanceController.LoadData();
             storedObject.collectedObjects.Add(id);
-            DataPersistanceController.PersistData(storedObject);  
-        }catch(FileNotFoundException e)
+            DataPersistanceController.PersistData(storedObject);
+        }
+        catch (FileNotFoundException e)
         {
             Debug.Log("No Storedobject found");
         }
     }
-    public static void AddWrittenMessage(int id){
+
+    public static void AddWrittenMessage(int id)
+    {
         Debug.Log("ADDING");
-          try
+        try
         {
-            StoredObject storedObject =DataPersistanceController.LoadData(); 
-            int i=1;
+            StoredObject storedObject = DataPersistanceController.LoadData();
             storedObject.sentMessages.Add(id);
-            DataPersistanceController.PersistData(storedObject);  
-        }catch(FileNotFoundException e)
+            DataPersistanceController.PersistData(storedObject);
+        }
+        catch (FileNotFoundException e)
         {
             Debug.Log("No Object found");
         }
-       
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
-    
 }

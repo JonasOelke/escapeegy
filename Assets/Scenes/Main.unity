@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -333,6 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagesScript: {fileID: 80857296}
+  itemsScript: {fileID: 0}
+  emmasPic: {fileID: 0}
+  uiController: {fileID: 0}
 --- !u!114 &80857296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +359,7 @@ GameObject:
   - component: {fileID: 196760444}
   - component: {fileID: 196760445}
   - component: {fileID: 196760446}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 1998012744}
+  inventoryDetailUi: {fileID: 1880129015}
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +737,7 @@ GameObject:
   - component: {fileID: 1161021711}
   - component: {fileID: 1161021712}
   - component: {fileID: 1161021713}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,6 +789,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIController: {fileID: 1998012744}
+--- !u!1 &1880129015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880129016}
+  - component: {fileID: 1880129017}
+  - component: {fileID: 1880129018}
+  m_Layer: 0
+  m_Name: InventoryDetailUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1880129016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880129015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1998012743}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880129017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880129015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 3299809d7e426e148a632ded065fb74f, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 2f06b7f011302d645a4f887d1e082628,
+    type: 3}
+  m_SortingOrder: 0
+--- !u!114 &1880129018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880129015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb492d81cde32c4987b1399ef3a5576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998012742
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +883,7 @@ Transform:
   - {fileID: 80857294}
   - {fileID: 1161021711}
   - {fileID: 196760444}
+  - {fileID: 1880129016}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -835,6 +902,7 @@ MonoBehaviour:
   chatUi: {fileID: 80857291}
   mainMenuUi: {fileID: 1161021710}
   inventoryUi: {fileID: 196760443}
+  inventoryDetailUi: {fileID: 1880129015}
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0

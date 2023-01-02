@@ -152,13 +152,19 @@
     border-bottom-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    border-left-color: rgba(255, 0, 0, 255);
-    border-right-color: rgba(255, 0, 0, 255);
-    border-top-color: rgba(255, 0, 0, 255);
-    border-bottom-color: rgba(255, 0, 0, 255);
     background-color: rgba(69, 59, 46, 0.25);
     height: 100%;
     margin-bottom: 60px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }
 
 .emmasFirstPic {
@@ -274,4 +280,15 @@
     border-bottom-color: rgb(255, 232, 204);
     color: rgba(210, 210, 210, 0);
     font-size: 402px;
+}
+
+.inventoryElement {
+    width: 100%;
+}
+
+.inventoryItemLabel {
+    font-size: 40px;
+    -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Cochin%20SDF.asset?fileID=11400000&guid=fb4d6009bdc2f6f4fa8687a390e00fb0&type=2#Cochin SDF');
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 255);
 }

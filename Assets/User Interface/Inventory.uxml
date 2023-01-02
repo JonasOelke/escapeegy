@@ -3,20 +3,36 @@
     <ui:VisualElement style="height: 100%; width: 100%; background-color: rgba(143, 98, 42, 0.89);">
         <ui:VisualElement style="width: 100%; height: 100%; opacity: 0.9;">
             <ui:Label text="Dein Inventar" display-tooltip-when-elided="true" name="Title" style="color: rgb(255, 255, 255); font-size: 119px; -unity-font-definition: url(&apos;project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Medium%20SDF.asset?fileID=11400000&amp;guid=8080471c494a4b74eb3b612c8e8ed7cf&amp;type=2#OpenSans-Medium SDF&apos;); -unity-font-style: normal; align-items: auto; -unity-text-align: upper-center; margin-top: 146px; margin-bottom: 50px;" />
-            <ui:VisualElement name="Elements" style="flex-direction: row; height: 100%; margin-left: 5%; margin-right: 5%; justify-content: space-around;">
-                <ui:VisualElement name="LeftColumn" style="justify-content: space-between; flex-direction: column; width: 40%; align-items: stretch; height: 100%;">
-                    <ui:VisualElement class="inventoryItemContainer" style="align-items: center; justify-content: center;" />
-                    <ui:VisualElement class="inventoryItemContainer" />
-                    <ui:VisualElement class="inventoryItemContainer" />
-                    <ui:VisualElement class="inventoryItemContainer" />
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="width: 100%; height: 100%;">
+                <ui:VisualElement name="Elements" style="flex-direction: row; height: auto; margin-left: 5%; margin-right: 5%; justify-content: space-around;">
+                    <ui:VisualElement name="LeftColumn" style="justify-content: flex-start; flex-direction: column; width: 45%; align-items: stretch; height: 100%;">
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Tagebucheintrag" display-tooltip-when-elided="true" class="inventoryItemLabel" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 395px; background-image: url(&apos;project://database/Assets/Pictures/Tagebucheintrag.png?fileID=21300000&amp;guid=86fbb80165e45a34fb2dc419f4ccd069&amp;type=3#Tagebucheintrag&apos;);" />
+                        </ui:Button>
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Gitter" display-tooltip-when-elided="true" class="inventoryItemLabel" />
+                            <ui:VisualElement class="inventoryElement" style="background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Gitter.png?fileID=21300000&amp;guid=536cb6d1f0edd224ab475f63d0cf1e86&amp;type=3#Gitter&apos;); height: 700px; width: 350px;" />
+                        </ui:Button>
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        </ui:Button>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RightColumn" style="justify-content: space-between; width: 45%; height: 100%;">
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:VisualElement name="VisualElement2" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        </ui:Button>
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        </ui:Button>
+                        <ui:Button class="inventoryItemContainer" style="height: auto;">
+                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        </ui:Button>
+                    </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="RightColumn" style="justify-content: space-between; width: 40%; height: 100%;">
-                    <ui:VisualElement class="inventoryItemContainer" />
-                    <ui:VisualElement class="inventoryItemContainer" />
-                </ui:VisualElement>
-            </ui:VisualElement>
+            </ui:ScrollView>
         </ui:VisualElement>
-        <ui:VisualElement style="height: 15%; justify-content: flex-end; margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+        <ui:VisualElement style="height: 10%; justify-content: flex-end; margin-left: 5%; margin-right: 5%; margin-bottom: 5%; opacity: 1;">
             <ui:VisualElement class="mainMenuButtonContainer" style="background-color: rgba(255, 232, 204, 0.5); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; width: 150px; height: 150px;">
                 <ui:Button display-tooltip-when-elided="true" name="BackButton" class="mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/arrow_thin.png?fileID=21300000&amp;guid=2dcf94bcf0a1c7d408ee04159ffc6199&amp;type=3#arrow_thin&apos;); -unity-background-scale-mode: stretch-to-fill; margin-right: 15px; width: 50px; height: 50px;" />
             </ui:VisualElement>

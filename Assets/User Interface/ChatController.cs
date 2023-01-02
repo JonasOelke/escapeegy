@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 using System.Threading;
 public class ChatController : MonoBehaviour
@@ -10,13 +12,32 @@ public class ChatController : MonoBehaviour
     ScrollView chatMessagesContainer;
     VisualElement messageSuggestionsContainer;
     public Messages messagesScript;
+    public Items itemsScript;
     private ChatMessage[] _messages;
+    private Item[] _items;
     public Messages emmasPic;
-    
+    private bool firstOpened=true;
+    public UIController uiController;
+    StoredObject storedObject;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //Sektion für stored Object bei Start
+        try
+        {
+            storedObject =DataPersistanceController.LoadData();
+            LoadScore(storedObject);
+        }catch(FileNotFoundException e)
+        {
+            StoredObject storedObject = new StoredObject(new List<int>());
+            DataPersistanceController.PersistData(storedObject);  
+            SceneManager.LoadScene("Intro_Slides1");
+        }
+
+
+
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
@@ -28,7 +49,8 @@ public class ChatController : MonoBehaviour
 
         ClearChat();
         _messages = messagesScript.getChatMessages();
-        addMessagetoSuggestionsContainer(2);
+        _items = itemsScript.getItems();
+        addMessagetoSuggestionsContainer(1);
     }
 
     IEnumerator Wait(Action Callback)
@@ -49,10 +71,34 @@ public class ChatController : MonoBehaviour
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
         var backButton = root.Q<Button>("BackButton");
+        
+         //Sektion für stored Object bei Start
+        try
+        {
+            storedObject =DataPersistanceController.LoadData();
+            LoadScore(storedObject);
+        }catch(FileNotFoundException e)
+        {
+            StoredObject storedObject = new StoredObject(new List<int>());
+            DataPersistanceController.PersistData(storedObject);  
+            SceneManager.LoadScene("Intro_Slides1");
+        }
+
+
+        Debug.Log("BBBBBBBBBBBBBBBB"+ storedObject);
         backButton.clicked += () =>
         {
             GetComponentInParent<UIController>().BackToMenu();
         };
+
+        if (storedObject.firstOpened)
+        { 
+            Debug.Log("DDDDDDDDDDDDDDDDDD");
+          //  uiController.BackToMenu();
+           // uiController.OpenChat();
+            storedObject.setOpened(false);
+            DataPersistanceController.PersistData(storedObject); 
+        }
     }
 
     void ClearChat()
@@ -72,8 +118,10 @@ public class ChatController : MonoBehaviour
         children.ForEach(child => messageSuggestionsContainer.Remove(child));
     }
 
-    void AddToChatMessagesContainer(ChatMessage chatMessage)
+    public void AddToChatMessagesContainer(ChatMessage chatMessage)
     {
+        //Storing stuff
+        StateControl.AddWrittenMessage(chatMessage.id);
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
         // Searches for noted answer and sets it into Chat Box too
@@ -131,10 +179,10 @@ public class ChatController : MonoBehaviour
                 StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
             }
 
-            Debug.Log("Delay starts");
+           
+        } Debug.Log("Delay starts");
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
             Debug.Log("Delay ends");
-        }
     }
 
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
@@ -144,7 +192,7 @@ public class ChatController : MonoBehaviour
             if (nextSuggestion != 0)
             {
                 addMessagetoSuggestionsContainer(nextSuggestion);
-                Debug.Log(nextSuggestion);
+                
             }
         }
     }
@@ -169,4 +217,47 @@ public class ChatController : MonoBehaviour
         };
         messageSuggestionsContainer.Add(messageSuggestion);
     }
+
+
+    
+void LoadScore(StoredObject myObject)
+{
+    Debug.Log("LOOOOOOOOOOOOOOOOOOOOOOAD");
+    foreach (var chatMessageID in myObject.sentMessages)
+        {
+            if(chatMessageID<100){
+                foreach(ChatMessage chatMessage in _messages){
+                    if(chatMessage.id==chatMessageID){
+                        AddToChatMessagesContainer(chatMessage);
+                    }
+                }
+            }else{
+                //Wenn id >100 ist es keine Message, sondern ein bild. Dann muss auf das zugehörige Item zugegriffen werden und die Responses da rausgesucht werden
+                foreach(Item item in _items){
+                    //Item aus Item Array raussuchen
+                    if(item.id==chatMessageID){
+                       
+                        //Und die Message zum Container hinzufügen
+                        VisualElement responseContainer = new VisualElement();
+                        responseContainer.AddToClassList("chatMessageContainer");
+                        Label response = new Label(item.response);
+                        response.AddToClassList("chatMessageLeft");
+                        responseContainer.Add(response);
+                        chatMessagesContainer.Add(responseContainer);
+                
+                    }
+                }
+                
+            }
+        }
+
+    foreach(int itemID in myObject.collectedObjects){
+        foreach(Item item in _items){
+            if(item.id==itemID){
+                item.setFound(true);
+            }
+        }
+    }   
+
+}
 }

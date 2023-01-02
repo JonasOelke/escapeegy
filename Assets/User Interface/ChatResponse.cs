@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChatResponse
-{
+{   
     public string photo;
     public string text;
 

@@ -31,15 +31,16 @@ public class IntroductionSceneManager : MonoBehaviour
          screenArray[currentSlide].SetActive(true);
          if(currentSlide==1){
             nextIndicator.SetActive(false);
-         }else if(currentSlide>9){
+         }else if(currentSlide>6){
             Debug.Log("Change szene");
             SceneManager.LoadScene(sceneToLoad);
+            
          }
-         if(currentSlide==2 || currentSlide==3){
+        /* if(currentSlide==2 || currentSlide==3){
             tap.SetActive(false);
             StartTapTimer=1;
             timeRemainingShowTap=3;
-         }
+         }*/
     }
 
     public void showOrHideDeathAnnouncement(){

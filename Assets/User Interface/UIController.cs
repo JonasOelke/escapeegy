@@ -13,12 +13,15 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        chatUi.gameObject.SetActive(false);
+        //chatUi.gameObject.SetActive(false);
         inventoryUi.gameObject.SetActive(false);
+        mainMenuUi.gameObject.SetActive(false);
     }
 
     public void BackToMenu()
     {
+        
+        Debug.Log("UIController: BACK to Menue");
         chatUi.gameObject.SetActive(false);
         inventoryUi.gameObject.SetActive(false);
         mainMenuUi.gameObject.SetActive(true);

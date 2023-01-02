@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
-public class storedObject
-{
-    int[] collectedObjects;
-	int[] sentMessages;
-	int[] questionMarks;
-	float spentTime;
+[System.Serializable]
+public class StoredObject 
+{   
+    public bool firstOpened=true;
+    public List<int> collectedObjects=new List<int>();
+    public List<int> sentMessages = new List<int>();
 
-    public storedObject(
-        int[] collectedObjects,
-	    int[] sentMessages,
-	    int[] questionMarks,
-	    float spentTime
+    public StoredObject(
+        List<int> collectedObjects
     )
     {
         this.collectedObjects= collectedObjects;
-        this.sentMessages=sentMessages;
-        this.questionMarks=questionMarks;
-        this.spentTime=spentTime;
     }
+
+    public void setOpened(bool opened){
+        this.firstOpened=opened;
+    }
+   
 }

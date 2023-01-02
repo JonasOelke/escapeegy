@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,29 +22,26 @@ public class DataPersistanceController : MonoBehaviour
     {
         outputText.text = inputField.text;
         dataPersistance.inputValue = inputField.text;
-        PersistData();
+        //PersistData();
     }
 
-    string ToJson()
+    static string ToJson(StoredObject obj)
     {
-        return JsonUtility.ToJson(dataPersistance);
+        return JsonUtility.ToJson(obj);
     }
 
-    public DataPersistanceModel LoadFromJson(string json)
-    {
-        return JsonUtility.FromJson<DataPersistanceModel>(json);
+
+   public static StoredObject LoadData()
+    {   
+        
+        string data = FileManager.LoadFromFile("escepeegy3.json");
+        Debug.Log(data+"AAAAAAAAAAAAAAAAAAAAaa");
+        StoredObject storedObject = data != "" ? JsonUtility.FromJson<StoredObject>(data) : throw new FileNotFoundException();
+        return storedObject;
     }
 
-    void LoadData()
+    public static bool PersistData(StoredObject storedObject)
     {
-        string data = FileManager.LoadFromFile("escepeegy1.json");
-        Debug.Log(data);
-        dataPersistance = data != "" ? LoadFromJson(data) : new DataPersistanceModel();
-        outputText.text = data != "" ? dataPersistance.inputValue : "--";
-    }
-
-    void PersistData()
-    {
-        FileManager.WriteToFile("escepeegy1.json", ToJson());
+        return FileManager.WriteToFile("escepeegy3.json", ToJson(storedObject));
     }
 }

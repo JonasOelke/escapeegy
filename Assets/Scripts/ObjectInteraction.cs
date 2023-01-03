@@ -40,6 +40,8 @@ public class ObjectInteraction : MonoBehaviour
             // touch.phase beschreibt die Phase des Touches in der wir grade sind
             if (touch.phase == TouchPhase.Began)
             {
+                print("Touched!");
+
                 // Erstellt einen Strahl, der von der Kamera durch touch-punkt geht
                 Ray ray = arCamera.ScreenPointToRay(touch.position);
 
@@ -48,19 +50,18 @@ public class ObjectInteraction : MonoBehaviour
                 if (Physics.Raycast(ray, out hitObject))
                 {
                     //Wir gucken, ob das getroffene Object das Findables - Script attached hat
-                    Findables findables = hitObject.transform.GetComponent<Findables>();
-
-                    // make it a child of the camera
-                    hitObject.transform.parent = arCamera.transform;
-
-                    // place it behind the camera
-                    hitObject.transform.localPosition = Vector3.forward;
+                    Findables findable =
+                        hitObject.transform.GetComponent<Findables>();
 
                     // wenn das getroffene Objekt das Script hat dann...
-                    if (findables != null)
+                    if (findable != null)
                     {
-                        // ...ruf ich die Farb-Funktion auf
-                        ChangeSelectedObject(findables);
+                        // ...ruf ich die Interaktions-Funktion auf
+                        ChangeSelectedObject (findable);
+                    }
+                    else
+                    {
+                        print("Object is not a findable");
                     }
                 }
             }
@@ -71,14 +72,14 @@ public class ObjectInteraction : MonoBehaviour
     {
         foreach (Findables current in placedObject)
         {
-            MeshRenderer meshRenderer = current.GetComponent<MeshRenderer>();
             if (selected != current)
             {
-                print("Ich wurde gefunden" + selected);
+                current.IsSelected = false;
             }
             else
             {
-                print("Ich wurde nicht gefunden");
+                current.IsSelected = true;
+                current.saveObject();
             }
         }
     }

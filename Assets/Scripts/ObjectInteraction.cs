@@ -48,8 +48,7 @@ public class ObjectInteraction : MonoBehaviour
                 if (Physics.Raycast(ray, out hitObject))
                 {
                     //Wir gucken, ob das getroffene Object das Findables - Script attached hat
-                    Findables findables =
-                        hitObject.transform.GetComponent<Findables>();
+                    Findables findables = hitObject.transform.GetComponent<Findables>();
 
                     // make it a child of the camera
                     hitObject.transform.parent = arCamera.transform;
@@ -61,7 +60,7 @@ public class ObjectInteraction : MonoBehaviour
                     if (findables != null)
                     {
                         // ...ruf ich die Farb-Funktion auf
-                        ChangeSelectedObject (findables);
+                        ChangeSelectedObject(findables);
                     }
                 }
             }

@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 80857293}
   - component: {fileID: 80857295}
   - component: {fileID: 80857296}
+  - component: {fileID: 80857297}
   m_Layer: 5
   m_Name: ChatUI
   m_TagString: Untagged
@@ -333,9 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagesScript: {fileID: 80857296}
-  itemsScript: {fileID: 0}
-  emmasPic: {fileID: 0}
-  uiController: {fileID: 0}
+  itemsScript: {fileID: 80857297}
 --- !u!114 &80857296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +347,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2fcc93ab9e2644f8c5e1733a106743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &80857297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80857291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7c65e19da11a14ea4c4ff7cc6812ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteTagebuchEintrag14Mai: {fileID: 21300000, guid: 86fbb80165e45a34fb2dc419f4ccd069,
+    type: 3}
 --- !u!1 &196760443
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +425,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiController: {fileID: 1998012744}
   inventoryDetailUi: {fileID: 1880129015}
+--- !u!1 &232458242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232458243}
+  - component: {fileID: 232458245}
+  - component: {fileID: 232458244}
+  m_Layer: 0
+  m_Name: PopupDialogUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &232458243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232458242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1998012743}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232458244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232458242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9f3fd91ec45a94aba1067c498fc7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &232458245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232458242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 3299809d7e426e148a632ded065fb74f, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 466da340a82b3114aa0f9d6caef30128,
+    type: 3}
+  m_SortingOrder: 0
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb492d81cde32c4987b1399ef3a5576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chatController: {fileID: 80857295}
 --- !u!1 &1998012742
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +960,7 @@ Transform:
   - {fileID: 1161021711}
   - {fileID: 196760444}
   - {fileID: 1880129016}
+  - {fileID: 232458243}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

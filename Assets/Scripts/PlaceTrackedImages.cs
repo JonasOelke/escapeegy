@@ -8,11 +8,12 @@ public class TrackedImages : MonoBehaviour
 {
     [SerializeField]
     private ARSession session;
+
     [SerializeField]
     private ARSessionOrigin sessionOrigin;
+
     [SerializeField]
     private List<Target> navigationTargetObjects = new List<Target>();
-
 
     // Reference to AR Tracked Image Manager component
     private ARTrackedImageManager _trackImageManager;
@@ -89,7 +90,9 @@ public class TrackedImages : MonoBehaviour
 
     private void RecenterSessionOrigin(string targetText)
     {
-        Target currentTarget = navigationTargetObjects.Find(x => x.Name.ToLower().Equals(targetText.ToLower()));
+        Target currentTarget = navigationTargetObjects.Find(
+            x => x.Name.ToLower().Equals(targetText.ToLower())
+        );
         if (currentTarget != null)
         {
             session.Reset();

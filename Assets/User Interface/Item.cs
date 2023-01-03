@@ -7,20 +7,18 @@ public class Item
 {
     public int id;
     Sprite model;
-    bool found=false;
+    bool found = false;
     public string response;
 
-    public Item(
-        int id,
-        string response,
-        Sprite model
-    )
+    public Item(int id, string response, Sprite model)
     {
         this.id = id;
         this.response = response;
         this.model = model;
     }
-    public void setFound(bool found){
-        this.found=found;
+
+    public void setFound(bool found)
+    {
+        this.found = found;
     }
 }

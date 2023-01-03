@@ -66,32 +66,24 @@ public class Findables : MonoBehaviour
 
                 //falls man wieder los lässt, nichts machen
                 if (
-                    touchZero.phase == TouchPhase.Ended ||
-                    touchZero.phase == TouchPhase.Canceled ||
-                    touchOne.phase == TouchPhase.Ended ||
-                    touchOne.phase == TouchPhase.Canceled
+                    touchZero.phase == TouchPhase.Ended
+                    || touchZero.phase == TouchPhase.Canceled
+                    || touchOne.phase == TouchPhase.Ended
+                    || touchOne.phase == TouchPhase.Canceled
                 )
                 {
                     return;
                 }
 
-                if (
-                    touchZero.phase == TouchPhase.Began ||
-                    touchOne.phase == TouchPhase.Began
-                )
+                if (touchZero.phase == TouchPhase.Began || touchOne.phase == TouchPhase.Began)
                 {
-                    initialDistance =
-                        Vector2.Distance(touchZero.position, touchOne.position);
+                    initialDistance = Vector2.Distance(touchZero.position, touchOne.position);
                     initialScale = transform.localScale;
-                    Debug
-                        .Log("Initial distance " +
-                        initialDistance +
-                        initialScale);
+                    Debug.Log("Initial distance " + initialDistance + initialScale);
                 } //wenn man beide Finger bewegt:
                 else
                 {
-                    var currentDistance =
-                        Vector2.Distance(touchZero.position, touchOne.position);
+                    var currentDistance = Vector2.Distance(touchZero.position, touchOne.position);
 
                     // if accidentally touched or pinchmovement very small
                     if (Mathf.Approximately(initialDistance, 0))

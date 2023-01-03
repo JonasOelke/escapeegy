@@ -290,5 +290,30 @@
     font-size: 40px;
     -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Cochin%20SDF.asset?fileID=11400000&guid=fb4d6009bdc2f6f4fa8687a390e00fb0&type=2#Cochin SDF');
     margin-bottom: 25px;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.dialogButton {
+    font-size: 50px;
+    color: rgba(143, 98, 42, 255);
+    background-color: rgba(255, 232, 204, 0.6);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    width: 350px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Medium%20SDF.asset?fileID=11400000&guid=8080471c494a4b74eb3b612c8e8ed7cf&type=2#OpenSans-Medium SDF');
+    -unity-font-style: bold;
 }

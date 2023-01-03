@@ -30,18 +30,19 @@ public class DataPersistanceController : MonoBehaviour
         return JsonUtility.ToJson(obj);
     }
 
-
-   public static StoredObject LoadData()
-    {   
-        
-        string data = FileManager.LoadFromFile("escepeegy3.json");
-        Debug.Log(data+"AAAAAAAAAAAAAAAAAAAAaa");
-        StoredObject storedObject = data != "" ? JsonUtility.FromJson<StoredObject>(data) : throw new FileNotFoundException();
+    public static StoredObject LoadData()
+    {
+        string data = FileManager.LoadFromFile("escepeegy.json");
+        Debug.Log(data + "AAAAAAAAAAAAAAAAAAAAaa");
+        StoredObject storedObject =
+            data != ""
+                ? JsonUtility.FromJson<StoredObject>(data)
+                : throw new FileNotFoundException();
         return storedObject;
     }
 
     public static bool PersistData(StoredObject storedObject)
     {
-        return FileManager.WriteToFile("escepeegy3.json", ToJson(storedObject));
+        return FileManager.WriteToFile("escepeegy.json", ToJson(storedObject));
     }
 }

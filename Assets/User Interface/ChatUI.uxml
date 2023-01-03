@@ -13,7 +13,11 @@
                 <ui:VisualElement class="chatMessageLeftContainer" />
                 <ui:VisualElement class="chatMessageRightContainer" />
             </ui:ScrollView>
-            <ui:VisualElement name="MessageSuggestionsContainer" style="align-items: flex-end; margin-top: 50px; -unity-text-align: upper-center; bottom: 0; position: absolute; margin-bottom: 85px; flex-direction: row-reverse; justify-content: flex-start; padding-right: 90px; flex-wrap: wrap;" />
+            <ui:VisualElement name="MessageSuggestionsContainer" style="align-items: flex-end; margin-top: 50px; -unity-text-align: upper-center; bottom: 0; position: absolute; margin-bottom: 85px; flex-direction: column; justify-content: space-between; padding-right: 90px; flex-wrap: nowrap; height: auto; width: 100%; max-height: 15%;">
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="chatSuggestion" style="display: none;" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="chatSuggestion" style="display: none;" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" class="chatSuggestion" style="display: none;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

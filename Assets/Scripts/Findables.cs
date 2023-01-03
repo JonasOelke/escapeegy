@@ -57,10 +57,8 @@ public class Findables : MonoBehaviour
                 if (touch.phase == TouchPhase.Moved)
                 {
                     float XaxisRotation = touch.deltaPosition.x * rotationSpeed;
-                    float YaxisRotation = touch.deltaPosition.y * rotationSpeed;
 
                     transform.RotateAround(Vector3.down, XaxisRotation);
-                    transform.RotateAround(Vector3.right, YaxisRotation);
                 }
             } // Zoomen:
             else if (Input.touchCount == 2)

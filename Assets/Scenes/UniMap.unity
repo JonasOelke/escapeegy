@@ -6246,7 +6246,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 466da340a82b3114aa0f9d6caef30128,
     type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!1 &585725486
 GameObject:
   m_ObjectHideFlags: 0
@@ -8943,6 +8943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatController: {fileID: 1542897643}
+  popupDialog: {fileID: 582144463}
 --- !u!114 &859394197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8959,7 +8960,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 2f06b7f011302d645a4f887d1e082628,
     type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!4 &859394198
 Transform:
   m_ObjectHideFlags: 0

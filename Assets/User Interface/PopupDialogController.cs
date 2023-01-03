@@ -15,19 +15,19 @@ public class PopupDialogController : MonoBehaviour
 
     private VisualElement root;
 
-    private void Start()
+    private void OnEnable()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
     }
 
     public class DialogProperties
     {
-        public string DialogTitle;
-        public string DialogMessage;
-        public string DialogButtonLeftText;
-        public string DialogButtonRightText;
-        public Action DialogButtonLeftAction;
-        public Action DialogButtonRightAction;
+        public string dialogTitle;
+        public string dialogMessage;
+        public string dialogButtonLeftText;
+        public string dialogButtonRightText;
+        public Action dialogButtonLeftAction;
+        public Action dialogButtonRightAction;
     }
 
     public void SetDialogProperties(DialogProperties dialogProperties)
@@ -37,13 +37,13 @@ public class PopupDialogController : MonoBehaviour
         Button dialogButtonLeft = root.Q<Button>("ButtonLeft");
         Button dialogButtonRight = root.Q<Button>("ButtonRight");
 
-        dialogButtonLeft.clicked += () => dialogProperties.DialogButtonLeftAction();
-        dialogButtonRight.clicked += () => dialogProperties.DialogButtonRightAction();
+        dialogButtonLeft.clicked += () => dialogProperties.dialogButtonLeftAction();
+        dialogButtonRight.clicked += () => dialogProperties.dialogButtonRightAction();
 
-        dialogButtonLeft.text = dialogProperties.DialogButtonLeftText;
-        dialogButtonRight.text = dialogProperties.DialogButtonRightText;
+        dialogButtonLeft.text = dialogProperties.dialogButtonLeftText;
+        dialogButtonRight.text = dialogProperties.dialogButtonRightText;
 
-        dialogTitle.text = dialogProperties.DialogTitle;
-        dialogMessage.text = dialogProperties.DialogMessage;
+        dialogTitle.text = dialogProperties.dialogTitle;
+        dialogMessage.text = dialogProperties.dialogMessage;
     }
 }

@@ -5,6 +5,7 @@ public class InventoryDetailController : MonoBehaviour
 {
     private VisualElement root;
     public ChatController chatController;
+    public GameObject popupDialog;
 
     void OnEnable()
     {
@@ -18,7 +19,19 @@ public class InventoryDetailController : MonoBehaviour
         Button sharebutton = root.Q<Button>("ShareButton");
         sharebutton.clicked += () =>
         {
-            Debug.Log("Share");
+            PopupDialogController.DialogProperties dialogProperties =
+                new PopupDialogController.DialogProperties();
+            dialogProperties.dialogTitle = "Teilen";
+            dialogProperties.dialogMessage = "Möchtest du das Element mit Tante Emma teilen?";
+            dialogProperties.dialogButtonLeftText = "Ja";
+            dialogProperties.dialogButtonRightText = "Nein";
+            dialogProperties.dialogButtonLeftAction = () =>
+            {
+                Debug.Log("Mit Tante Emma Teilen");
+            };
+            dialogProperties.dialogButtonRightAction = () => popupDialog.SetActive(false);
+            popupDialog.SetActive(true);
+            popupDialog.GetComponent<PopupDialogController>().SetDialogProperties(dialogProperties);
         };
     }
 

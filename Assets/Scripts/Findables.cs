@@ -7,8 +7,7 @@ public class Findables : MonoBehaviour
     // to determine if something is selected or not
     public bool IsSelected { get; set; }
 
-    [SerializeField]
-    private SimpleStateManager simpleStateManager;
+    public StateControl stateControl;
 
     private Touch touch;
 
@@ -23,6 +22,9 @@ public class Findables : MonoBehaviour
     private Quaternion initialRotation;
 
     private float rotationSpeed = 0.001f;
+
+    [SerializeField]
+    public int id;
 
     // Kamera
     [SerializeField]
@@ -42,6 +44,9 @@ public class Findables : MonoBehaviour
         // wenn Objekt ausgewäglt wird
         if (IsSelected)
         {
+            transform.parent = arCamera.transform;
+            transform.localPosition = Vector3.forward;
+
             // wenn einmal getouched wird
             if (Input.touchCount == 1)
             {
@@ -52,10 +57,8 @@ public class Findables : MonoBehaviour
                 if (touch.phase == TouchPhase.Moved)
                 {
                     float XaxisRotation = touch.deltaPosition.x * rotationSpeed;
-                    float YaxisRotation = touch.deltaPosition.y * rotationSpeed;
 
                     transform.RotateAround(Vector3.down, XaxisRotation);
-                    transform.RotateAround(Vector3.right, YaxisRotation);
                 }
             } // Zoomen:
             else if (Input.touchCount == 2)
@@ -66,24 +69,32 @@ public class Findables : MonoBehaviour
 
                 //falls man wieder los lässt, nichts machen
                 if (
-                    touchZero.phase == TouchPhase.Ended
-                    || touchZero.phase == TouchPhase.Canceled
-                    || touchOne.phase == TouchPhase.Ended
-                    || touchOne.phase == TouchPhase.Canceled
+                    touchZero.phase == TouchPhase.Ended ||
+                    touchZero.phase == TouchPhase.Canceled ||
+                    touchOne.phase == TouchPhase.Ended ||
+                    touchOne.phase == TouchPhase.Canceled
                 )
                 {
                     return;
                 }
 
-                if (touchZero.phase == TouchPhase.Began || touchOne.phase == TouchPhase.Began)
+                if (
+                    touchZero.phase == TouchPhase.Began ||
+                    touchOne.phase == TouchPhase.Began
+                )
                 {
-                    initialDistance = Vector2.Distance(touchZero.position, touchOne.position);
+                    initialDistance =
+                        Vector2.Distance(touchZero.position, touchOne.position);
                     initialScale = transform.localScale;
-                    Debug.Log("Initial distance " + initialDistance + initialScale);
+                    Debug
+                        .Log("Initial distance " +
+                        initialDistance +
+                        initialScale);
                 } //wenn man beide Finger bewegt:
                 else
                 {
-                    var currentDistance = Vector2.Distance(touchZero.position, touchOne.position);
+                    var currentDistance =
+                        Vector2.Distance(touchZero.position, touchOne.position);
 
                     // if accidentally touched or pinchmovement very small
                     if (Mathf.Approximately(initialDistance, 0))
@@ -105,6 +116,14 @@ public class Findables : MonoBehaviour
 
             // zum Entwählen der Objekte - verfällt mit der Funktionalität sie ins Inventar zu legen
             transform.position = initialPosition;
+        }
+    }
+
+    public void saveObject()
+    {
+        if (IsSelected)
+        {
+            stateControl.FoundObject (id);
         }
     }
 }

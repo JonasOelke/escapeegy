@@ -139,12 +139,15 @@
 .mainMenuButton {
     width: 100px;
     height: 100px;
-    opacity: 0.7;
+    opacity: 0.8;
     background-color: rgba(255, 255, 255, 0);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
+    color: rgba(143, 98, 42, 255);
+    font-size: 75px;
+    -unity-font-style: bold;
 }
 
 .inventoryItemContainer {
@@ -295,7 +298,7 @@
 
 .dialogButton {
     font-size: 50px;
-    color: rgba(143, 98, 42, 255);
+    color: rgb(143, 98, 42);
     background-color: rgba(255, 232, 204, 0.6);
     border-left-width: 0;
     border-right-width: 0;
@@ -316,4 +319,26 @@
     border-bottom-right-radius: 22px;
     -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Medium%20SDF.asset?fileID=11400000&guid=8080471c494a4b74eb3b612c8e8ed7cf&type=2#OpenSans-Medium SDF');
     -unity-font-style: bold;
+}
+
+.mainSubButtonContainer {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background-color: rgba(255, 232, 204, 255);
+    background-image: none;
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.73;
 }

@@ -14,10 +14,6 @@
     align-items: flex-end;
 }
 
-.mainButton:hover {
-    background-color: var(--dark-brown);
-}
-
 .mainButton:active {
     scale: 0.95 0.95;
 }
@@ -145,7 +141,7 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    color: rgba(143, 98, 42, 255);
+    color: rgb(143, 98, 42);
     font-size: 75px;
     -unity-font-style: bold;
 }
@@ -328,7 +324,7 @@
     border-bottom-left-radius: 200px;
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
-    background-color: rgba(255, 232, 204, 255);
+    background-color: rgb(255, 232, 204);
     background-image: none;
     -unity-slice-left: 0;
     -unity-slice-top: 0;

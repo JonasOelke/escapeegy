@@ -1,11 +1,22 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/User%20Interface/Stylesheet.uss?fileID=7433441132597879392&amp;guid=a572e4e18994dc343b43aeb594f74a5a&amp;type=3#Stylesheet" />
-    <ui:VisualElement style="height: 100%; width: 100%; justify-content: flex-start; align-items: stretch;">
-        <ui:VisualElement name="Container" style="justify-content: center; align-items: center; flex-direction: row; height: 15%; flex-basis: auto; bottom: 0; top: auto; width: 100%; padding-left: 0; padding-right: 0; padding-bottom: 0; min-height: auto; min-width: 100%; position: absolute;">
-            <ui:VisualElement class="mainMenuButtonContainer" style="opacity: 0.9;">
-                <ui:Button display-tooltip-when-elided="true" name="InventoryButton" class="button mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/box.png?fileID=21300000&amp;guid=0f6bb84556d004343bc8fd7dafe2be8a&amp;type=3#box&apos;); width: 100px; height: 100px;" />
+    <ui:VisualElement style="height: 100%; width: 100%; justify-content: flex-end; align-items: stretch;">
+        <ui:VisualElement name="FloorMenu" style="align-items: center; justify-content: flex-end;">
+            <ui:VisualElement class="mainSubButtonContainer" style="margin-top: 40px; margin-bottom: 40px; opacity: 1; background-color: rgba(255, 232, 204, 0.7);">
+                <ui:Button display-tooltip-when-elided="true" name="AtticButton" text="DG" class="button mainButton mainMenuButton" style="font-size: 75px; -unity-font-style: bold; color: rgb(143, 98, 42); opacity: 0.95;" />
             </ui:VisualElement>
-            <ui:VisualElement name="VisualElement" class="mainMenuButtonContainer">
+            <ui:VisualElement class="mainSubButtonContainer" style="opacity: 1; background-color: rgba(255, 232, 204, 0.7);">
+                <ui:Button display-tooltip-when-elided="true" name="SecondFloorButton" text="2" class="button mainButton mainMenuButton" style="opacity: 0.95; color: rgb(143, 98, 42);" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mainSubButtonContainer" style="background-color: rgba(255, 232, 204, 0.7); opacity: 1;">
+                <ui:Button display-tooltip-when-elided="true" name="GroundFloorButton" text="EG" class="button mainButton mainMenuButton" style="opacity: 0.95;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Container" style="justify-content: center; align-items: center; flex-direction: row; height: auto; flex-basis: auto; bottom: 0; top: auto; width: 100%; padding-left: 0; padding-right: 0; padding-bottom: 0; min-height: auto; min-width: 100%; position: relative; margin-bottom: 80px; margin-top: 50px;">
+            <ui:VisualElement class="mainMenuButtonContainer" style="opacity: 0.9;">
+                <ui:Button display-tooltip-when-elided="true" name="InventoryButton" class="button mainMenuButton mainButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/box.png?fileID=21300000&amp;guid=0f6bb84556d004343bc8fd7dafe2be8a&amp;type=3#box&apos;); width: 100px; height: 100px;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mainMenuButtonContainer">
                 <ui:Button display-tooltip-when-elided="true" name="FloorButton" class="button mainButton mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/layer.png?fileID=2800000&amp;guid=45cf3e5480185c7469071c7583d4653b&amp;type=3#layer&apos;);" />
             </ui:VisualElement>
             <ui:VisualElement class="mainMenuButtonContainer">

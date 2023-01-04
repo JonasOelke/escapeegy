@@ -34,7 +34,7 @@ public class DataPersistanceController : MonoBehaviour
    public static StoredObject LoadData()
     {   
         
-        string data = FileManager.LoadFromFile("escepeegy3.json");
+        string data = FileManager.LoadFromFile("escepeegy7.json");
         Debug.Log(data+"AAAAAAAAAAAAAAAAAAAAaa");
         StoredObject storedObject = data != "" ? JsonUtility.FromJson<StoredObject>(data) : throw new FileNotFoundException();
         return storedObject;
@@ -42,6 +42,6 @@ public class DataPersistanceController : MonoBehaviour
 
     public static bool PersistData(StoredObject storedObject)
     {
-        return FileManager.WriteToFile("escepeegy3.json", ToJson(storedObject));
+        return FileManager.WriteToFile("escepeegy7.json", ToJson(storedObject));
     }
 }

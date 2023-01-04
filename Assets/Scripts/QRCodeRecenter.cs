@@ -10,10 +10,13 @@ public class QRCodeRecenter : MonoBehaviour
 {
     [SerializeField]
     private ARSession session;
+
     [SerializeField]
     private ARSessionOrigin sessionOrigin;
+
     [SerializeField]
     private ARCameraManager cameraManager;
+
     [SerializeField]
     private List<Target> qrCodeTargetObjects = new List<Target>();
 
@@ -41,7 +44,7 @@ public class QRCodeRecenter : MonoBehaviour
 
     private void OnCameraFrameReceived(ARCameraFrameEventArgs eventArgs)
     {
-        if(!cameraManager.TryAcquireLatestCpuImage(out XRCpuImage image))
+        if (!cameraManager.TryAcquireLatestCpuImage(out XRCpuImage image))
         {
             return;
         }
@@ -50,13 +53,10 @@ public class QRCodeRecenter : MonoBehaviour
         {
             // Get the entire image.
             inputRect = new RectInt(0, 0, image.width, image.height),
-
             // Downsample by 2.
             outputDimensions = new Vector2Int(image.width / 2, image.height / 2),
-
             // Choose RGBA format.
             outputFormat = TextureFormat.RGBA32,
-
             // Flip across the vertical axis (mirror image).
             transformation = XRCpuImage.Transformation.MirrorY
         };
@@ -82,7 +82,8 @@ public class QRCodeRecenter : MonoBehaviour
             conversionParams.outputDimensions.x,
             conversionParams.outputDimensions.y,
             conversionParams.outputFormat,
-            false);
+            false
+        );
 
         cameraImageTexture.LoadRawTextureData(buffer);
         cameraImageTexture.Apply();
@@ -91,7 +92,11 @@ public class QRCodeRecenter : MonoBehaviour
         buffer.Dispose();
 
         // Detect and decode the barcode inside the bitmap
-        var result = reader.Decode(cameraImageTexture.GetPixels32(), cameraImageTexture.width, cameraImageTexture.height);
+        var result = reader.Decode(
+            cameraImageTexture.GetPixels32(),
+            cameraImageTexture.width,
+            cameraImageTexture.height
+        );
 
         // Do something with the result
         if (result != null)
@@ -102,7 +107,9 @@ public class QRCodeRecenter : MonoBehaviour
 
     private void SetQrCodeRecenterTarget(string targetText)
     {
-        Target currentTarget = qrCodeTargetObjects.Find(x => x.Name.ToLower().Equals(targetText.ToLower()));
+        Target currentTarget = qrCodeTargetObjects.Find(
+            x => x.Name.ToLower().Equals(targetText.ToLower())
+        );
         if (currentTarget != null)
         {
             // Reset position and rotation of ARSession

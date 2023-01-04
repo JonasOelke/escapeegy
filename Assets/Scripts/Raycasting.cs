@@ -36,7 +36,11 @@ public class ARRaycasting : MonoBehaviour
                 Pose pose = hits[0].pose;
                 if (objectInstance == null)
                 {
-                    objectInstance = Instantiate<GameObject>(objectToPlacePrefab, pose.position, pose.rotation);
+                    objectInstance = Instantiate<GameObject>(
+                        objectToPlacePrefab,
+                        pose.position,
+                        pose.rotation
+                    );
                 }
                 else
                 {

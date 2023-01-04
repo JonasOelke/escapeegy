@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChatResponse
-{   
+{
     public string photo;
     public string text;
 
@@ -12,9 +12,9 @@ public class ChatResponse
         return null;
     }
 
-    public ChatResponse(string text,string photo)
+    public ChatResponse(string text, string photo)
     {
         this.text = text;
-        this.photo =photo;
+        this.photo = photo;
     }
 }

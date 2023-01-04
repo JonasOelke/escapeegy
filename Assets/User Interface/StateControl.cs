@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
 
 public class StateControl : MonoBehaviour
 {
@@ -21,14 +21,20 @@ public class StateControl : MonoBehaviour
         }
     }
 
-    public static void FoundObject(int id)
+    public void FoundObject(int id)
     {
-        Debug.Log("Found Object, adding to storedobject");
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            storedObject.collectedObjects.Add(id);
-            DataPersistanceController.PersistData(storedObject);
+            if (storedObject.collectedObjects.Contains(id))
+            {
+                Debug.Log(id + " already exists");
+            }
+            else
+            {
+                storedObject.collectedObjects.Add (id);
+                DataPersistanceController.PersistData (storedObject);
+            }
         }
         catch (FileNotFoundException e)
         {
@@ -42,8 +48,8 @@ public class StateControl : MonoBehaviour
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            storedObject.sentMessages.Add(id);
-            DataPersistanceController.PersistData(storedObject);
+            storedObject.sentMessages.Add (id);
+            DataPersistanceController.PersistData (storedObject);
         }
         catch (FileNotFoundException e)
         {

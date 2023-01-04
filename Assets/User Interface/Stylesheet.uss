@@ -14,10 +14,6 @@
     align-items: flex-end;
 }
 
-.mainButton:hover {
-    background-color: var(--dark-brown);
-}
-
 .mainButton:active {
     scale: 0.95 0.95;
 }
@@ -139,12 +135,15 @@
 .mainMenuButton {
     width: 100px;
     height: 100px;
-    opacity: 0.7;
+    opacity: 0.8;
     background-color: rgba(255, 255, 255, 0);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
+    color: rgb(143, 98, 42);
+    font-size: 75px;
+    -unity-font-style: bold;
 }
 
 .inventoryItemContainer {
@@ -290,5 +289,52 @@
     font-size: 40px;
     -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Cochin%20SDF.asset?fileID=11400000&guid=fb4d6009bdc2f6f4fa8687a390e00fb0&type=2#Cochin SDF');
     margin-bottom: 25px;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.dialogButton {
+    font-size: 50px;
+    color: rgb(143, 98, 42);
+    background-color: rgba(255, 232, 204, 0.6);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-top: 33px;
+    padding-bottom: 33px;
+    width: 350px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    -unity-font-definition: url('project://database/Assets/User%20Interface/Fonts/Open%20Sans/OpenSans-Medium%20SDF.asset?fileID=11400000&guid=8080471c494a4b74eb3b612c8e8ed7cf&type=2#OpenSans-Medium SDF');
+    -unity-font-style: bold;
+}
+
+.mainSubButtonContainer {
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background-color: rgb(255, 232, 204);
+    background-image: none;
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0.73;
 }

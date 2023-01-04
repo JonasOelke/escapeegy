@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-using System.Threading;
 public class ChatController : MonoBehaviour
 {
     ScrollView chatMessagesContainer;
@@ -15,28 +14,26 @@ public class ChatController : MonoBehaviour
     public Items itemsScript;
     private ChatMessage[] _messages;
     private Item[] _items;
-    public Messages emmasPic;
-    private bool firstOpened=true;
-    public UIController uiController;
+    private bool firstOpened = true;
     StoredObject storedObject;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _messages = messagesScript.getChatMessages();
+        _items = itemsScript.getItems();
         //Sektion für stored Object bei Start
         try
         {
-            storedObject =DataPersistanceController.LoadData();
+            storedObject = DataPersistanceController.LoadData();
             LoadScore(storedObject);
-        }catch(FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
             StoredObject storedObject = new StoredObject(new List<int>());
-            DataPersistanceController.PersistData(storedObject);  
-            SceneManager.LoadScene("Intro_Slides1");
+            DataPersistanceController.PersistData(storedObject);
+            SceneManager.LoadScene("UniMap");
         }
-
-
 
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
@@ -48,8 +45,7 @@ public class ChatController : MonoBehaviour
         };
 
         ClearChat();
-        _messages = messagesScript.getChatMessages();
-        _items = itemsScript.getItems();
+
         addMessagetoSuggestionsContainer(1);
     }
 
@@ -71,33 +67,31 @@ public class ChatController : MonoBehaviour
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
         var backButton = root.Q<Button>("BackButton");
-        
-         //Sektion für stored Object bei Start
+
+        //Sektion für stored Object bei Start
         try
         {
-            storedObject =DataPersistanceController.LoadData();
+            storedObject = DataPersistanceController.LoadData();
             LoadScore(storedObject);
-        }catch(FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
             StoredObject storedObject = new StoredObject(new List<int>());
-            DataPersistanceController.PersistData(storedObject);  
+            DataPersistanceController.PersistData(storedObject);
             SceneManager.LoadScene("Intro_Slides1");
         }
 
-
-        Debug.Log("BBBBBBBBBBBBBBBB"+ storedObject);
+        Debug.Log("BBBBBBBBBBBBBBBB" + storedObject);
         backButton.clicked += () =>
         {
             GetComponentInParent<UIController>().BackToMenu();
         };
 
         if (storedObject.firstOpened)
-        { 
+        {
             Debug.Log("DDDDDDDDDDDDDDDDDD");
-          //  uiController.BackToMenu();
-           // uiController.OpenChat();
             storedObject.setOpened(false);
-            DataPersistanceController.PersistData(storedObject); 
+            DataPersistanceController.PersistData(storedObject);
         }
     }
 
@@ -152,8 +146,10 @@ public class ChatController : MonoBehaviour
                     responseContainer.Add(response);
                 }
                 else
-                {   Label response = new Label(chatResponse.text);
-                    switch(chatResponse.photo){
+                {
+                    Label response = new Label(chatResponse.text);
+                    switch (chatResponse.photo)
+                    {
                         case "Lochkarte":
                             response.AddToClassList("emmasFirstPic");
                             break;
@@ -169,20 +165,16 @@ public class ChatController : MonoBehaviour
                         case "Tagebucheintrag10.Mai":
                             response.AddToClassList("emmasFifthPic");
                             break;
-                        
-
-
                     }
-                    
+
                     responseContainer.Add(response);
                 }
                 StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
             }
-
-           
-        } Debug.Log("Delay starts");
-            StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
-            Debug.Log("Delay ends");
+        }
+        Debug.Log("Delay starts");
+        StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
+        Debug.Log("Delay ends");
     }
 
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
@@ -192,7 +184,6 @@ public class ChatController : MonoBehaviour
             if (nextSuggestion != 0)
             {
                 addMessagetoSuggestionsContainer(nextSuggestion);
-                
             }
         }
     }
@@ -204,9 +195,12 @@ public class ChatController : MonoBehaviour
 
         var chatMessage = Array.Find(_messages, e => e.id == id);
         Button messageSuggestion = new Button();
-        if(chatMessage.summary==""){
+        if (chatMessage.summary == "")
+        {
             messageSuggestion.text = chatMessage.text;
-        }else{
+        }
+        else
+        {
             messageSuggestion.text = chatMessage.summary;
         }
         messageSuggestion.AddToClassList("chatSuggestion");
@@ -218,25 +212,29 @@ public class ChatController : MonoBehaviour
         messageSuggestionsContainer.Add(messageSuggestion);
     }
 
-
-    
-void LoadScore(StoredObject myObject)
-{
-    Debug.Log("LOOOOOOOOOOOOOOOOOOOOOOAD");
-    foreach (var chatMessageID in myObject.sentMessages)
+    void LoadScore(StoredObject myObject)
+    {
+        Debug.Log("LOOOOOOOOOOOOOOOOOOOOOOAD");
+        foreach (var chatMessageID in myObject.sentMessages)
         {
-            if(chatMessageID<100){
-                foreach(ChatMessage chatMessage in _messages){
-                    if(chatMessage.id==chatMessageID){
+            if (chatMessageID < 100)
+            {
+                foreach (ChatMessage chatMessage in _messages)
+                {
+                    if (chatMessage.id == chatMessageID)
+                    {
                         AddToChatMessagesContainer(chatMessage);
                     }
                 }
-            }else{
+            }
+            else
+            {
                 //Wenn id >100 ist es keine Message, sondern ein bild. Dann muss auf das zugehörige Item zugegriffen werden und die Responses da rausgesucht werden
-                foreach(Item item in _items){
+                foreach (Item item in _items)
+                {
                     //Item aus Item Array raussuchen
-                    if(item.id==chatMessageID){
-                       
+                    if (item.id == chatMessageID)
+                    {
                         //Und die Message zum Container hinzufügen
                         VisualElement responseContainer = new VisualElement();
                         responseContainer.AddToClassList("chatMessageContainer");
@@ -244,20 +242,20 @@ void LoadScore(StoredObject myObject)
                         response.AddToClassList("chatMessageLeft");
                         responseContainer.Add(response);
                         chatMessagesContainer.Add(responseContainer);
-                
                     }
                 }
-                
             }
         }
 
-    foreach(int itemID in myObject.collectedObjects){
-        foreach(Item item in _items){
-            if(item.id==itemID){
-                item.setFound(true);
+        foreach (int itemID in myObject.collectedObjects)
+        {
+            foreach (Item item in _items)
+            {
+                if (item.id == itemID)
+                {
+                    item.setFound(true);
+                }
             }
         }
-    }   
-
-}
+    }
 }

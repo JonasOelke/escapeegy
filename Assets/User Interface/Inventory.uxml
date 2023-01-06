@@ -118,7 +118,7 @@
                                 </ui:Button>
                             </ui:VisualElement>
                             <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
-                                <ui:Button name="Bildschnipsel1" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                <ui:Button name="Bildschnipsel5" class="inventoryItemContainer" style="height: auto; width: 45%;">
                                     <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%235.PNG?fileID=21300000&amp;guid=06bd970744a39d541a02933605683e36&amp;type=3#Bildschnipsel_#5&apos;);" />
                                 </ui:Button>
                                 <ui:Button name="Bildschnipsel4" class="inventoryItemContainer" style="height: auto; width: 45%;">
@@ -126,7 +126,7 @@
                                 </ui:Button>
                             </ui:VisualElement>
                         </ui:VisualElement>
-                        <ui:Button name="Leichenschein" class="inventoryItemContainer" style="height: auto;">
+                        <ui:Button name="Bildschnipsel3" class="inventoryItemContainer" style="height: auto;">
                             <ui:VisualElement class="inventoryElement" style="width: 456px; height: 218px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%233.PNG?fileID=21300000&amp;guid=2cedd30078181744db6888807c985ed9&amp;type=3#Bildschnipsel_#3&apos;);" />
                         </ui:Button>
                     </ui:VisualElement>

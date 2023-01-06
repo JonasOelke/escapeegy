@@ -50,14 +50,13 @@ public class ObjectInteraction : MonoBehaviour
                 if (Physics.Raycast(ray, out hitObject))
                 {
                     //Wir gucken, ob das getroffene Object das Findables - Script attached hat
-                    Findables findable =
-                        hitObject.transform.GetComponent<Findables>();
+                    Findables findable = hitObject.transform.GetComponent<Findables>();
 
                     // wenn das getroffene Objekt das Script hat dann...
                     if (findable != null)
                     {
                         // ...ruf ich die Interaktions-Funktion auf
-                        ChangeSelectedObject (findable);
+                        ChangeSelectedObject(findable);
                     }
                     else
                     {

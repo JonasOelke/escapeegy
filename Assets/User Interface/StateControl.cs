@@ -21,18 +21,18 @@ public class StateControl : MonoBehaviour
         }
     }
 
-    public void FoundObject(int id)
+    public void FoundObject(string name)
     {
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            if (storedObject.collectedObjects.Contains(id))
+            if (storedObject.collectedObjects.Contains(name))
             {
-                Debug.Log(id + " already exists");
+                Debug.Log(name + " already exists");
             }
             else
             {
-                storedObject.collectedObjects.Add (id);
+                storedObject.collectedObjects.Add (name);
                 DataPersistanceController.PersistData (storedObject);
             }
         }

@@ -7,10 +7,10 @@ using UnityEngine;
 public class StoredObject
 {
     public bool firstOpened = true;
-    public List<int> collectedObjects = new List<int>();
+    public List<string> collectedObjects = new List<string>();
     public List<int> sentMessages = new List<int>();
 
-    public StoredObject(List<int> collectedObjects)
+    public StoredObject(List<string> collectedObjects)
     {
         this.collectedObjects = collectedObjects;
     }
@@ -19,4 +19,6 @@ public class StoredObject
     {
         this.firstOpened = opened;
     }
+    
+    
 }

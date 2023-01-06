@@ -30,7 +30,7 @@ public class ChatController : MonoBehaviour
         }
         catch (FileNotFoundException e)
         {
-            StoredObject storedObject = new StoredObject(new List<int>());
+            StoredObject storedObject = new StoredObject(new List<string>());
             DataPersistanceController.PersistData(storedObject);
             SceneManager.LoadScene("UniMap");
         }
@@ -76,7 +76,7 @@ public class ChatController : MonoBehaviour
         }
         catch (FileNotFoundException e)
         {
-            StoredObject storedObject = new StoredObject(new List<int>());
+            StoredObject storedObject = new StoredObject(new List<string>());
             DataPersistanceController.PersistData(storedObject);
             SceneManager.LoadScene("Intro_Slides1");
         }
@@ -247,15 +247,9 @@ public class ChatController : MonoBehaviour
             }
         }
 
-        foreach (int itemID in myObject.collectedObjects)
+        foreach (string name in myObject.collectedObjects)
         {
-            foreach (Item item in _items)
-            {
-                if (item.id == itemID)
-                {
-                    item.setFound(true);
-                }
-            }
+            //Hier in inventar laden
         }
     }
 }

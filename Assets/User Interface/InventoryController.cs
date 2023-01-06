@@ -41,10 +41,11 @@ public class InventoryController : MonoBehaviour
             StoredObject storedObject = DataPersistanceController.LoadData();
             var collectedObjects = storedObject.collectedObjects;
 
-            // foreach (VisualElement visualElement in child.Children())
-            // {
-            //     visualElement.style.opacity = collectedObjects.Contains(child.name) ? 1 : 0;
-            // }
+            bool found = collectedObjects.Contains(child.name);
+            child.style.display = found ? DisplayStyle.Flex : DisplayStyle.None;
+
+            if (!found)
+                continue;
 
             Button inventoryItemButton = (Button)child;
             inventoryItemButton.clicked += () =>

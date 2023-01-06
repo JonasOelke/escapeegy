@@ -12,7 +12,7 @@ public class InventoryDetailController : MonoBehaviour
     public UIController uiController;
     private Sprite _sprite;
     private string _inventoryItemName;
-    
+
     void OnEnable()
     {
         chatController = chatUi.GetComponent<ChatController>();
@@ -22,9 +22,6 @@ public class InventoryDetailController : MonoBehaviour
         {
             gameObject.SetActive(false);
         };
-
-        Dictionary<string, int> inventoryItemToMessageIdMap = new Dictionary<string, int>();
-        inventoryItemToMessageIdMap.Add("ElliesBrief1", 15);
 
         Button sharebutton = root.Q<Button>("ShareButton");
         sharebutton.clicked += () =>
@@ -40,7 +37,7 @@ public class InventoryDetailController : MonoBehaviour
                 Messages messagesClass = chatUi.GetComponent<Messages>();
                 ChatMessage[] chatMessages = messagesClass.GetChatMessages();
                 ChatMessage chatMessage = chatMessages[
-                    inventoryItemToMessageIdMap[_inventoryItemName]
+                    InventoryItemToMessageIdMap.Map[_inventoryItemName]
                 ];
                 chatMessage.photo = _sprite;
                 chatMessage.text = "Ich möchte gerne ein Item aus meinem Inventar mit dir teilen!";

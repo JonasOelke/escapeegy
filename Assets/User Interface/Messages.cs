@@ -7,7 +7,7 @@ public class Messages : MonoBehaviour
     // Start is called before the first frame update
     void Start() { }
 
-    public ChatMessage[] getChatMessages()
+    public ChatMessage[] GetChatMessages()
     {
         //-------------------------------------Intro Messages-----------------------------
             //Message to put in Responses Array if the Message should not have a response
@@ -800,8 +800,18 @@ public class Messages : MonoBehaviour
 
     }
 
-     public ChatResponse[] getChatResponses()
+
+//Das hier kann evtl ganz weg, richtig sad:(
+     public ChatResponse[] GetChatResponses()
     {
+        ChatResponse message20Response = new ChatResponse(
+            "Leg es übereinander",
+            ""
+        );
+          ChatResponse message11Response = new ChatResponse(
+            "Das weiß ich nicht",
+            ""
+        );
           ChatResponse message8Response = new ChatResponse(
             "Oh das ist ja nett von Ellie. Vielleicht solltest du dir erstmal einen Überblick verschaffen. Guck mal nach einem Gebäudeplan",
             ""
@@ -835,7 +845,238 @@ public class Messages : MonoBehaviour
             "Vielleicht gibt es eine Stechuhr, bei der du mehr rausfinden kannst",
             ""
         );
-        ChatResponse[] chatResponseArray = {message8Response,message10Response};
+        ChatResponse message22Response = new ChatResponse(
+            "Wie wärs wenn du dir erstmal einen Kaffee holst?",
+            ""
+        );
+
+    ChatResponse message25Response = new ChatResponse(
+            "",
+            "Tagebucheintrag25.April"  //hier bild einfügen
+        );
+        ChatResponse message25Response2 = new ChatResponse(
+            "Das erinnert mich an etwas. Moment.",
+            ""
+        );
+
+
+        ChatResponse message26Response = new ChatResponse(
+            "Die Einträge sind von Liselotte. Sie war Maggies Schwester. ",
+            ""
+        );
+
+
+
+        ChatResponse message29Response = new ChatResponse(
+            "Klostefrau Melissengeist in der Schwangerschaft ist ja nicht besonders toll… Das arme Kind. ",
+            ""
+        );
+
+
+        ChatResponse message30Response = new ChatResponse(
+            "Das war damals einfach so... ",
+            ""
+        );
+
+
+        //----------------27. April
+        ChatResponse message31Response = new ChatResponse(
+            "Auf der Krankenakte steht ihre Spindnummer",
+            ""
+        );
+
+        ChatResponse message32Response = new ChatResponse(
+            "schau dich mal um",
+            ""
+        );
+        ChatResponse message32Response2 = new ChatResponse(
+            "Vielleicht ist es ihr Geburtstag?",
+            "" //Das hier nur wenn tuch schon gefunden wurde
+        );
+
+
+        //Nach lösen der Spindgeschichte
+        
+
+        //Wenn Brief und Tagebuch aus spind gefunden
+      
+
+        ChatResponse message35Response = new ChatResponse(
+            "Oh Gott... Hat er sie vergewaltigt?",
+            ""
+        );
+
+
+        ChatResponse message36Response = new ChatResponse(
+            "...",
+            ""
+        );
+        ChatResponse message36Response2 = new ChatResponse(
+            "Wie geht es dir?",
+            ""
+        );
+
+        // ------------------23. März
+        ChatResponse message40Response = new ChatResponse(
+            "Ich hab da was gefunden. Tipp: mach das nicht so mit unserer Familie:",
+            ""
+        );
+        ChatResponse message40Response2 = new ChatResponse(
+            "",
+            "Tagebucheintrag26.Dezember"
+        );
+
+
+        ChatResponse message41Response = new ChatResponse(
+           "Klingt, als hätte Maggie einiges mit ihrer Familie durchmachen müssen ",
+            ""
+        );
+
+
+        // ---------------------3. Mai
+        ChatResponse message42Response = new ChatResponse(
+           "Gibts eigentlich noch mehr Krankenakten?",
+            ""
+        );
+    
+
+        ChatResponse message43Response = new ChatResponse(
+           "Guck doch mal beim Ärztezimmer, vielleicht gibt es da etwas. Das sollte auf dem Gebäudeplan markiert sein.?",
+            ""
+        );
+     
+
+
+        ChatResponse message46Response = new ChatResponse(
+           "Das sieht für mich nach einem verschlüsselten Brief aus. Die Zahl in der Ecke könnte der Schlüssel sein.",
+            ""
+        );
+    
+
+        ChatResponse message47Response2 = new ChatResponse(
+           "Ich glaube, ich habe noch ein Buch darüber. Gib mir einen Moment",
+            ""
+        );
+        ChatResponse message47Response = new ChatResponse(
+           "",
+            "decryptedLetter"
+        );
+         ChatResponse message47Response3 = new ChatResponse(
+           "Das ist 2 tage vor ihrem Todestag!!",
+            ""
+        );
+        
+    
+
+
+        //--------------------------7. Mai
+
+
+
+         ChatResponse message49Response = new ChatResponse(
+           "Ohjemine. Hätte nicht gedacht, dass das so ein großer Fall ist",
+            ""
+        );
+        ChatResponse message49Response2 = new ChatResponse(
+           "",
+            "Tagebucheintrag10.Mai"//Hier Bild einfügen
+        );
+
+
+         ChatResponse message50Response = new ChatResponse(
+           "Wollen wir darüber gleich telefonieren?",
+            ""
+        );
+
+
+
+
+        //----------Findet Schächtelchen/Ampulle im Regal
+
+        //Vorher Bild senden
+        ChatResponse message52Response = new ChatResponse(
+           "War so üblich damals",
+            ""
+        );
+ 
+
+        //------------Schwanger pflichertfüllung
+         //Vorher Bild senden
+        ChatResponse message53Response = new ChatResponse(
+           "Boah, so schwanger hätte ich ja nicht mehr arbeiten wollen",
+            ""
+        );
+
+
+        //------------KlinikSäle
+         //Vorher Bild senden
+        ChatResponse message54Response = new ChatResponse(
+           "Von Privatsphäre halten die wohl nichts",
+            ""
+        );
+ 
+
+
+        //------------Besuch von Fiete
+         //Vorher Bild von einzelnem Schnipsel senden
+        ChatResponse message55Response = new ChatResponse(
+           "Sieht aus, als wäre das ein Stück von einem Foto. Vielleicht kannst du die anderen Teile auch noch finden.",
+            ""
+        );
+ 
+
+        //Vorher Bild von allen Schnipseln senden
+        ChatResponse message56Response = new ChatResponse(
+           "Das ist wohl dieser Fiete… ",
+            ""
+        );
+
+
+        //----------BFF Support Snippet
+        //Vorher Bild von Freunden senden
+        ChatResponse message57Response = new ChatResponse(
+           " Die beiden scheinen Spaß zu haben. Der Ort sieht sehr markant aus, vielleicht findet du den Vogel.",
+            ""
+        );
+
+
+        //----------Schnuffeltuch
+        //Vorher Bild  senden
+        ChatResponse message58Response = new ChatResponse(
+           "Das ist bestimmt der Errechnete Geburtstermin vom Kind",
+            ""
+        );
+  
+
+        //----------Abschiedsparty WG
+        //Vorher Bild  senden
+        ChatResponse message59Response = new ChatResponse(
+           "Die WG scheint sehr nett gewesen zu sein",
+            ""
+        );
+
+
+        //----------Merkblatt
+        //Vorher Bild  senden
+        ChatResponse message60Response = new ChatResponse(
+           "Die sollen ihren Kindern Kuhmilch füttern? Krass!",
+            ""
+        );
+
+        //----------Drogenwerbung
+        //Vorher Bild  senden
+        ChatResponse message61Response = new ChatResponse(
+           " Ja, da hab ich neulich eine Doku drüber gesehen",
+            ""
+        );
+   
+
+        ChatResponse[] chatResponseArray = {message8Response,message10Response,message16Response,message16Response2,message18Response,message19Response
+        ,message11Response,message20Response,message22Response,message25Response,message25Response2,message10Response,message10Response,message10Response
+        ,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response
+        ,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response
+        ,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response,message10Response
+        ,message10Response,message10Response,message10Response,message10Response,message10Response};
 
         return chatResponseArray;
 

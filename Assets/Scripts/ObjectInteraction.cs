@@ -52,7 +52,11 @@ public class ObjectInteraction : MonoBehaviour
                     //Wir gucken, ob das getroffene Object das Findables - Script attached hat
                     Findables findable = hitObject.transform.GetComponent<Findables>();
 
-                    // wenn das getroffene Objekt das Script hat dann...
+                    //Wenn nicht, schauen ob das Parent Element das Skript hat
+                    if(findable==null){
+                        findable = hitObject.collider.gameObject.transform.parent.GetComponent<Findables>();
+                    }
+                    // wenn das getroffene Objekt/oder das Parent das Script hat dann...
                     if (findable != null)
                     {
                         // ...ruf ich die Interaktions-Funktion auf

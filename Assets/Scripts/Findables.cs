@@ -22,7 +22,7 @@ public class Findables : MonoBehaviour
     private Quaternion initialRotation;
 
     private float rotationSpeed = 0.001f;
-
+    private GameObject mainMenuUI;
     [SerializeField]
     public int id;
 
@@ -36,20 +36,31 @@ public class Findables : MonoBehaviour
         initialScale = transform.localScale;
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        mainMenuUI = GameObject.Find("MainMenuUI");
     }
 
     //Update is called once per frame
     void Update()
     {
-        // wenn Objekt ausgewäglt wird
+        // wenn Objekt ausgewählt wird
         if (IsSelected)
         {
+            
             transform.parent = arCamera.transform;
             transform.localPosition = Vector3.forward;
 
             // wenn einmal getouched wird
             if (Input.touchCount == 1)
             {
+                Debug.Log("AAAAAAAAAAAA,"+gameObject.name);
+                //Hier Speicher Button erscheinen lassen
+                mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(true);
+                mainMenuUI.GetComponent<MainMenuController>().SetCollectedButtonAction(() => {
+                    stateControl.SaveFoundObject(gameObject.name);
+                   // mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(false);
+                });
+                 
+
                 //Touch Referenz
                 touch = Input.GetTouch(0);
 
@@ -69,32 +80,24 @@ public class Findables : MonoBehaviour
 
                 //falls man wieder los lässt, nichts machen
                 if (
-                    touchZero.phase == TouchPhase.Ended ||
-                    touchZero.phase == TouchPhase.Canceled ||
-                    touchOne.phase == TouchPhase.Ended ||
-                    touchOne.phase == TouchPhase.Canceled
+                    touchZero.phase == TouchPhase.Ended
+                    || touchZero.phase == TouchPhase.Canceled
+                    || touchOne.phase == TouchPhase.Ended
+                    || touchOne.phase == TouchPhase.Canceled
                 )
                 {
                     return;
                 }
 
-                if (
-                    touchZero.phase == TouchPhase.Began ||
-                    touchOne.phase == TouchPhase.Began
-                )
+                if (touchZero.phase == TouchPhase.Began || touchOne.phase == TouchPhase.Began)
                 {
-                    initialDistance =
-                        Vector2.Distance(touchZero.position, touchOne.position);
+                    initialDistance = Vector2.Distance(touchZero.position, touchOne.position);
                     initialScale = transform.localScale;
-                    Debug
-                        .Log("Initial distance " +
-                        initialDistance +
-                        initialScale);
+                    Debug.Log("Initial distance " + initialDistance + initialScale);
                 } //wenn man beide Finger bewegt:
                 else
                 {
-                    var currentDistance =
-                        Vector2.Distance(touchZero.position, touchOne.position);
+                    var currentDistance = Vector2.Distance(touchZero.position, touchOne.position);
 
                     // if accidentally touched or pinchmovement very small
                     if (Mathf.Approximately(initialDistance, 0))
@@ -110,7 +113,7 @@ public class Findables : MonoBehaviour
         else
         {
             // Zurücksetzen der Werte
-            transform.SetParent(null);
+            transform.SetParent(GameObject.Find("Findables").transform);
             transform.localScale = initialScale;
             transform.rotation = initialRotation;
 
@@ -123,7 +126,7 @@ public class Findables : MonoBehaviour
     {
         if (IsSelected)
         {
-            stateControl.FoundObject (id);
+            stateControl.SaveFoundObject(gameObject.name);
         }
     }
 }

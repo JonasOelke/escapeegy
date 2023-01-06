@@ -6,9 +6,7 @@ public class Findables : MonoBehaviour
 {
     // to determine if something is selected or not
     public bool IsSelected { get; set; }
-
-    public StateControl stateControl;
-
+    
     private Touch touch;
 
     private Vector2 touchPosition;
@@ -115,7 +113,7 @@ public class Findables : MonoBehaviour
     {
         if (IsSelected)
         {
-            stateControl.FoundObject(gameObject.name);
+            StateControl.SaveFoundObject(gameObject.name);
         }
     }
 }

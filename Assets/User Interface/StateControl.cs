@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class StateControl : MonoBehaviour
 {
-    StoredObject myStored;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +19,7 @@ public class StateControl : MonoBehaviour
         }
     }
 
-    public void FoundObject(string name)
+    public static void SaveFoundObject(string name)
     {
         try
         {
@@ -32,8 +30,8 @@ public class StateControl : MonoBehaviour
             }
             else
             {
-                storedObject.collectedObjects.Add (name);
-                DataPersistanceController.PersistData (storedObject);
+                storedObject.collectedObjects.Add(name);
+                DataPersistanceController.PersistData(storedObject);
             }
         }
         catch (FileNotFoundException e)
@@ -48,8 +46,8 @@ public class StateControl : MonoBehaviour
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            storedObject.sentMessages.Add (id);
-            DataPersistanceController.PersistData (storedObject);
+            storedObject.sentMessages.Add(id);
+            DataPersistanceController.PersistData(storedObject);
         }
         catch (FileNotFoundException e)
         {

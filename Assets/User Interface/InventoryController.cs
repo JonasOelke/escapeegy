@@ -33,9 +33,19 @@ public class InventoryController : MonoBehaviour
         VisualElement[] inventoryElements = GetChildrenRecursive(inventoryElement);
 
         foreach (
-            var child in inventoryElements.Where(x => x.ClassListContains("inventoryItemContainer"))
+            VisualElement child in inventoryElements.Where(
+                x => x.ClassListContains("inventoryItemContainer")
+            )
         )
         {
+            StoredObject storedObject = DataPersistanceController.LoadData();
+            var collectedObjects = storedObject.collectedObjects;
+
+            foreach (VisualElement visualElement in child.Children())
+            {
+                visualElement.style.opacity = collectedObjects.Contains(child.name) ? 1 : 0;
+            }
+
             Button inventoryItemButton = (Button)child;
             inventoryItemButton.clicked += () =>
             {

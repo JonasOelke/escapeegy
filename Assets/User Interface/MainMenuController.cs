@@ -19,7 +19,7 @@ public class MainMenuController : MonoBehaviour
         Button chatButton = root.Q<Button>("ChatButton");
         Button floorButton = root.Q<Button>("FloorButton");
         Button mapButton = root.Q<Button>("MapButton");
-
+        
         VisualElement floorMenu = root.Q<VisualElement>("FloorMenu");
         floorMenu.style.display = DisplayStyle.None;
 

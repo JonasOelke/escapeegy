@@ -33,7 +33,6 @@ public class DataPersistanceController : MonoBehaviour
     public static StoredObject LoadData()
     {
         string data = FileManager.LoadFromFile("escepeegy70.json");
-        Debug.Log(data + "AAAAAAAAAAAAAAAAAAAAaa");
         StoredObject storedObject =
             data != ""
                 ? JsonUtility.FromJson<StoredObject>(data)

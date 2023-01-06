@@ -71,8 +71,10 @@ public class ChatController : MonoBehaviour
         //Sektion für stored Object bei Start
         try
         {
+
             storedObject = DataPersistanceController.LoadData();
             LoadScore(storedObject);
+            Debug.Log(storedObject+" Wurde gefunden, aber wieso");
         }
         catch (FileNotFoundException e)
         {

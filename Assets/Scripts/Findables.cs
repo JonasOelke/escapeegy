@@ -20,6 +20,7 @@ public class Findables : MonoBehaviour
     private Quaternion initialRotation;
 
     private float rotationSpeed = 0.001f;
+    private GameObject mainMenuUI;
 
     [SerializeField]
     public int id;
@@ -34,6 +35,7 @@ public class Findables : MonoBehaviour
         initialScale = transform.localScale;
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        mainMenuUI = GameObject.Find("MainMenuUI");
     }
 
     //Update is called once per frame
@@ -48,6 +50,14 @@ public class Findables : MonoBehaviour
             // wenn einmal getouched wird
             if (Input.touchCount == 1)
             {
+                Debug.Log("AAAAAAAAAAAA,"+gameObject.name);
+                //Hier Speicher Button erscheinen lassen
+                mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(true);
+                mainMenuUI.GetComponent<MainMenuController>().SetCollectedButtonAction(() => {
+                    StateControl.SaveFoundObject(gameObject.name);
+                   // mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(false);
+                });
+                 
                 //Touch Referenz
                 touch = Input.GetTouch(0);
 

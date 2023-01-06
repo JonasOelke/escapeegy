@@ -64,7 +64,7 @@ public class ObjectInteraction : MonoBehaviour
                     }
                     else
                     {
-                        print("Object is not a findable");
+                        print("Object is not a findable "+hitObject.transform);
                     }
                 }
             }

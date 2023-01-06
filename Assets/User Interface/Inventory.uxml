@@ -6,27 +6,128 @@
             <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="width: 100%; height: 100%;">
                 <ui:VisualElement name="Elements" style="flex-direction: row; height: auto; margin-left: 5%; margin-right: 5%; justify-content: space-around;">
                     <ui:VisualElement name="LeftColumn" style="justify-content: flex-start; flex-direction: column; width: 45%; align-items: stretch; height: 100%;">
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:Label text="Tagebucheintrag" display-tooltip-when-elided="true" class="inventoryItemLabel" />
-                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 395px; background-image: url(&apos;project://database/Assets/Pictures/Tagebucheintrag.png?fileID=21300000&amp;guid=86fbb80165e45a34fb2dc419f4ccd069&amp;type=3#Tagebucheintrag&apos;);" />
+                        <ui:Button name="ElliesBrief1" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Ellies Brief #1" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 738px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Ellies_Brief_%231.jpg?fileID=21300000&amp;guid=4222905ba28a3444486f4dc947fa0936&amp;type=3#Ellies_Brief_#1&apos;);" />
                         </ui:Button>
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:Label text="Gitter" display-tooltip-when-elided="true" class="inventoryItemLabel" />
-                            <ui:VisualElement class="inventoryElement" style="background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Gitter.png?fileID=21300000&amp;guid=536cb6d1f0edd224ab475f63d0cf1e86&amp;type=3#Gitter&apos;); height: 700px; width: 350px;" />
+                        <ui:Button name="ElliesBrief2" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Ellies Brief #2&#x9;" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 880px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Ellies_Brief_%232.jpg?fileID=21300000&amp;guid=6b2493d7a4ffcf44981a435b36668cb3&amp;type=3#Ellies_Brief_#2&apos;);" />
                         </ui:Button>
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        <ui:Button name="Verlaufsbericht1" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Verlaufsbericht #1" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 659px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Verlaufsbericht_%231.PNG?fileID=21300000&amp;guid=729e6e0b2185cf948b25494c8ea2cade&amp;type=3#Verlaufsbericht_#1&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Verlaufsbericht2" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Verlaufsbericht #2" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 659px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Verlaufsbericht_%232.PNG?fileID=21300000&amp;guid=47fbad43c41a57e4daa9af5adb4b3886&amp;type=3#Verlaufsbericht_#2&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Verlaufsbericht3" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Verlaufsbericht #3" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 659px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Verlaufsbericht_%233.PNG?fileID=21300000&amp;guid=0ae13517105b3c6419f667160cd1883a&amp;type=3#Verlaufsbericht_#3&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="LieselottesTagebucheintrag2" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="LieselottesTagebucheintrag #2" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 721px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lieselottes_Tagebucheintrag_%232.jpg?fileID=21300000&amp;guid=30442405e8d7b4446b571bc6de442dd0&amp;type=3#Lieselottes_Tagebucheintrag_#2&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Klinikarbeit" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Klinikarbeit" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 332px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Klinikarbeit.PNG?fileID=21300000&amp;guid=97a7dc1923d787b47ad27b1f4127b63b&amp;type=3#Klinikarbeit&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Kliniksaal" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Kliniksaal" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 332px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Kliniksaal.PNG?fileID=21300000&amp;guid=356476a030530fa49aae9df7e22aa164&amp;type=3#Kliniksaal&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="BettieUndMaggie" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Bettie und Maggie" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 675px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bettie_und_Maggie.PNG?fileID=21300000&amp;guid=89aac5d26160ad84eb3c24ffa6cac6bb&amp;type=3#Bettie_und_Maggie&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="WGAbschied" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="WG Abschied" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 675px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/WG_Abschied.PNG?fileID=21300000&amp;guid=6960b1764b0784648ae4f9c07649b923&amp;type=3#WG_Abschied&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Aufnahmebericht" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Aufnahmebericht" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 675px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Aufnahmebericht.png?fileID=21300000&amp;guid=cd0b256e3be4c4b49903d6ed5b22cbff&amp;type=3#Aufnahmebericht&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Lochkarte" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Lochkarte" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 806px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lochkarte.png?fileID=21300000&amp;guid=383087f8d8ada9c4fbc34a680eb82710&amp;type=3#Lochkarte&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="LieselottesTagebucheintrag5" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Lieselottes Tagebucheintrag #5" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 461px; height: 806px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lieselottes_Tagebucheintrag_%235.jpg?fileID=21300000&amp;guid=4f2b214cffc1b8c4493ef77d4b4f4ee6&amp;type=3#Lieselottes_Tagebucheintrag_#5&apos;);" />
                         </ui:Button>
                     </ui:VisualElement>
-                    <ui:VisualElement name="RightColumn" style="justify-content: space-between; width: 45%; height: 100%;">
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:VisualElement name="VisualElement2" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                    <ui:VisualElement name="RightColumn" style="justify-content: flex-start; width: 45%; height: 100%;">
+                        <ui:Button name="MaggiesTagebucheintrag1" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Maggies Tagebucheintrag #1" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Maggies_Tagebucheintrag_%231.jpg?fileID=21300000&amp;guid=f65c96b759a5dca469d449a2139e160b&amp;type=3#Maggies_Tagebucheintrag_#1&apos;);" />
                         </ui:Button>
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        <ui:Button name="MaggiesTagebucheintrag2" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Maggies Tagebucheintrag #2" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Maggies_Tagebucheintrag_%232.jpg?fileID=21300000&amp;guid=0e4578bae2fa39348a4f136bf3f3f170&amp;type=3#Maggies_Tagebucheintrag_#2&apos;);" />
                         </ui:Button>
-                        <ui:Button class="inventoryItemContainer" style="height: auto;">
-                            <ui:VisualElement name="VisualElement" class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/PicsFromEmma/Lochkarte.png?fileID=21300000&amp;guid=c0a4bc029bf1c154d80d54db3949b4d9&amp;type=3#Lochkarte&apos;);" />
+                        <ui:Button name="MaggiesTagebucheintrag3" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Maggies Tagebucheintrag #3" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Maggies_Tagebucheintrag_%233.jpg?fileID=21300000&amp;guid=7290e61ac68cd7d4bb7108378faeb3c2&amp;type=3#Maggies_Tagebucheintrag_#3&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="MaggiesTagebucheintrag4" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Maggies Tagebucheintrag #4" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 350px; height: 700px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Maggies_Tagebucheintrag_%234.jpg?fileID=21300000&amp;guid=782fd87f26c8d5747bc50f9d9d4cdcb9&amp;type=3#Maggies_Tagebucheintrag_#4&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="LieselottesTagebucheintrag1" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="LieselottesTagebucheintrag #1" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 721px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lieselottes_Tagebucheintrag_%231.jpg?fileID=21300000&amp;guid=3ef656f590b0a0a4d86e0208f1d09267&amp;type=3#Lieselottes_Tagebucheintrag_#1&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="LieselottesTagebucheintrag3" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="LieselottesTagebucheintrag #3" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 721px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lieselottes_Tagebucheintrag_%233.jpg?fileID=21300000&amp;guid=958ed9a618089264481e25ccd3b4e8bb&amp;type=3#Lieselottes_Tagebucheintrag_#3&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="LieselottesTagebucheintrag4" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="LieselottesTagebucheintrag #4" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 721px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Lieselottes_Tagebucheintrag_%234.jpg?fileID=21300000&amp;guid=7436bd36a20cf6e4099b03d4985f2132&amp;type=3#Lieselottes_Tagebucheintrag_#4&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="FietesBesuch" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Fietes Besuch" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 645px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Fietes_Besuch.PNG?fileID=21300000&amp;guid=10060a0e5905d4943a992b7ebc8a5997&amp;type=3#Fietes_Besuch&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Nestbau" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Nestbau" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 645px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Nestbau.PNG?fileID=21300000&amp;guid=fb5fa329fc1231d4da1197339b9bb6c1&amp;type=3#Nestbau&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Drogenwerbung" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Drogenwerbung" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 315px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Drogenwerbung.PNG?fileID=21300000&amp;guid=8af89bfcf6d6dd843b12f0d4c157fd99&amp;type=3#Drogenwerbung&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="InteressantesPapier" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Interessantes Papier" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 696px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/interessantes_Papier.png?fileID=21300000&amp;guid=db8deb75cb9fe974d83aa50a76c27f5b&amp;type=3#interessantes_Papier&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Leichenschein" class="inventoryItemContainer" style="height: auto;">
+                            <ui:Label text="Leichenschein" display-tooltip-when-elided="true" class="inventoryItemLabel" style="display: flex; opacity: 1;" />
+                            <ui:VisualElement class="inventoryElement" style="width: 400px; height: 569px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Leichenschein.PNG?fileID=21300000&amp;guid=f411e66c5d7caf54c8abb9345b0dc8e0&amp;type=3#Leichenschein&apos;);" />
+                        </ui:Button>
+                        <ui:VisualElement>
+                            <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                                <ui:Button name="Bildschnipsel1" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                    <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%231.PNG?fileID=21300000&amp;guid=d40cbcccaea662c4594a94661e268694&amp;type=3#Bildschnipsel_#1&apos;);" />
+                                </ui:Button>
+                                <ui:Button name="Bildschnipsel4" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                    <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%234.PNG?fileID=21300000&amp;guid=acabdab02076e5b409bec9aced6fb93a&amp;type=3#Bildschnipsel_#4&apos;);" />
+                                </ui:Button>
+                            </ui:VisualElement>
+                            <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+                                <ui:Button name="Bildschnipsel5" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                    <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%235.PNG?fileID=21300000&amp;guid=06bd970744a39d541a02933605683e36&amp;type=3#Bildschnipsel_#5&apos;);" />
+                                </ui:Button>
+                                <ui:Button name="Bildschnipsel4" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                    <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%232.PNG?fileID=21300000&amp;guid=37340f71ad9b04e4d94dacc6515381c1&amp;type=3#Bildschnipsel_#2&apos;);" />
+                                </ui:Button>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:Button name="Bildschnipsel3" class="inventoryItemContainer" style="height: auto;">
+                            <ui:VisualElement class="inventoryElement" style="width: 456px; height: 218px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%233.PNG?fileID=21300000&amp;guid=2cedd30078181744db6888807c985ed9&amp;type=3#Bildschnipsel_#3&apos;);" />
                         </ui:Button>
                     </ui:VisualElement>
                 </ui:VisualElement>

@@ -20,7 +20,7 @@ public class ChatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _messages = messagesScript.getChatMessages();
+        _messages = messagesScript.GetChatMessages();
         _items = itemsScript.getItems();
         //Sektion für stored Object bei Start
         try

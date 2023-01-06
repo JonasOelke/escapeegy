@@ -5,6 +5,7 @@ using UnityEngine;
 public class Items : MonoBehaviour
 {
     public Sprite spriteTagebuchEintrag14Mai;
+    
     // Start is called before the first frame update
     void Start()
     {

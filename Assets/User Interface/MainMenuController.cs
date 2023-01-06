@@ -9,11 +9,25 @@ public class MainMenuController : MonoBehaviour
     public UIController UIController;
     private Button _inventoryButton;
     private Button _chatButton;
+    VisualElement root;
     public GameObject minimapCanvas;
+    
+
+
+    public void SetDisplayCollectedButton(bool onOrOff){
+       VisualElement button = root.Q<VisualElement>("CollectButtonContainer");
+       button.style.display= onOrOff? DisplayStyle.Flex : DisplayStyle.None;
+    }
+
+    public void SetCollectedButtonAction(Action action) {
+        Button button = root.Q<Button>("CollectButton");
+        button.clicked += action;
+        button.clicked+=()=>{SetDisplayCollectedButton(false);};
+    }
 
     private void OnEnable()
     {
-        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+         root = GetComponent<UIDocument>().rootVisualElement;
 
         Button inventoryButton = root.Q<Button>("InventoryButton");
         Button chatButton = root.Q<Button>("ChatButton");

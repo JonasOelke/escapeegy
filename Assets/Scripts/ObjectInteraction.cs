@@ -78,7 +78,7 @@ public class ObjectInteraction : MonoBehaviour
             else
             {
                 current.IsSelected = true;
-                current.saveObject();
+                //current.saveObject();
             }
         }
     }

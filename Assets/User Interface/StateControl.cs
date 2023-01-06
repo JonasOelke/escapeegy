@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
@@ -19,10 +20,13 @@ public class StateControl : MonoBehaviour
         {
             Debug.Log("No Object found");
         }
+        
     }
 
-    public void FoundObject(string name)
-    {
+    public void SaveFoundObject(string name)
+    {   
+        GameObject foundObject = GameObject.Find(name);
+        foundObject.SetActive(false);
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();

@@ -12,7 +12,7 @@ public class ChatMessage
     public string summary;
     bool available = false;
     public ChatResponse[] responses;
-    public GameObject photo;
+    public Sprite photo;
 
     public ChatMessage(
         int id,
@@ -20,7 +20,7 @@ public class ChatMessage
         string text,
         string summary,
         ChatResponse[] responses,
-        GameObject photo = null
+        Sprite photo = null
     )
     {
         this.id = id;

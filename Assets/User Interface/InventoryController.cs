@@ -69,7 +69,7 @@ public class InventoryController : MonoBehaviour
                 inventoryDetailUi.SetActive(true);
                 inventoryDetailUi
                     .GetComponent<InventoryDetailController>()
-                    .SetSprite(itemLabel, styleBackground);
+                    .SetSprite(itemLabel, child.name, styleBackground);
             };
         }
     }

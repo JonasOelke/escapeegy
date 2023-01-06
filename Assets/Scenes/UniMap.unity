@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4439403, g: 0.4931519, b: 0.5722083, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2050,6 +2050,7 @@ MonoBehaviour:
   mainMenuUi: {fileID: 996363283}
   inventoryUi: {fileID: 1054820606}
   inventoryDetailUi: {fileID: 859394195}
+  popupDialogUi: {fileID: 582144463}
 --- !u!4 &159195414
 Transform:
   m_ObjectHideFlags: 0
@@ -2508,7 +2509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateControl: {fileID: 0}
   id: 0
   arCamera: {fileID: 0}
 --- !u!65 &205076132
@@ -10551,8 +10551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb492d81cde32c4987b1399ef3a5576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chatController: {fileID: 1542897643}
   popupDialog: {fileID: 582144463}
+  chatUi: {fileID: 1542897642}
+  uiController: {fileID: 159195413}
 --- !u!114 &859394197
 MonoBehaviour:
   m_ObjectHideFlags: 0

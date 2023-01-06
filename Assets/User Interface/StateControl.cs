@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
@@ -19,20 +20,23 @@ public class StateControl : MonoBehaviour
         {
             Debug.Log("No Object found");
         }
+        
     }
 
-    public void FoundObject(int id)
-    {
+    public void SaveFoundObject(string name)
+    {   
+        GameObject foundObject = GameObject.Find(name);
+        foundObject.SetActive(false);
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            if (storedObject.collectedObjects.Contains(id))
+            if (storedObject.collectedObjects.Contains(name))
             {
-                Debug.Log(id + " already exists");
+                Debug.Log(name + " already exists");
             }
             else
             {
-                storedObject.collectedObjects.Add (id);
+                storedObject.collectedObjects.Add (name);
                 DataPersistanceController.PersistData (storedObject);
             }
         }

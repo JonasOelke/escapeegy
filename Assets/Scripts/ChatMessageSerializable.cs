@@ -5,14 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class ChatMessageSerializable
 {
-    int id;
-    int[] nextIds;
-    bool sent;
-    string text;
-    string summary;
-    bool available;
-    ChatResponseSerializable[] responses;
-    string photo;
+    public int id;
+    public int[] nextIds;
+    public bool sent;
+    public string text;
+    public string summary;
+    public bool available;
+    public ChatResponseSerializable[] responses;
+    public string photo;
 
     public ChatMessageSerializable(ChatMessage message)
     {
@@ -27,6 +27,6 @@ public class ChatMessageSerializable
         {
             responses[i] = new ChatResponseSerializable(message.responses[i]);
         }
-        photo = message.photo.name;
+        photo = message.photo ? message.photo.name : "";
     }
 }

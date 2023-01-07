@@ -28,13 +28,19 @@ public class DataPersistanceController : MonoBehaviour
 
     public static StoredObject LoadData()
     {
+        StoredObjectSerializable storedObjectSerializable = LoadFromFile();
+        return new StoredObject(storedObjectSerializable);
+    }
+
+    static StoredObjectSerializable LoadFromFile()
+    {
         string data = FileManager.LoadFromFile("escepeegy.json");
-        StoredObject storedObject =
+        StoredObjectSerializable storedObjectSerializable =
             data != ""
-                ? JsonUtility.FromJson<StoredObject>(data)
+                ? JsonUtility.FromJson<StoredObjectSerializable>(data)
                 : throw new FileNotFoundException();
 
-        return storedObject;
+        return storedObjectSerializable;
     }
 
     public static void DeleteData()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -53,9 +54,9 @@ public class StateControl : MonoBehaviour
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            if (storedObject.sentMessages.Contains(chatMessage))
+            if (storedObject.sentMessages.Any((x) => chatMessage.id == x.id))
             {
-                Debug.Log(chatMessage.text + " already exists");
+                Debug.Log("Message already exists");
             }
             else
             {

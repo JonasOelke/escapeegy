@@ -30,4 +30,21 @@ public class ChatMessage
         this.responses = responses;
         this.photo = photo;
     }
+
+    public ChatMessage(ChatMessageSerializable chatMessageSerializable)
+    {
+        id = chatMessageSerializable.id;
+        nextIds = chatMessageSerializable.nextIds;
+        sent = chatMessageSerializable.sent;
+        text = chatMessageSerializable.text;
+        summary = chatMessageSerializable.summary;
+        responses = new ChatResponse[chatMessageSerializable.responses.Length];
+        for (int i = 0; i < chatMessageSerializable.responses.Length; i++)
+        {
+            responses[i] = new ChatResponse(
+                chatMessageSerializable.responses[i].text,
+                chatMessageSerializable.responses[i].photo
+            );
+        }
+    }
 }

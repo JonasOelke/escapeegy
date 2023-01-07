@@ -25,10 +25,15 @@ public class MainMenuController : MonoBehaviour
         button.clicked+=()=>{SetDisplayCollectedButton(false);};
     }
 
+     public void SetResetButtonAction() {
+        Button button2 = root.Q<Button>("ResetButton");
+        button2.clicked+=()=>{DataPersistanceController.DeleteData();};
+    }
+
     private void OnEnable()
     {
          root = GetComponent<UIDocument>().rootVisualElement;
-
+        Button resetButton = root.Q<Button>("ResetButton");
         Button inventoryButton = root.Q<Button>("InventoryButton");
         Button chatButton = root.Q<Button>("ChatButton");
         Button floorButton = root.Q<Button>("FloorButton");
@@ -50,6 +55,10 @@ public class MainMenuController : MonoBehaviour
         chatButton.clicked += () =>
         {
             UIController.OpenChat();
+        };
+        
+        resetButton.clicked+=()=>{
+            DataPersistanceController.DeleteData();
         };
 
         floorButton.clicked += () =>

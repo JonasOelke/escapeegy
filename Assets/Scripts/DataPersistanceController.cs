@@ -34,7 +34,7 @@ public class DataPersistanceController : MonoBehaviour
 
     public static StoredObject LoadData()
     {
-        string data = FileManager.LoadFromFile("escepeegy901.json");
+        string data = FileManager.LoadFromFile("escepeegy.json");
         StoredObject storedObject =
             data != ""
                 ? JsonUtility.FromJson<StoredObject>(data)
@@ -45,13 +45,13 @@ public class DataPersistanceController : MonoBehaviour
      public static void DeleteData()
     {
 
-        FileManager.DeleteFile("escepeegy70.json");
+        FileManager.DeleteFile("escepeegy.json");
         SceneManager.LoadScene("UniMap");
 
     }
 
     public static bool PersistData(StoredObject storedObject)
     {
-        return FileManager.WriteToFile("escepeegy901.json", ToJson(storedObject));
+        return FileManager.WriteToFile("escepeegy.json", ToJson(storedObject));
     }
 }

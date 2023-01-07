@@ -6,60 +6,105 @@ using UnityEngine;
 public class GameControll : MonoBehaviour
 {
 
- [SerializeField] GameObject[] series;
+ [SerializeField] GameObject[] Findables;
 
- public bool linearCheck;
-    string nameObj;
+
+   
    [SerializeField] int activeSectionIndex;
+     
 
- public bool visible =false; 
 //MaggiesBrief nach Verlaufsbericht2 als Textnachricht
+//"MaggiesTagebucheintrag4" zwi ElliesBrief2 und Verlaufsbericht
  public List<string> ObjectNamesLinear = new List<string>()
  {
     "MaggiesTagebucheintrag1", "MaggiesTagebucheintrag2", "ElliesBrief1",  "MaggiesTagebucheintrag3", "Aufnahmebericht",
-    "Verlaufsbericht1", "MaggiesTagebucheintrag4",  "ElliesBrief2","LieselottesTagebucheintrag2","Verlaufsbericht2", "Fragezeichen", "Verlaufsbericht3",
-    "Leichenschein", "LieselottesTagebucheintrag5"
-  
- };
-  public List<string> Ahhh= new List<string>()
- {
-    "MaggiesTagebucheintrag1", "MaggiesTagebucheintrag2", "ElliesBrief1",  "MaggiesTagebucheintrag3", "Aufnahmebericht",
-    "Verlaufsbericht1", "MaggiesTagebucheintrag4",  "ElliesBrief2","LieselottesTagebucheintrag2","Verlaufsbericht2", "Fragezeichen", "Verlaufsbericht3",
-    "Leichenschein", "LieselottesTagebucheintrag5"
-  
- };
+    "Verlaufsbericht1", "MaggiesTagebucheintrag4", "ElliesBrief2",  "Verlaufsbericht2", "Fragezeichen", "Verlaufsbericht3", 
+    "Leichenschein"
 
+  
+ };
+  
 
 //Bedingungen: Lochkarte + interassentesPapier = LochkarteMerge 
 //Schnipsel 1-5 = FietesBesuch
 //Drogenwerbung bei Ampulle
  public List<string> objectsUnLinear = new List<string>(){
-      "LieselottesTagebucheintrag1", "LieselottesTagebucheintrag3", "LieselottesTagebucheintrag4","Klinikarbeit","Kliniksaal","FietesBesuch", "Bildschnipsel1",
+     "Klinikarbeit","Kliniksaal","FietesBesuch", "Bildschnipsel1",
       "Bildschnipsel2","Bildschnipsel3","Bildschnipsel4","Bildschnipsel5","BettieUndMaggie","Nestbau","WGAbschied","Drogenwerbung", "InteressantesPapier",
       "Lochkarte","LochkarteMerge"};
 
 
-public void ItemCheck(){
-    name = Ahhh[0];
+
+//Logik: Leichenschein+Verlaufsbericht3 und Spindrätsel als SpecialCases für den Counter, weil's zwei Objekte in der Linearity sind
+public void LinearityCheck(string nameObj){
+   SetVisibility(activeSectionIndex);
 
      if (ObjectNamesLinear.Count >= activeSectionIndex)
         {
             SectionsFinished();
            // return;
         }
-
+   if (activeSectionIndex == 4)
+   {
+      activeSectionIndex = 5;
+      }
     if (objectsUnLinear.Contains(nameObj)){
         Debug.Log("it's unlinear");
     }
+
     else if (ObjectNamesLinear[activeSectionIndex] == nameObj){
         activeSectionIndex +=1;
-        Debug.Log("Linearity "+ name + "IndexCheck" + ObjectNamesLinear[activeSectionIndex]);
+        Debug.Log("Linearity "+ nameObj + "IndexCheck" + ObjectNamesLinear[activeSectionIndex]);
     }
     else {
         Debug.Log("Linearity Fail");
         }
 }
 
+//sets the Visibility of linear GameObjects
+//Lochkarte + Spindrätsel müssen noch auftauchen als Bedingung -> Lochkarte gelöst, dann erst Next. Und Spindrätse
+public void SetVisibility(int activeSectionIndex){
+ 
+ StoredObject storedObject = DataPersistanceController.LoadData();
+      var collectedObjects = storedObject.collectedObjects;
+
+   switch(activeSectionIndex){
+      case 0:
+         Findables[0].SetActive(true);
+      break;
+      case 1: 
+         Findables[1].SetActive(true);
+      break;
+      case 2: 
+         Findables[2].SetActive(true);
+      break;
+       case 3: 
+         Findables[3].SetActive(true);
+         break;
+      case 4:
+         Findables[4].SetActive(true);
+         Findables[5].SetActive(true);
+      break;
+        case 5: 
+         Findables[6].SetActive(true);
+         break;
+      case 6: 
+         Findables[7].SetActive(true);
+         break;
+      case 7:
+      if(  collectedObjects.Contains("LieselottesTagebucheintrag3")){
+         Findables[8].SetActive(true);
+           };
+         break;
+      case 8: 
+         Findables[9].SetActive(true);
+         break;
+      case 9: 
+         Findables[10].SetActive(true);
+         Findables[11].SetActive(true);
+         break;
+   }
+}
 
  public void SectionsFinished(){
     //endgame

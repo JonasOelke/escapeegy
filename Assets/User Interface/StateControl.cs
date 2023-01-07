@@ -8,6 +8,7 @@ public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
 
+        
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,8 @@ public class StateControl : MonoBehaviour
 
     public static void SaveFoundObject(string name)
     {   
+         GameControll myGameController= new GameControll();
+      
         GameObject foundObject = GameObject.Find(name);
         foundObject.SetActive(false);
         try
@@ -36,6 +39,7 @@ public class StateControl : MonoBehaviour
             {
                 storedObject.collectedObjects.Add (name);
                 DataPersistanceController.PersistData (storedObject);
+                myGameController.LinearityCheck(name);
             }
         }
         catch (FileNotFoundException e)

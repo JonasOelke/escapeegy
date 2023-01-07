@@ -23,7 +23,6 @@ public class StateControl : MonoBehaviour
     }
 
 
-   
 
 
     public static void SaveFoundObject(string name)
@@ -42,8 +41,10 @@ public class StateControl : MonoBehaviour
             else
             {
                 storedObject.collectedObjects.Add (name);
-                DataPersistanceController.PersistData (storedObject);
+                //Hier von mygamecontroller den state index bekomnmen und dann mit der steState von storedobject den state setzen.-----------------------------------------------------------------------------
                 myGameController.LinearityCheck(name);
+                DataPersistanceController.PersistData (storedObject);
+         
             }
         }
         catch (FileNotFoundException e)

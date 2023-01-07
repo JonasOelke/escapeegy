@@ -7,6 +7,7 @@ using UnityEngine;
 public class StoredObject
 {
     public bool firstOpened = true;
+    public int state;
     public List<string> collectedObjects = new List<string>();
     public List<int> sentMessages = new List<int>();
 
@@ -25,5 +26,10 @@ public class StoredObject
     public void setOpened(bool opened)
     {
         this.firstOpened = opened;
+    }
+
+    public void setState(int state)
+    {
+        this.state = state;
     }
 }

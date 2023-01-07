@@ -260,6 +260,8 @@ public class ChatController : MonoBehaviour
     void LoadScore(StoredObject myObject, bool reLoading)
     {
         Debug.Log("Loading Score, reloading:" + reLoading);
+        //hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
+        //FunktionUmEsInGameControl(myObject.state)
         foreach (var chatMessageID in myObject.sentMessages)
         {
             //  Debug.Log("Gesendete Nachricht: "+ chatMessageID);

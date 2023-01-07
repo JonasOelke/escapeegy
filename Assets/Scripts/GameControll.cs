@@ -42,11 +42,7 @@ public void LinearityCheck(string nameObj){
    var collectedObjects = storedObject.collectedObjects;
    SetVisibility(activeSectionIndex);
 
-     if (ObjectNamesLinear.Count >= activeSectionIndex)
-        {
-            SectionsFinished();
-           // return;
-        }
+    
    if (collectedObjects.Contains("Verlaufsbericht1") && collectedObjects.Contains("Aufnahmebericht"))
    {
       activeSectionIndex = 6;
@@ -94,7 +90,7 @@ public void SetVisibility(int activeSectionIndex){
           Debug.Log("I'm flying 5");
          break;
       case 6: 
-           Findables[6].SetActive(true); //MaggieTB4
+         Findables[6].SetActive(true); //MaggieTB4
          Findables[7].SetActive(true); //ElliesBrief2
          break;
       case 7:

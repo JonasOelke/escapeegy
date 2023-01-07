@@ -22,7 +22,9 @@ public class MainMenuController : MonoBehaviour
     public void SetCollectedButtonAction(Action action) {
         Button button = root.Q<Button>("CollectButton");
         button.clicked += action;
-        button.clicked+=()=>{SetDisplayCollectedButton(false);};
+        button.clicked+=()=>{SetDisplayCollectedButton(false); 
+        };
+       
     }
 
      public void SetResetButtonAction() {

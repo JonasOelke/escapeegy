@@ -338,3 +338,13 @@
     margin-bottom: 20px;
     opacity: 0.73;
 }
+
+.unity-base-slider__tracker {
+    height: 50px;
+}
+
+.unity-base-slider__dragger {
+    height: 70px;
+    width: 70px;
+    margin-top: -15px;
+}

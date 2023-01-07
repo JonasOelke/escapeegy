@@ -348,3 +348,15 @@
     width: 70px;
     margin-top: -15px;
 }
+
+.chatMessageRightPhoto {
+    border-left-color: rgba(219, 190, 154, 255);
+    border-right-color: rgba(219, 190, 154, 255);
+    border-top-color: rgba(219, 190, 154, 255);
+    border-bottom-color: rgba(219, 190, 154, 255);
+    border-left-width: 22px;
+    border-right-width: 22px;
+    border-top-width: 22px;
+    border-bottom-width: 22px;
+    -unity-background-scale-mode: scale-and-crop;
+}

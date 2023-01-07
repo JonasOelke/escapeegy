@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,13 +37,20 @@ public class InventoryDetailController : MonoBehaviour
             {
                 Messages messagesClass = chatUi.GetComponent<Messages>();
                 ChatMessage[] chatMessages = messagesClass.GetChatMessages();
-                ChatMessage chatMessage = chatMessages[
-                    InventoryItemToMessageIdMap.Map[_inventoryItemName]
-                ];
+
+                ChatMessage chatMessage;
+                try
+                {
+                    chatMessage = chatMessages[InventoryItemToMessageIdMap.Map[_inventoryItemName]];
+                }
+                catch (Exception e)
+                {
+                    chatMessage = chatMessages[61];
+                }
+
                 chatMessage.photo = _sprite;
-                chatMessage.text = "Ich möchte gerne ein Item aus meinem Inventar mit dir teilen!";
                 uiController.OpenChat();
-                chatController.AddToChatMessagesContainer(chatMessage,false);
+                chatController.AddToChatMessagesContainer(chatMessage, false);
             };
             dialogProperties.dialogButtonRightAction = () => popupDialog.SetActive(false);
             popupDialog.SetActive(true);
@@ -55,6 +63,8 @@ public class InventoryDetailController : MonoBehaviour
         VisualElement image = root.Q<VisualElement>("Image");
         _sprite = texture2D.value.sprite;
         _inventoryItemName = inventoryItemName;
+
+        Debug.Log("InventoryItemName: " + _inventoryItemName);
 
         image.style.backgroundColor = new StyleColor(new Color(1f, 1f, 1f, 0f));
         image.style.backgroundImage = Background.FromSprite(_sprite);

@@ -28,7 +28,7 @@ public class ChatController : MonoBehaviour
         try
         {
             storedObject = DataPersistanceController.LoadData();
-           // LoadScore(storedObject);
+            // LoadScore(storedObject);
         }
         catch (FileNotFoundException e)
         {
@@ -47,8 +47,8 @@ public class ChatController : MonoBehaviour
         };
 
         ClearChat();
-        firstStart=true;
-        addMessagetoSuggestionsContainer(1);//------------------------------------------------------------------------------evtl ungut
+        firstStart = true;
+        addMessagetoSuggestionsContainer(1); //------------------------------------------------------------------------------evtl ungut
         OnEnable();
     }
 
@@ -75,10 +75,9 @@ public class ChatController : MonoBehaviour
         //Sektion für stored Object bei Start
         try
         {
-
             storedObject = DataPersistanceController.LoadData();
             LoadScore(storedObject, firstOpened);
-            Debug.Log(storedObject+" Wurde gefunden, aber wieso");
+            Debug.Log(storedObject + " Wurde gefunden, aber wieso");
         }
         catch (FileNotFoundException e)
         {
@@ -122,7 +121,7 @@ public class ChatController : MonoBehaviour
     public void AddToChatMessagesContainer(ChatMessage chatMessage, bool reLoading)
     {
         //Storing stuff
-        Debug.Log("AddtoChatMessagesContainer"+chatMessage.id);
+        Debug.Log("AddtoChatMessagesContainer" + chatMessage.id);
         StateControl.AddWrittenMessage(chatMessage.id);
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
@@ -132,20 +131,39 @@ public class ChatController : MonoBehaviour
         //      chatMessagesContainer.append(chatResponse.getMessage());
         // }
 
-        VisualElement msgContainer = new VisualElement();
-        msgContainer.AddToClassList("chatMessageContainer");
-        Label msg = new Label(chatMessage.text);
-        Debug.Log("Text der NAchricht_"+chatMessage.text);
-        msg.AddToClassList("chatMessageRight");
-        msgContainer.Add(msg);
-        Debug.Log("Adding message");
-        chatMessagesContainer.Add(msgContainer);
+
+
+        if (chatMessage.text != "")
+        {
+            VisualElement msgContainer = new VisualElement();
+            msgContainer.AddToClassList("chatMessageContainer");
+            Label msg = new Label(chatMessage.text);
+            Debug.Log("Text der NAchricht_" + chatMessage.text);
+            msg.AddToClassList("chatMessageRight");
+
+            msgContainer.Add(msg);
+            Debug.Log("Adding message");
+            chatMessagesContainer.Add(msgContainer);
+        }
+        else if (chatMessage.photo)
+        {
+            VisualElement msg = new VisualElement();
+            Debug.Log("Sprite: " + chatMessage.photo.name);
+            msg.AddToClassList("chatMessageRight");
+            msg.AddToClassList("chatMessageRightPhoto");
+            msg.style.backgroundImage = new StyleBackground(chatMessage.photo);
+
+            // get the image aspect ratio, and set the height based on the actual width of the container
+            msg.style.height = (float)(
+                chatMessage.photo.rect.height / chatMessage.photo.rect.width * Screen.width * 0.8
+            );
+            chatMessagesContainer.Add(msg);
+        }
 
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
             if (chatResponse.text != "NEE")
             {
-                
                 Debug.Log("Adding RESPONSE");
                 VisualElement responseContainer = new VisualElement();
                 responseContainer.AddToClassList("chatMessageContainer");
@@ -179,17 +197,23 @@ public class ChatController : MonoBehaviour
 
                     responseContainer.Add(response);
                 }
-                if(reLoading){
-                     chatMessagesContainer.Add(responseContainer);
-                }else{
-                     StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
+                if (reLoading)
+                {
+                    chatMessagesContainer.Add(responseContainer);
+                }
+                else
+                {
+                    StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
                 }
             }
         }
-        
-        if(reLoading){
+
+        if (reLoading)
+        {
             AddMessageToContainerAndSetNextSuggestion(chatMessage);
-        }else{
+        }
+        else
+        {
             Debug.Log("Delay starts");
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
             Debug.Log("Delay ends");
@@ -198,7 +222,7 @@ public class ChatController : MonoBehaviour
 
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
     {
-          Debug.Log("AddMessageToContainerAndSetNextSuggestion");
+        Debug.Log("AddMessageToContainerAndSetNextSuggestion");
         foreach (int nextSuggestion in chatMessage.nextIds)
         {
             if (nextSuggestion != 0)
@@ -227,7 +251,7 @@ public class ChatController : MonoBehaviour
         messageSuggestion.AddToClassList("chatSuggestion");
         messageSuggestion.clicked += () =>
         {
-            AddToChatMessagesContainer(chatMessage,false);
+            AddToChatMessagesContainer(chatMessage, false);
             messageSuggestion.parent.Remove(messageSuggestion);
         };
         messageSuggestionsContainer.Add(messageSuggestion);
@@ -235,18 +259,18 @@ public class ChatController : MonoBehaviour
 
     void LoadScore(StoredObject myObject, bool reLoading)
     {
-        Debug.Log("Loading Score, reloading:"+reLoading);
+        Debug.Log("Loading Score, reloading:" + reLoading);
         foreach (var chatMessageID in myObject.sentMessages)
         {
-          //  Debug.Log("Gesendete Nachricht: "+ chatMessageID);
-            if (chatMessageID < 100) 
+            //  Debug.Log("Gesendete Nachricht: "+ chatMessageID);
+            if (chatMessageID < 100)
             {
                 foreach (ChatMessage chatMessage in _messages)
                 {
                     if (chatMessage.id == chatMessageID)
                     {
                         // Debug.Log("Gesendete Nachricht: "+ chatMessageID);
-                        AddToChatMessagesContainer(chatMessage,reLoading);
+                        AddToChatMessagesContainer(chatMessage, reLoading);
                     }
                 }
             }

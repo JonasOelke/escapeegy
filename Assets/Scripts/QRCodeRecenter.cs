@@ -26,8 +26,9 @@ public class QRCodeRecenter : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            Debug.Log("Changed Position");
             SetQrCodeRecenterTarget("StartPoint");
         }
     }

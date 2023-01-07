@@ -8,6 +8,7 @@ public class InventoryController : MonoBehaviour
 {
     public UIController uiController;
     public GameObject inventoryDetailUi;
+    public GameObject lochkarteRaetselUi;
 
     private VisualElement[] GetChildrenRecursive(VisualElement visualElement)
     {
@@ -47,29 +48,50 @@ public class InventoryController : MonoBehaviour
                 continue;
 
             Button inventoryItemButton = (Button)child;
-            inventoryItemButton.clicked += () =>
+
+            // check if Lochkarte and InteressantesPapier are found and open LochkarteRaetselUI instead of InventoryDetail
+            if (
+                (
+                    collectedObjects.Contains("Lochkarte")
+                    && collectedObjects.Contains("InteressantesPapier")
+                )
+                && (
+                    inventoryItemButton.name.Equals("Lochkarte")
+                    || inventoryItemButton.name.Equals("InteressantesPapier")
+                )
+            )
             {
-                StyleBackground styleBackground = null;
-                string itemLabel = "";
-
-                // The button has a VisualElement child that contains the actual image
-                foreach (VisualElement visualElement in child.Children())
+                inventoryItemButton.clicked += () =>
                 {
-                    if (visualElement.GetType() == typeof(Label))
-                    {
-                        itemLabel = ((Label)visualElement).text;
-                    }
-                    else
-                    {
-                        styleBackground = visualElement.resolvedStyle.backgroundImage;
-                    }
-                }
+                    lochkarteRaetselUi.SetActive(true);
+                };
+            }
+            else
+            {
+                inventoryItemButton.clicked += () =>
+                {
+                    StyleBackground styleBackground = null;
+                    string itemLabel = "";
 
-                inventoryDetailUi.SetActive(true);
-                inventoryDetailUi
-                    .GetComponent<InventoryDetailController>()
-                    .SetSprite(itemLabel, child.name, styleBackground);
-            };
+                    // The button has a VisualElement child that contains the actual image
+                    foreach (VisualElement visualElement in child.Children())
+                    {
+                        if (visualElement.GetType() == typeof(Label))
+                        {
+                            itemLabel = ((Label)visualElement).text;
+                        }
+                        else
+                        {
+                            styleBackground = visualElement.resolvedStyle.backgroundImage;
+                        }
+                    }
+
+                    inventoryDetailUi.SetActive(true);
+                    inventoryDetailUi
+                        .GetComponent<InventoryDetailController>()
+                        .SetSprite(itemLabel, child.name, styleBackground);
+                };
+            }
         }
 
         // Check if all Bildschnipsel are collected and show FietesBesuch instead

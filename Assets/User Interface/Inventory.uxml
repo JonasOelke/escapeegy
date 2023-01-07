@@ -121,7 +121,7 @@
                                 <ui:Button name="Bildschnipsel5" class="inventoryItemContainer" style="height: auto; width: 45%;">
                                     <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%235.PNG?fileID=21300000&amp;guid=06bd970744a39d541a02933605683e36&amp;type=3#Bildschnipsel_#5&apos;);" />
                                 </ui:Button>
-                                <ui:Button name="Bildschnipsel4" class="inventoryItemContainer" style="height: auto; width: 45%;">
+                                <ui:Button name="Bildschnipsel2" class="inventoryItemContainer" style="height: auto; width: 45%;">
                                     <ui:VisualElement class="inventoryElement" style="width: 150px; height: 294px; background-image: url(&apos;project://database/Assets/Pictures/InventoryPictures/Bildschnipsel_%232.PNG?fileID=21300000&amp;guid=37340f71ad9b04e4d94dacc6515381c1&amp;type=3#Bildschnipsel_#2&apos;);" />
                                 </ui:Button>
                             </ui:VisualElement>

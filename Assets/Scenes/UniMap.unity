@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4439403, g: 0.4931519, b: 0.5722083, a: 1}
+  m_IndirectSpecularColor: {r: 0.4440221, g: 0.49316514, b: 0.5722316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5441,6 +5441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678003348}
+  - component: {fileID: 678003349}
   m_Layer: 0
   m_Name: QRCodeRecenter
   m_TagString: Untagged
@@ -5463,6 +5464,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678003349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678003347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b47e5208926a441b9d493fa16f1a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  session: {fileID: 5472436117178709916}
+  sessionOrigin: {fileID: 388525030}
+  cameraManager: {fileID: 22732922}
+  qrCodeTargetObjects:
+  - Name: StartPoint
+    PositionObject: {fileID: 1768969010}
 --- !u!1 &684191450
 GameObject:
   m_ObjectHideFlags: 0

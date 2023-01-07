@@ -604,18 +604,22 @@ public class Messages : MonoBehaviour
 
 
          ChatResponse message49Response = new ChatResponse(
-           "Ohjemine. Hätte nicht gedacht, dass das so ein großer Fall ist",
+           "Herzversagen?! Jetzt verstehe ich, warum Lieselotte das alles verdächtig findet.",
             ""
         );
         ChatResponse message49Response2 = new ChatResponse(
+           "Hätte nicht gedacht, dass das so ein großer Fall ist",
+            ""
+        );
+        ChatResponse message49Response3 = new ChatResponse(
            "",
             "Tagebucheintrag10.Mai"//Hier Bild einfügen
         );
          ChatMessage message49 = new ChatMessage(
             49,
             new[] { 50 },
-            "Herzversagen?! Jetzt verstehe ich, warum Lieselotte das alles verdächtig findet",
-            "Herzversagen?! SUS",
+            "",//Hier bild von Krankenakte 3
+            "",
             new[] { message49Response,message49Response2}
         );
 
@@ -663,7 +667,7 @@ public class Messages : MonoBehaviour
         ChatMessage message53 = new ChatMessage(
             53,
             new[] { 0 },
-            "Schau was ich gefunden habe ",
+            "",//Hier Bild von Klinikarbeit
             "",
             new[] { message53Response}
         );
@@ -678,7 +682,7 @@ public class Messages : MonoBehaviour
         ChatMessage message54 = new ChatMessage(
             54,
             new[] { 0 },
-            "Schau was ich gefunden habe ",
+            "", //Hier Bild Kliniksaal
             "",
             new[] { message54Response}
         );
@@ -693,22 +697,26 @@ public class Messages : MonoBehaviour
         ChatMessage message55 = new ChatMessage(
             55,
             new[] { 0 },
-            "Was ist das denn?",
+            "",
             "",
             new[] { message55Response}
         );
 
         //Vorher Bild von allen Schnipseln senden
-        ChatResponse message56Response = new ChatResponse(
+          ChatResponse message56Response = new ChatResponse(
+           "Maggie sieht aber nicht so glücklich aus. ",
+            ""
+        );
+        ChatResponse message56Response2 = new ChatResponse(
            "Das ist wohl dieser Fiete… ",
             ""
         );
         ChatMessage message56 = new ChatMessage(
             56,
             new[] { 0 },
-            " Ich hab alle Schnipsel gefunden! Maggie sieht aber nicht so glücklich aus.",
-            "Ich hab alle Schnipsel gefunden!...",
-            new[] { message56Response}
+            "",//Hier bild von fiete fertig zusammengestellt
+            "",
+            new[] { message56Response,message56Response2}
         );
 
         //----------BFF Support Snippet
@@ -720,7 +728,7 @@ public class Messages : MonoBehaviour
         ChatMessage message57 = new ChatMessage(
             57,
             new[] { 0 },
-            " Guck mal!",
+            "",
             "",
             new[] { message57Response}
         );
@@ -734,8 +742,8 @@ public class Messages : MonoBehaviour
         ChatMessage message58 = new ChatMessage(
             58,
             new[] { 0 },
-            "Die scheinen sich schon gut auf das Kind vorzubereiten. Auf der Rückseite habe ich ein Datum gefunden",
-            "Die bereiten sich auf das Kind vor!...",
+            "",
+            "",
             new[] { message58Response}
         );
 
@@ -764,7 +772,7 @@ public class Messages : MonoBehaviour
         ChatMessage message60 = new ChatMessage(
             60,
             new[] { 0 },
-            "Das ist wohl das Merkblatt, das Maggie bekommen hat",
+            "",
             "",
             new[] { message60Response}
         );
@@ -781,6 +789,20 @@ public class Messages : MonoBehaviour
             "Warte mal, damals wurden Drogen einfach als Medizin verteilt?",
             "",
             new[] { message61Response}
+        );
+
+
+        // "Ich weiß auch nicht"- Nachricht
+         ChatResponse message62Response = new ChatResponse(
+           "Ich weiß nicht, was ich dazu sagen soll",
+            ""
+        );
+        ChatMessage message62 = new ChatMessage(
+            61,
+            new[] { 0 },
+            "",//HIer jedes asset, dass keine Besondere Antwort hat
+            "",
+            new[] { message62Response}
         );
 
 

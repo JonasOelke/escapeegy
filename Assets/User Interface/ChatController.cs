@@ -20,7 +20,7 @@ public class ChatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _messages = messagesScript.getChatMessages();
+        _messages = messagesScript.GetChatMessages();
         _items = itemsScript.getItems();
         //Sektion für stored Object bei Start
         try
@@ -71,8 +71,10 @@ public class ChatController : MonoBehaviour
         //Sektion für stored Object bei Start
         try
         {
+
             storedObject = DataPersistanceController.LoadData();
             LoadScore(storedObject);
+            Debug.Log(storedObject+" Wurde gefunden, aber wieso");
         }
         catch (FileNotFoundException e)
         {

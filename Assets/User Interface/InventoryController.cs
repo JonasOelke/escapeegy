@@ -33,9 +33,20 @@ public class InventoryController : MonoBehaviour
         VisualElement[] inventoryElements = GetChildrenRecursive(inventoryElement);
 
         foreach (
-            var child in inventoryElements.Where(x => x.ClassListContains("inventoryItemContainer"))
+            VisualElement child in inventoryElements.Where(
+                x => x.ClassListContains("inventoryItemContainer")
+            )
         )
         {
+            StoredObject storedObject = DataPersistanceController.LoadData();
+            var collectedObjects = storedObject.collectedObjects;
+
+            bool found = collectedObjects.Contains(child.name);
+            child.style.display = found ? DisplayStyle.Flex : DisplayStyle.None;
+
+            if (!found)
+                continue;
+
             Button inventoryItemButton = (Button)child;
             inventoryItemButton.clicked += () =>
             {
@@ -58,7 +69,7 @@ public class InventoryController : MonoBehaviour
                 inventoryDetailUi.SetActive(true);
                 inventoryDetailUi
                     .GetComponent<InventoryDetailController>()
-                    .SetSprite(itemLabel, styleBackground);
+                    .SetSprite(itemLabel, child.name, styleBackground);
             };
         }
     }

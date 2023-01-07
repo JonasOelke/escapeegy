@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,8 +34,7 @@ public class DataPersistanceController : MonoBehaviour
 
     public static StoredObject LoadData()
     {
-        string data = FileManager.LoadFromFile("escepeegy11.json");
-        Debug.Log(data + "AAAAAAAAAAAAAAAAAAAAaa");
+        string data = FileManager.LoadFromFile("escepeegy901.json");
         StoredObject storedObject =
             data != ""
                 ? JsonUtility.FromJson<StoredObject>(data)
@@ -41,8 +42,16 @@ public class DataPersistanceController : MonoBehaviour
         return storedObject;
     }
 
+     public static void DeleteData()
+    {
+
+        FileManager.DeleteFile("escepeegy70.json");
+        SceneManager.LoadScene("UniMap");
+
+    }
+
     public static bool PersistData(StoredObject storedObject)
     {
-        return FileManager.WriteToFile("escepeegy11.json", ToJson(storedObject));
+        return FileManager.WriteToFile("escepeegy901.json", ToJson(storedObject));
     }
 }

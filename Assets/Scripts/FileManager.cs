@@ -21,6 +21,12 @@ public static class FileManager
         }
     }
 
+     public static void DeleteFile(string a_FileName)
+    {
+        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+        File.Delete(fullPath);
+    }
+
     public static string LoadFromFile(string a_FileName)
     {
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);

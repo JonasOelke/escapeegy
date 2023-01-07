@@ -6,9 +6,7 @@ public class Findables : MonoBehaviour
 {
     // to determine if something is selected or not
     public bool IsSelected { get; set; }
-
-    public StateControl stateControl;
-
+    
     private Touch touch;
 
     private Vector2 touchPosition;
@@ -23,6 +21,7 @@ public class Findables : MonoBehaviour
 
     private float rotationSpeed = 0.001f;
     private GameObject mainMenuUI;
+
     [SerializeField]
     public int id;
 
@@ -42,10 +41,9 @@ public class Findables : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        // wenn Objekt ausgewählt wird
+        // wenn Objekt ausgewäglt wird
         if (IsSelected)
         {
-            
             transform.parent = arCamera.transform;
             transform.localPosition = Vector3.forward;
 
@@ -56,11 +54,10 @@ public class Findables : MonoBehaviour
                 //Hier Speicher Button erscheinen lassen
                 mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(true);
                 mainMenuUI.GetComponent<MainMenuController>().SetCollectedButtonAction(() => {
-                    stateControl.SaveFoundObject(gameObject.name);
+                    StateControl.SaveFoundObject(gameObject.name);
                    // mainMenuUI.GetComponent<MainMenuController>().SetDisplayCollectedButton(false);
                 });
                  
-
                 //Touch Referenz
                 touch = Input.GetTouch(0);
 
@@ -126,7 +123,7 @@ public class Findables : MonoBehaviour
     {
         if (IsSelected)
         {
-            stateControl.SaveFoundObject(gameObject.name);
+            StateControl.SaveFoundObject(gameObject.name);
         }
     }
 }

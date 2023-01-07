@@ -7,10 +7,10 @@ public class ChatMessage
 {
     public int id;
     public int[] nextIds;
-    bool sent = false;
+    public bool sent = false;
     public string text;
     public string summary;
-    bool available = false;
+    public bool available = false;
     public ChatResponse[] responses;
     public Sprite photo;
 

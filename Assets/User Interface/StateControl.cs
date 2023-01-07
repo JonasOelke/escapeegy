@@ -8,7 +8,6 @@ public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
 
-        
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +21,10 @@ public class StateControl : MonoBehaviour
         }
     }
 
-
-   
-
-
     public static void SaveFoundObject(string name)
-    {   
-         GameControll myGameController= new GameControll();
-      
+    {
+        GameControll myGameController = new GameControll();
+
         GameObject foundObject = GameObject.Find(name);
         foundObject.SetActive(false);
         try
@@ -41,8 +36,8 @@ public class StateControl : MonoBehaviour
             }
             else
             {
-                storedObject.collectedObjects.Add (name);
-                DataPersistanceController.PersistData (storedObject);
+                storedObject.collectedObjects.Add(name);
+                DataPersistanceController.PersistData(storedObject);
                 myGameController.LinearityCheck(name);
             }
         }
@@ -52,22 +47,21 @@ public class StateControl : MonoBehaviour
         }
     }
 
-    public static void AddWrittenMessage(int id)
+    public static void AddWrittenMessage(ChatMessage chatMessage)
     {
         Debug.Log("addWrittenMessage to stored object");
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            if (storedObject.sentMessages.Contains(id))
+            if (storedObject.sentMessages.Contains(chatMessage))
             {
-                Debug.Log(id + " already exists");
+                Debug.Log(chatMessage.text + " already exists");
             }
             else
             {
-                storedObject.sentMessages.Add (id);
-                DataPersistanceController.PersistData (storedObject);
+                storedObject.sentMessages.Add(chatMessage);
+                DataPersistanceController.PersistData(storedObject);
             }
-            
         }
         catch (FileNotFoundException e)
         {

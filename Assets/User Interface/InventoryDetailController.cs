@@ -42,7 +42,7 @@ public class InventoryDetailController : MonoBehaviour
                 chatMessage.photo = _sprite;
                 chatMessage.text = "Ich möchte gerne ein Item aus meinem Inventar mit dir teilen!";
                 uiController.OpenChat();
-                chatController.AddToChatMessagesContainer(chatMessage);
+                chatController.AddToChatMessagesContainer(chatMessage,false);
             };
             dialogProperties.dialogButtonRightAction = () => popupDialog.SetActive(false);
             popupDialog.SetActive(true);

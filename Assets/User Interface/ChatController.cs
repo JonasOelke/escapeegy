@@ -122,7 +122,7 @@ public class ChatController : MonoBehaviour
     {
         //Storing stuff
         Debug.Log("AddtoChatMessagesContainer" + chatMessage.id);
-        StateControl.AddWrittenMessage(chatMessage.id);
+        StateControl.AddWrittenMessage(chatMessage);
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
         // Searches for noted answer and sets it into Chat Box too
@@ -262,14 +262,15 @@ public class ChatController : MonoBehaviour
         Debug.Log("Loading Score, reloading:" + reLoading);
         //hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
         //FunktionUmEsInGameControl(myObject.state)
-        foreach (var chatMessageID in myObject.sentMessages)
+      
+        foreach (var sentMessage in myObject.sentMessages)
         {
             //  Debug.Log("Gesendete Nachricht: "+ chatMessageID);
-            if (chatMessageID < 100)
+            if (sentMessage.id < 100)
             {
                 foreach (ChatMessage chatMessage in _messages)
                 {
-                    if (chatMessage.id == chatMessageID)
+                    if (chatMessage.id == sentMessage.id)
                     {
                         // Debug.Log("Gesendete Nachricht: "+ chatMessageID);
                         AddToChatMessagesContainer(chatMessage, reLoading);
@@ -282,7 +283,7 @@ public class ChatController : MonoBehaviour
                 foreach (Item item in _items)
                 {
                     //Item aus Item Array raussuchen
-                    if (item.id == chatMessageID)
+                    if (item.id == sentMessage.id)
                     {
                         //Und die Message zum Container hinzufügen
                         VisualElement responseContainer = new VisualElement();

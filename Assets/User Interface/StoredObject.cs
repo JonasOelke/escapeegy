@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 
-[System.Serializable]
 public class StoredObject
 {
     public bool firstOpened = true;
     public int state;
     public List<string> collectedObjects = new List<string>();
-    public List<int> sentMessages = new List<int>();
+    public List<ChatMessage> sentMessages = new List<ChatMessage>();
 
     public StoredObject(List<string> collectedObjects)
     {
@@ -18,9 +18,22 @@ public class StoredObject
         collectedObjects.Add("Bildschnipsel3");
         collectedObjects.Add("Bildschnipsel4");
         collectedObjects.Add("Lochkarte");
-        collectedObjects.Add("InteressantesPapier");
+        collectedObjects.Add("ElliesBrief1");
 
         this.collectedObjects = collectedObjects;
+    }
+
+    public StoredObject(StoredObjectSerializable storedObjectSerializable)
+    {
+        this.firstOpened = storedObjectSerializable.firstOpened;
+        this.collectedObjects = storedObjectSerializable.collectedObjects.ToList();
+        this.sentMessages = new List<ChatMessage>();
+        foreach (
+            ChatMessageSerializable chatMessageSerializable in storedObjectSerializable.sentMessages
+        )
+        {
+            sentMessages.Add(new ChatMessage(chatMessageSerializable));
+        }
     }
 
     public void setOpened(bool opened)

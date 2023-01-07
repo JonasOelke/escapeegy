@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,6 @@ public class StateControl : MonoBehaviour
 {
     StoredObject myStored;
 
-        
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +22,10 @@ public class StateControl : MonoBehaviour
         }
     }
 
-
-
-
     public static void SaveFoundObject(string name)
-    {   
-         GameControll myGameController= new GameControll();
-      
+    {
+        GameControll myGameController = new GameControll();
+
         GameObject foundObject = GameObject.Find(name);
         foundObject.SetActive(false);
         try
@@ -53,22 +50,21 @@ public class StateControl : MonoBehaviour
         }
     }
 
-    public static void AddWrittenMessage(int id)
+    public static void AddWrittenMessage(ChatMessage chatMessage)
     {
         Debug.Log("addWrittenMessage to stored object");
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            if (storedObject.sentMessages.Contains(id))
+            if (storedObject.sentMessages.Any((x) => chatMessage.id == x.id))
             {
-                Debug.Log(id + " already exists");
+                Debug.Log("Message already exists");
             }
             else
             {
-                storedObject.sentMessages.Add (id);
-                DataPersistanceController.PersistData (storedObject);
+                storedObject.sentMessages.Add(chatMessage);
+                DataPersistanceController.PersistData(storedObject);
             }
-            
         }
         catch (FileNotFoundException e)
         {

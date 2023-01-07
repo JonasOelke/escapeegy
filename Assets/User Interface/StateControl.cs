@@ -21,6 +21,10 @@ public class StateControl : MonoBehaviour
         }
     }
 
+
+   
+
+
     public static void SaveFoundObject(string name)
     {   
         GameObject foundObject = GameObject.Find(name);
@@ -46,12 +50,20 @@ public class StateControl : MonoBehaviour
 
     public static void AddWrittenMessage(int id)
     {
-        Debug.Log("ADDING");
+        Debug.Log("addWrittenMessage to stored object");
         try
         {
             StoredObject storedObject = DataPersistanceController.LoadData();
-            storedObject.sentMessages.Add (id);
-            DataPersistanceController.PersistData (storedObject);
+            if (storedObject.sentMessages.Contains(id))
+            {
+                Debug.Log(id + " already exists");
+            }
+            else
+            {
+                storedObject.sentMessages.Add (id);
+                DataPersistanceController.PersistData (storedObject);
+            }
+            
         }
         catch (FileNotFoundException e)
         {

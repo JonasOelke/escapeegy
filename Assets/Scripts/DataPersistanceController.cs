@@ -17,7 +17,7 @@ public class DataPersistanceController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadData();
+       // LoadData();
     }
 
     public void SaveData()
@@ -39,7 +39,14 @@ public class DataPersistanceController : MonoBehaviour
             data != ""
                 ? JsonUtility.FromJson<StoredObject>(data)
                 : throw new FileNotFoundException();
+
+        for(int i = 0; i < storedObject.sentMessages.Count; i++)
+        {
+            Debug.Log(storedObject.sentMessages[i]+" und ");
+        }
+
         return storedObject;
+
     }
 
      public static void DeleteData()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3943,6 +3943,7 @@ GameObject:
   - component: {fileID: 332828761}
   - component: {fileID: 332828760}
   - component: {fileID: 332828759}
+  - component: {fileID: 332828762}
   m_Layer: 0
   m_Name: Drogenwerbung
   m_TagString: Untagged
@@ -4029,6 +4030,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332828757}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &332828762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332828757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &336016906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +6705,7 @@ GameObject:
   - component: {fileID: 573304294}
   - component: {fileID: 573304293}
   - component: {fileID: 573304292}
+  - component: {fileID: 573304295}
   m_Layer: 0
   m_Name: Verlaufsbericht2
   m_TagString: Untagged
@@ -6775,6 +6792,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573304290}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &573304295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573304290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &575290852
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,6 +9645,7 @@ GameObject:
   - component: {fileID: 774361217}
   - component: {fileID: 774361216}
   - component: {fileID: 774361215}
+  - component: {fileID: 774361218}
   m_Layer: 0
   m_Name: Verlaufsbericht1
   m_TagString: Untagged
@@ -9699,6 +9732,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774361213}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &774361218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774361213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &774781671
 GameObject:
   m_ObjectHideFlags: 0
@@ -10235,6 +10283,7 @@ GameObject:
   - component: {fileID: 820357633}
   - component: {fileID: 820357632}
   - component: {fileID: 820357631}
+  - component: {fileID: 820357634}
   m_Layer: 0
   m_Name: Nestbau
   m_TagString: Untagged
@@ -10321,6 +10370,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820357629}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &820357634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820357629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &857726478
 GameObject:
   m_ObjectHideFlags: 0
@@ -13805,6 +13869,7 @@ GameObject:
   - component: {fileID: 1405743038}
   - component: {fileID: 1405743037}
   - component: {fileID: 1405743036}
+  - component: {fileID: 1405743039}
   m_Layer: 0
   m_Name: BettieUndMaggie
   m_TagString: Untagged
@@ -13891,6 +13956,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405743034}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1405743039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405743034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &1416926041
 GameObject:
   m_ObjectHideFlags: 0
@@ -16269,6 +16349,7 @@ GameObject:
   - component: {fileID: 1606717734}
   - component: {fileID: 1606717733}
   - component: {fileID: 1606717732}
+  - component: {fileID: 1606717735}
   m_Layer: 0
   m_Name: Bildschnipsel4
   m_TagString: Untagged
@@ -16355,6 +16436,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606717730}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1606717735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606717730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &1608578524
 GameObject:
   m_ObjectHideFlags: 0
@@ -17436,6 +17532,7 @@ GameObject:
   - component: {fileID: 1733605030}
   - component: {fileID: 1733605029}
   - component: {fileID: 1733605028}
+  - component: {fileID: 1733605031}
   m_Layer: 0
   m_Name: MaggiesTagebucheintrag3
   m_TagString: Untagged
@@ -17522,6 +17619,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733605026}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1733605031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733605026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &1745008274
 GameObject:
   m_ObjectHideFlags: 0
@@ -17534,6 +17646,7 @@ GameObject:
   - component: {fileID: 1745008278}
   - component: {fileID: 1745008277}
   - component: {fileID: 1745008276}
+  - component: {fileID: 1745008279}
   m_Layer: 0
   m_Name: Bildschnipsel3
   m_TagString: Untagged
@@ -17620,6 +17733,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745008274}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1745008279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745008274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &1747501562
 GameObject:
   m_ObjectHideFlags: 0
@@ -18860,6 +18988,7 @@ GameObject:
   - component: {fileID: 1814798632}
   - component: {fileID: 1814798631}
   - component: {fileID: 1814798630}
+  - component: {fileID: 1814798633}
   m_Layer: 0
   m_Name: Grundriss
   m_TagString: Untagged
@@ -18946,6 +19075,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814798628}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1814798633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814798628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 0}
+  id: 0
+  arCamera: {fileID: 0}
 --- !u!1 &1820871783
 GameObject:
   m_ObjectHideFlags: 0
@@ -19654,6 +19798,7 @@ GameObject:
   - component: {fileID: 1868611094}
   - component: {fileID: 1868611093}
   - component: {fileID: 1868611092}
+  - component: {fileID: 1868611095}
   m_Layer: 0
   m_Name: Aufnahmebericht
   m_TagString: Untagged
@@ -19740,6 +19885,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868611090}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1868611095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868611090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead1db74e288a4033998c3d20eb44d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateControl: {fileID: 1542897648}
+  id: 0
+  arCamera: {fileID: 22732920}
 --- !u!1 &1870332042
 GameObject:
   m_ObjectHideFlags: 0

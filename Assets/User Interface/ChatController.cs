@@ -118,10 +118,32 @@ public class ChatController : MonoBehaviour
         children.ForEach(child => messageSuggestionsContainer.Remove(child));
     }
 
+
+    //Funktion um den Chat an gefundene Objekte anzupassen
+    public void ChatToStoryLogic(string name){
+        if (name=="MaggiesTagebucheintrag1"){
+            addMessagetoSuggestionsContainer(5);
+        }
+        else if (name=="MaggiesTagebucheintrag2"){
+            addMessagetoSuggestionsContainer(13);
+        }
+        else if (name=="Verlaufsbericht"){
+            addMessagetoSuggestionsContainer(31);
+        }
+        else if (name=="MaggiesTagebucheintrag4"){
+            addMessagetoSuggestionsContainer(47);
+        }
+        else if (name=="universalHelp"){
+            addMessagetoSuggestionsContainer(63);
+        }
+    }
+
+
     public void AddToChatMessagesContainer(ChatMessage chatMessage, bool reLoading)
     {
+        //Storing stuff
+        Debug.Log("AddtoChatMessagesContainer" + chatMessage.id);
         StateControl.AddWrittenMessage(chatMessage);
-
         // Takes ChatMassage-Object and puts it into sent Chat Box ("sends it")
         // Using ChatMessagesContainer in UI
         // Searches for noted answer and sets it into Chat Box too
@@ -136,18 +158,20 @@ public class ChatController : MonoBehaviour
         {
             VisualElement msgContainer = new VisualElement();
             msgContainer.AddToClassList("chatMessageContainer");
-
             Label msg = new Label(chatMessage.text);
+            Debug.Log("Text der NAchricht_" + chatMessage.text);
             msg.AddToClassList("chatMessageRight");
 
             msgContainer.Add(msg);
+            Debug.Log("Adding message");
             chatMessagesContainer.Add(msgContainer);
         }
         else if (chatMessage.photo)
         {
             VisualElement msg = new VisualElement();
+            Debug.Log("Sprite: " + chatMessage.photo.name);
             msg.AddToClassList("chatMessageRight");
-            msg.AddToClassList("chatMessagePhoto");
+            msg.AddToClassList("chatMessageRightPhoto");
             msg.style.backgroundImage = new StyleBackground(chatMessage.photo);
 
             // get the image aspect ratio, and set the height based on the actual width of the container
@@ -161,28 +185,36 @@ public class ChatController : MonoBehaviour
         {
             if (chatResponse.text != "NEE")
             {
+                Debug.Log("Adding RESPONSE");
                 VisualElement responseContainer = new VisualElement();
                 responseContainer.AddToClassList("chatMessageContainer");
-                if (chatResponse.text != "")
+                if (chatResponse.photo == "")
                 {
                     Label response = new Label(chatResponse.text);
                     response.AddToClassList("chatMessageLeft");
                     responseContainer.Add(response);
                 }
-                else if (chatResponse.photo)
+                else
                 {
-                    VisualElement response = new VisualElement();
-                    response.AddToClassList("chatMessageLeft");
-                    response.AddToClassList("chatMessagePhoto");
-                    response.style.backgroundImage = new StyleBackground(chatResponse.photo);
-
-                    // get the image aspect ratio, and set the height based on the actual width of the container
-                    response.style.height = (float)(
-                        chatResponse.photo.rect.height
-                        / chatResponse.photo.rect.width
-                        * Screen.width
-                        * 0.8
-                    );
+                    Label response = new Label(chatResponse.text);
+                    switch (chatResponse.photo)
+                    {
+                        case "Lochkarte":
+                            response.AddToClassList("emmasFirstPic");
+                            break;
+                        case "Tagebucheintrag25.April":
+                            response.AddToClassList("emmasSecondPic");
+                            break;
+                        case "Tagebucheintrag26.Dezember":
+                            response.AddToClassList("emmasThirdPic");
+                            break;
+                        case "decryptedLetter":
+                            response.AddToClassList("emmasFourthPic");
+                            break;
+                        case "Tagebucheintrag10.Mai":
+                            response.AddToClassList("emmasFifthPic");
+                            break;
+                    }
 
                     responseContainer.Add(response);
                 }
@@ -203,7 +235,9 @@ public class ChatController : MonoBehaviour
         }
         else
         {
+            Debug.Log("Delay starts");
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
+            Debug.Log("Delay ends");
         }
     }
 
@@ -214,13 +248,14 @@ public class ChatController : MonoBehaviour
         {
             if (nextSuggestion != 0)
             {
-                AddMessagetoSuggestionsContainer(nextSuggestion);
+                addMessagetoSuggestionsContainer(nextSuggestion);
             }
         }
     }
 
     void AddMessagetoSuggestionsContainer(int id)
     {
+        Debug.Log("addMessagetoSuggestionsContainer");
         // Searches for new suggestion with noted ID
         // Puts the text into suggestionBox
 
@@ -243,14 +278,49 @@ public class ChatController : MonoBehaviour
         messageSuggestionsContainer.Add(messageSuggestion);
     }
 
-    void LoadChatHistory(StoredObject myObject, bool reLoading)
+    void LoadScore(StoredObject myObject, bool reLoading)
     {
-        //TODO: hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
-        // FunktionUmEsInGameControl(myObject.state)
-
-        foreach (ChatMessage sentMessage in myObject.sentMessages)
+        Debug.Log("Loading Score, reloading:" + reLoading);
+        //hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
+        //FunktionUmEsInGameControl(myObject.state)
+      
+        foreach (var sentMessage in myObject.sentMessages)
         {
-            AddToChatMessagesContainer(sentMessage, reLoading);
+            //  Debug.Log("Gesendete Nachricht: "+ chatMessageID);
+            if (sentMessage.id < 100)
+            {
+                foreach (ChatMessage chatMessage in _messages)
+                {
+                    if (chatMessage.id == sentMessage.id)
+                    {
+                        // Debug.Log("Gesendete Nachricht: "+ chatMessageID);
+                        AddToChatMessagesContainer(chatMessage, reLoading);
+                    }
+                }
+            }
+            else
+            {
+                //Wenn id >100 ist es keine Message, sondern ein bild. Dann muss auf das zugehörige Item zugegriffen werden und die Responses da rausgesucht werden
+                foreach (Item item in _items)
+                {
+                    //Item aus Item Array raussuchen
+                    if (item.id == sentMessage.id)
+                    {
+                        //Und die Message zum Container hinzufügen
+                        VisualElement responseContainer = new VisualElement();
+                        responseContainer.AddToClassList("chatMessageContainer");
+                        Label response = new Label(item.response);
+                        response.AddToClassList("chatMessageLeft");
+                        responseContainer.Add(response);
+                        chatMessagesContainer.Add(responseContainer);
+                    }
+                }
+            }
+        }
+
+        foreach (string name in myObject.collectedObjects)
+        {
+            //Hier in inventar laden
         }
     }
 }

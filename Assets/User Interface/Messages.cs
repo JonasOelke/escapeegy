@@ -50,7 +50,7 @@ public class Messages : MonoBehaviour
 
         // Third Message
         ChatResponse message3Response = new ChatResponse(
-            "Ja, klar. Vielleicht gibt es da eine/n <ersten Startpunkt> einfügen.",
+            "Ja, klar. Schau da doch einfach mal am Haupteingang!",
             ""
         );
         ChatMessage message3 = new ChatMessage(
@@ -65,10 +65,23 @@ public class Messages : MonoBehaviour
         ChatMessage message4 = new ChatMessage(4, new[] { 0 }, "", "", new[] { message3Response });
 
         //-------------help 14. April-----------------
+               
+
+        ChatResponse message12Response = new ChatResponse(
+            "Guck doch mal obs n schwarzes Brett gibt ",
+            ""
+        );
+        ChatMessage message12 = new ChatMessage(
+            12,
+            new[] { 0 },
+            "Ich weiß nicht weiter...",
+            "",
+            new[] { message12Response }
+        );
         ChatResponse message5Response = new ChatResponse("Scan doch mal die Tür ein?", "");
         ChatMessage message5 = new ChatMessage(
             5,
-            new[] { 6 },
+            new[] { 6,12 },
             "Bin angekommen, was kann ich tun?",
             "",
             new[] { message5Response }
@@ -77,7 +90,7 @@ public class Messages : MonoBehaviour
         ChatResponse message6Response = new ChatResponse("Schick mir ein Bild davon!", "");
         ChatMessage message6 = new ChatMessage(
             6,
-            new[] { 7 },
+            new[] { 0 },
             "Ich habe was gefunden!",
             "",
             new[] { message6Response }
@@ -96,7 +109,7 @@ public class Messages : MonoBehaviour
             "Oh das ist ja nett von Ellie. Vielleicht solltest du dir erstmal einen Überblick verschaffen. Guck mal nach einem Gebäudeplan",
             ""
         );
-        ChatMessage message8 = new ChatMessage(8, new[] { 0 }, "", "", new[] { message8Response });
+        ChatMessage message8 = new ChatMessage(8, new[] { 0 }, "", "", new[] { message8Response });//HIEr muss auch ein bild verknüpft sein? ist es das?------------------------------
 
         //-------------Bild gefundenhelp 16. April-----------------
         ChatResponse message10Response = new ChatResponse("Vielleicht ist das der Vater?", "");
@@ -125,19 +138,7 @@ public class Messages : MonoBehaviour
             new[] { message11Response }
         );
 
-        //-------------HELP am 16. April-----------------
 
-        ChatResponse message12Response = new ChatResponse(
-            "Guck doch mal obs n schwarzes Brett gibt ",
-            ""
-        );
-        ChatMessage message12 = new ChatMessage(
-            12,
-            new[] { 0 },
-            "Ich weiß nicht weiter...",
-            "",
-            new[] { message12Response }
-        );
 
         //-------------HELP am 20. April-----------------
 
@@ -359,7 +360,7 @@ public class Messages : MonoBehaviour
         );
         ChatMessage message32 = new ChatMessage(
             32,
-            new[] { 0 },
+            new[] { 40 },
             "Oh mist, ich brauche den Spindcode",
             "",
             new[] { message32Response, message32Response2 }
@@ -449,7 +450,7 @@ public class Messages : MonoBehaviour
         );
         ChatMessage message41 = new ChatMessage(
             41,
-            new[] { 0 },
+            new[] { 42 },
             "Boah, die Familie klingt ja nicht so nice. Und Fiete wirkt sehr übergriffig…",
             "Die Familie klingt uncool...",
             new[] { message41Response }
@@ -511,15 +512,12 @@ public class Messages : MonoBehaviour
             new[] { message46Response }
         );
 
-        ChatResponse message47Response2 = new ChatResponse(
+        ChatResponse message47Response = new ChatResponse(
             "Ich glaube, ich habe noch ein Buch darüber. Gib mir einen Moment",
             ""
         );
-        ChatResponse message47Response = new ChatResponse(
-            "",
-            "decryptedLetter",
-            Resources.Load<Sprite>("InventoryPictures/BriefEntschluesselt")
-        );
+        ChatResponse message47Response2 = new ChatResponse("", "decryptedLetter",
+            Resources.Load<Sprite>("InventoryPictures/BriefEntschluesselt"));
 
         ChatResponse message47Response3 = new ChatResponse(
             "Das ist 2 tage vor ihrem Todestag!!",
@@ -727,9 +725,22 @@ public class Messages : MonoBehaviour
             ""
         );
         ChatMessage message62 = new ChatMessage(
-            61,
+            62,
             new[] { 0 },
             "", //HIer jedes asset, dass keine Besondere Antwort hat
+            "",
+            new[] { message62Response }
+        );
+
+          // Universelle Help- Nachricht
+        ChatResponse message63Response = new ChatResponse(
+            "Schick mir doch mal, was du so gefunden hast!",
+            ""
+        );
+        ChatMessage message63 = new ChatMessage(
+            63,
+            new[] { 0 },
+            "Ich weiß nicht weiter", 
             "",
             new[] { message62Response }
         );

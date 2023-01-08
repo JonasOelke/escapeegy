@@ -27,7 +27,7 @@
                 <ui:Button display-tooltip-when-elided="true" name="OK" style="width: 532px; background-image: url(&apos;project://database/Assets/Pictures/Ra%CC%88tsel/Spindcode/ok.png?fileID=2800000&amp;guid=7f5851f52a49a4f3f9abd27bbd3df202&amp;type=3#ok&apos;); background-color: rgba(88, 88, 88, 0); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
             </ui:GroupBox>
         </ui:VisualElement>
-        <ui:VisualElement class="mainMenuButtonContainer" style="background-color: rgba(255, 232, 204, 0.5); margin-left: 0; margin-right: 0; margin-top: 113px; margin-bottom: 50px; width: 150px; height: 150px; align-items: center; position: absolute; left: 5%; bottom: 5%;">
+        <ui:VisualElement class="mainMenuButtonContainer" style="background-color: rgba(255, 232, 204, 0.5); margin-left: 0; margin-right: 0; margin-top: 113px; margin-bottom: 50px; width: 150px; height: 150px; align-items: center; position: absolute; left: 5%; bottom: 0; top: 10px;">
             <ui:Button display-tooltip-when-elided="true" name="BackButton" class="mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/arrow_thin.png?fileID=21300000&amp;guid=2dcf94bcf0a1c7d408ee04159ffc6199&amp;type=3#arrow_thin&apos;); -unity-background-scale-mode: scale-and-crop; margin-right: 15px; width: 50px; height: 50px;" />
         </ui:VisualElement>
     </ui:VisualElement>

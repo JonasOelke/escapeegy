@@ -5,10 +5,10 @@ using UnityEngine;
 public class ColliderDetection : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] storyItems;
+    private GameObject SpindCodeUI;
 
     [SerializeField]
-    private GameObject colliderObject;
+    private GameObject ColliderObject;
 
     // Kamera
     [SerializeField]
@@ -26,11 +26,7 @@ public class ColliderDetection : MonoBehaviour
     {
         //TODO: Wert muss aus Speicherdatei geholt werden
         active = true;
-        colliderObject.SetActive(true);
-        foreach (GameObject item in storyItems)
-        {
-            item.SetActive(false);
-        }
+        ColliderObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -58,15 +54,10 @@ public class ColliderDetection : MonoBehaviour
                     {
                         if (
                             hitObject.collider.gameObject.name ==
-                            colliderObject.name
+                            ColliderObject.name
                         )
                         {
-                            foreach (GameObject item in storyItems)
-                            {
-                                item.SetActive(true);
-                            }
-                            colliderObject.SetActive(false);
-                            active = false;
+                            SpindCodeUI.SetActive(true);
                         }
                     }
                 }

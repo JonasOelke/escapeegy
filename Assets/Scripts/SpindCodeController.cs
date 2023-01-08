@@ -6,13 +6,17 @@ using UnityEngine.UIElements;
 
 public class SpindCodeController : MonoBehaviour
 {
-    string[] display = { "0", "0", "0", "0" };
+    private string[] display = { "0", "0", "0", "0" };
 
-    int digitPosition = 1;
+    private int digitPosition = 0;
 
-    String joinedString;
+    private String joinedString;
 
-    String solution = "2405";
+    private String solution = "2405";
+
+    public GameObject SpindCodeUI;
+
+    public GameObject SpindCollider;
 
     private Button _0;
 
@@ -35,6 +39,8 @@ public class SpindCodeController : MonoBehaviour
     private Button _9;
 
     private Button _OK;
+
+    private Button _back;
 
     private Label Digits;
 
@@ -59,6 +65,7 @@ public class SpindCodeController : MonoBehaviour
         _9 = root.Q<Button>("9");
         _OK = root.Q<Button>("OK");
         Digits = root.Q<Label>("Digits");
+        _back = root.Q<Button>("BackButton");
 
         _0.clicked += () =>
         {
@@ -66,6 +73,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("0");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _1.clicked += () =>
@@ -74,6 +82,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("1");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _2.clicked += () =>
@@ -82,6 +91,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("2");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _3.clicked += () =>
@@ -90,6 +100,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("3");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _4.clicked += () =>
@@ -98,6 +109,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("4");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _5.clicked += () =>
@@ -106,6 +118,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("5");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _6.clicked += () =>
@@ -114,6 +127,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("6");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _7.clicked += () =>
@@ -122,6 +136,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("7");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _8.clicked += () =>
@@ -130,6 +145,7 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("8");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _9.clicked += () =>
@@ -138,28 +154,33 @@ public class SpindCodeController : MonoBehaviour
             {
                 EnterNumber("9");
                 ConvertDigitArrayToString();
+                digitPosition += 1;
             }
         };
         _OK.clicked += () =>
         {
-            if (CheckDigitPosition())
+            Debug.Log("Input: " + joinedString);
+            Debug.Log("Lösungswort: " + solution);
+            if (joinedString == solution)
             {
-                Debug.Log("Damn you're right");
-                // gameObject1.SetActive(true)
-                // gameObject2.SetActive(true)
-                // View disablen
+                Destroy (SpindCollider);
+                SpindCodeUI.SetActive(false);
             }
             else
             {
-                Debug.Log("Nööööööt wrong code");
                 CodeAufräumen();
             }
+        };
+        _back.clicked += () =>
+        {
+            CodeAufräumen();
+            SpindCodeUI.SetActive(false);
         };
     }
 
     public void EnterNumber(string enteredNumber)
     {
-        if (digitPosition <= 4)
+        if (digitPosition <= 3)
         {
             display[digitPosition] = enteredNumber;
         }
@@ -167,22 +188,22 @@ public class SpindCodeController : MonoBehaviour
 
     public void ConvertDigitArrayToString()
     {
-        joinedString = string.Join(" ", display);
+        joinedString = string.Join("", display);
         Digits.text = joinedString;
     }
 
     public bool CheckDigitPosition()
     {
-        return digitPosition < 5;
+        return digitPosition < 4;
     }
 
     private void CodeAufräumen()
     {
-        digitPosition = 1;
-        joinedString = "0000";
-        for (int i = 0; i < 5; i++)
+        digitPosition = 0;
+        for (int i = 0; i < 4; i++)
         {
             display[i] = "0";
         }
+        ConvertDigitArrayToString();
     }
 }

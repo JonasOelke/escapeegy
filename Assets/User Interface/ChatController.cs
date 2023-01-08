@@ -64,6 +64,29 @@ public class ChatController : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
+       IEnumerator Wait2(Action Callback)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 1 second.
+        yield return new WaitForSeconds(2.1f);
+        Callback();
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
+        IEnumerator Wait3(Action Callback)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 1 second.
+        yield return new WaitForSeconds(0.2f);
+        Callback();
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
+
     private void OnEnable()
     {
         Debug.Log("Enable");
@@ -181,7 +204,14 @@ public class ChatController : MonoBehaviour
             );
             chatMessagesContainer.Add(msg);
         }
+        
 
+       StartCoroutine(Wait3(() => {
+                
+                        
+                        chatMessagesContainer.scrollOffset = new Vector2(0,chatMessagesContainer.contentContainer.layout.max[1]);
+        } ));
+        Debug.Log("Autoscrollen: "+chatMessagesContainer.contentViewport.layout.size[1] );
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
             if (chatResponse.text != "NEE")
@@ -218,9 +248,21 @@ public class ChatController : MonoBehaviour
                 else
                 {
                     StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
+                    
+                    StartCoroutine(Wait2(() => 
+                
+                        
+                        chatMessagesContainer.scrollOffset = new Vector2(0,chatMessagesContainer.contentContainer.layout.max[1])
+                    
+                        
+                ));
                 }
             }
+            
+        
+            
         }
+
 
         if (reLoading)
         {
@@ -230,6 +272,8 @@ public class ChatController : MonoBehaviour
         {
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
         }
+        
+        //chatMessagesContainer.scrollOffset = chatMessagesContainer.contentContainer.layout.max - chatMessagesContainer.contentViewport.layout.size;
     }
 
     void AddMessageToContainerAndSetNextSuggestion(ChatMessage chatMessage)
@@ -242,6 +286,8 @@ public class ChatController : MonoBehaviour
                 AddMessagetoSuggestionsContainer(nextSuggestion);
             }
         }
+        
+           // chatMessagesContainer.scrollOffset = chatMessagesContainer.contentContainer.layout.max - chatMessagesContainer.contentViewport.layout.size;
     }
 
     void AddMessagetoSuggestionsContainer(int id)

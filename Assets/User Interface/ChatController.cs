@@ -272,7 +272,11 @@ public class ChatController : MonoBehaviour
     {
         //TODO: hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
         // FunktionUmEsInGameControl(myObject.state)
+        GameControll myGameController = GameObject.Find("StateControl").GetComponent<GameControll>();
+        Debug.Log("Loading Score, reloading:" + reLoading);
 
+        myGameController.setIndex(myObject.state);
+        
         foreach (ChatMessage sentMessage in myObject.sentMessages)
         {
             AddToChatMessagesContainer(sentMessage, reLoading);

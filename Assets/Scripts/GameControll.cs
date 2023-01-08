@@ -35,7 +35,13 @@ public class GameControll : MonoBehaviour
       "Bildschnipsel2","Bildschnipsel3","Bildschnipsel4","Bildschnipsel5","BettieUndMaggie","Nestbau","WGAbschied","Drogenwerbung", "InteressantesPapier",
       "Lochkarte","LochkarteMerge"};
 
-
+public void setIndex(int index){
+   Debug.Log("Setting indey to:"+index);
+   activeSectionIndex=index;
+   for(int i=0;i<index;i++){
+       SetVisibility(i);
+   }
+}
 
 //Logik: Leichenschein+Verlaufsbericht3 und Spindrätsel als SpecialCases für den Counter, weil's zwei Objekte in der Linearity sind
 public void LinearityCheck(string nameObj){

@@ -10,8 +10,9 @@ public class GameControll : MonoBehaviour
 
 
    [SerializeField] GameObject[] QuestionMarks;
-   [SerializeField] int activeSectionIndex;
    [SerializeField] GameObject[] MiniMapQuestionMarks;
+   
+    [SerializeField] public int activeSectionIndex;
      StoredObject storedObject = DataPersistanceController.LoadData();
     
 

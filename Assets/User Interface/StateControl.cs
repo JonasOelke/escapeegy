@@ -39,9 +39,11 @@ public class StateControl : MonoBehaviour
             }
             else
             {
-                storedObject.collectedObjects.Add (name);
-                //Hier von mygamecontroller den state index bekomnmen und dann mit der steState von storedobject den state setzen.-----------------------------------------------------------------------------
-                myGameController.LinearityCheck(name);
+         
+                myGameController.LinearityCheck(name);       
+                storedObject.collectedObjects.Add(name);
+                //Hier wird myGamecontroller der state index genommen und dann mit der steState von storedobject den state gesetzt
+                storedObject.setState(myGameController.activeSectionIndex);
                 DataPersistanceController.PersistData (storedObject);
          
             }

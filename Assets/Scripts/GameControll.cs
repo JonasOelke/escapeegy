@@ -9,7 +9,7 @@ public class GameControll : MonoBehaviour
  [SerializeField] GameObject[] Findables;
 
 
-   
+   [SerializeField] GameObject[] QuestionMarks;
    [SerializeField] int activeSectionIndex;
      StoredObject storedObject = DataPersistanceController.LoadData();
     

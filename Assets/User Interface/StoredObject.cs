@@ -19,6 +19,7 @@ public class StoredObject
         collectedObjects.Add("Bildschnipsel4");
         collectedObjects.Add("Lochkarte");
         collectedObjects.Add("ElliesBrief1");
+        collectedObjects.Add("BriefVerschluesselt");
 
         this.collectedObjects = collectedObjects;
     }

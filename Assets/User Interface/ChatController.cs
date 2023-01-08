@@ -174,12 +174,12 @@ public class ChatController : MonoBehaviour
                     VisualElement response = new VisualElement();
                     response.AddToClassList("chatMessageLeft");
                     response.AddToClassList("chatMessagePhoto");
-                    response.style.backgroundImage = new StyleBackground(chatMessage.photo);
+                    response.style.backgroundImage = new StyleBackground(chatResponse.photo);
 
                     // get the image aspect ratio, and set the height based on the actual width of the container
                     response.style.height = (float)(
-                        chatMessage.photo.rect.height
-                        / chatMessage.photo.rect.width
+                        chatResponse.photo.rect.height
+                        / chatResponse.photo.rect.width
                         * Screen.width
                         * 0.8
                     );

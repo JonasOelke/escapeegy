@@ -24,6 +24,7 @@ public class InventoryItemToMessageIdMap
         { "BettieUndMaggie", 58 },
         { "Nestbau", 57 },
         { "DrogenWerbung", 59 },
+        { "BriefVerschluesselt", 44 }
         //Wenn ein Asset gesendet wurde, das nicht in dieser Liste ist, soll es als nachricht 62 gesendet werden
     };
 }

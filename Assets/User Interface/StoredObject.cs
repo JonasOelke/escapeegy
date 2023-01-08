@@ -18,6 +18,7 @@ public class StoredObject
         collectedObjects.Add("Bildschnipsel3");
         collectedObjects.Add("Bildschnipsel4");
         collectedObjects.Add("Lochkarte");
+         collectedObjects.Add("InteressantesPapier");
         collectedObjects.Add("ElliesBrief1");
         collectedObjects.Add("BriefVerschluesselt");
 

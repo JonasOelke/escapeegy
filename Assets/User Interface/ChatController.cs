@@ -276,7 +276,7 @@ public class ChatController : MonoBehaviour
         Debug.Log("Loading Score, reloading:" + reLoading);
 
         myGameController.setIndex(myObject.state);
-        
+
         foreach (ChatMessage sentMessage in myObject.sentMessages)
         {
             AddToChatMessagesContainer(sentMessage, reLoading);

@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class ChatResponse
 {
-    public string photo;
+    public Sprite photo;
     public string text;
 
-    GameObject GetMessage()
-    {
-        return null;
-    }
-
-    public ChatResponse(string text, string photo)
+    public ChatResponse(string text, string test, Sprite photo = null)
     {
         this.text = text;
         this.photo = photo;
+    }
+
+    public ChatResponse(ChatResponseSerializable chatResponseSerializable)
+    {
+        text = chatResponseSerializable.text;
+        photo = Resources.Load<Sprite>("InventoryPictures/" + chatResponseSerializable.photo);
     }
 }

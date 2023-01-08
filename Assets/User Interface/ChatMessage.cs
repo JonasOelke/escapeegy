@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -39,12 +40,28 @@ public class ChatMessage
         text = chatMessageSerializable.text;
         summary = chatMessageSerializable.summary;
         responses = new ChatResponse[chatMessageSerializable.responses.Length];
+
         for (int i = 0; i < chatMessageSerializable.responses.Length; i++)
         {
-            responses[i] = new ChatResponse(
-                chatMessageSerializable.responses[i].text,
-                chatMessageSerializable.responses[i].photo
-            );
+            responses[i] = new ChatResponse(chatMessageSerializable.responses[i]);
+        }
+
+        if (!chatMessageSerializable.photo.Equals(""))
+        {
+            try
+            {
+                Sprite sprite = Resources.Load<Sprite>(
+                    "InventoryPictures/" + chatMessageSerializable.photo
+                );
+                photo = sprite;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(
+                    e + "\n this probably means, that there is no photo defined for this message"
+                );
+                photo = null;
+            }
         }
     }
 }

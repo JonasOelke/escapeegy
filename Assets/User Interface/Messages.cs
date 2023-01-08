@@ -516,7 +516,9 @@ public class Messages : MonoBehaviour
             "Ich glaube, ich habe noch ein Buch darüber. Gib mir einen Moment",
             ""
         );
-        ChatResponse message47Response2 = new ChatResponse("", "decryptedLetter");
+        ChatResponse message47Response2 = new ChatResponse("", "decryptedLetter",
+            Resources.Load<Sprite>("InventoryPictures/BriefEntschluesselt"));
+
         ChatResponse message47Response3 = new ChatResponse(
             "Das ist 2 tage vor ihrem Todestag!!",
             ""

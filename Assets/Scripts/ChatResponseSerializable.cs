@@ -10,7 +10,7 @@ public class ChatResponseSerializable
 
     public ChatResponseSerializable(ChatResponse chatResponse)
     {
-        photo = chatResponse.photo;
+        photo = chatResponse.photo ? chatResponse.photo.name : "";
         text = chatResponse.text;
     }
 }

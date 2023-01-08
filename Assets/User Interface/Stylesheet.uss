@@ -349,11 +349,11 @@
     margin-top: -15px;
 }
 
-.chatMessageRightPhoto {
-    border-left-color: rgba(219, 190, 154, 255);
-    border-right-color: rgba(219, 190, 154, 255);
-    border-top-color: rgba(219, 190, 154, 255);
-    border-bottom-color: rgba(219, 190, 154, 255);
+.chatMessagePhoto {
+    border-left-color: rgb(219, 190, 154);
+    border-right-color: rgb(219, 190, 154);
+    border-top-color: rgb(219, 190, 154);
+    border-bottom-color: rgb(219, 190, 154);
     border-left-width: 22px;
     border-right-width: 22px;
     border-top-width: 22px;

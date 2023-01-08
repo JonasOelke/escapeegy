@@ -9,9 +9,13 @@ public class LochkartenRaetselController : MonoBehaviour
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        
+        Button backButton = root.Q<Button>("BackButton");
         Slider lochkarteSlider = root.Q<Slider>("LochkarteSlider");
         VisualElement lochkarte = root.Q<VisualElement>("Lochkarte");
+         backButton.clicked += () =>
+        {
+            gameObject.SetActive(false);
+        };
         lochkarteSlider.RegisterValueChangedCallback(
             (e) =>
             {

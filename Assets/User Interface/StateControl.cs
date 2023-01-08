@@ -22,6 +22,8 @@ public class StateControl : MonoBehaviour
         }
     }
 
+
+
     public static void SaveFoundObject(string name)
     {
         GameControll myGameController = new GameControll();

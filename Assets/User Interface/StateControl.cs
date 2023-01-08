@@ -26,7 +26,7 @@ public class StateControl : MonoBehaviour
 
     public static void SaveFoundObject(string name)
     {
-        GameControll myGameController = new GameControll();
+        GameControll myGameController = GameObject.Find("StateControl").GetComponent<GameControll>();
 
         GameObject foundObject = GameObject.Find(name);
         foundObject.SetActive(false);
@@ -36,6 +36,9 @@ public class StateControl : MonoBehaviour
             if (storedObject.collectedObjects.Contains(name))
             {
                 Debug.Log(name + " already exists");
+                //Sorgt bei re-öffnen der app daür, dass die gespeicherten objekte in den den State des GameControll übernommen werden
+                  myGameController.LinearityCheck(name); 
+
             }
             else
             {

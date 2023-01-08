@@ -118,6 +118,27 @@ public class ChatController : MonoBehaviour
         children.ForEach(child => messageSuggestionsContainer.Remove(child));
     }
 
+
+    //Funktion um den Chat an gefundene Objekte anzupassen
+    public void ChatToStoryLogic(string name){
+        if (name=="MaggiesTagebucheintrag1"){
+            addMessagetoSuggestionsContainer(5);
+        }
+        else if (name=="MaggiesTagebucheintrag2"){
+            addMessagetoSuggestionsContainer(13);
+        }
+        else if (name=="Verlaufsbericht"){
+            addMessagetoSuggestionsContainer(31);
+        }
+        else if (name=="MaggiesTagebucheintrag4"){
+            addMessagetoSuggestionsContainer(47);
+        }
+        else if (name=="universalHelp"){
+            addMessagetoSuggestionsContainer(63);
+        }
+    }
+
+
     public void AddToChatMessagesContainer(ChatMessage chatMessage, bool reLoading)
     {
         //Storing stuff
@@ -232,7 +253,7 @@ public class ChatController : MonoBehaviour
         }
     }
 
-    void addMessagetoSuggestionsContainer(int id)
+   void  addMessagetoSuggestionsContainer(int id)
     {
         Debug.Log("addMessagetoSuggestionsContainer");
         // Searches for new suggestion with noted ID

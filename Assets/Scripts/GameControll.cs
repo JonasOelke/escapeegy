@@ -66,47 +66,55 @@ public void LinearityCheck(string nameObj){
 //sets the Visibility of linear GameObjects
 //Lochkarte + Spindrätsel müssen noch auftauchen als Bedingung -> Lochkarte gelöst, dann erst Next. Und Spindrätse
 public void SetVisibility(int activeSectionIndex){
-
+   ChatController chatController = GameObject.Find("ChatUI").GetComponent<ChatController>();
       var collectedObjects = storedObject.collectedObjects;
 
    switch(activeSectionIndex){
       case 0:
-         Findables[0].SetActive(true);
+         Findables[0].SetActive(true); //MaggieTb1
+         chatController.ChatToStoryLogic("MaggiesTagebucheintrag1");
       break;
       case 1: 
-         Findables[1].SetActive(true);
+         Findables[1].SetActive(true); //MaggieTb2
+         chatController.ChatToStoryLogic("MaggiesTagebucheintrag2");
       break;
       case 2: 
-         Findables[2].SetActive(true);
+         Findables[2].SetActive(true); //ElliesBrief1
       break;
        case 3: 
-         Findables[3].SetActive(true);
+         Findables[3].SetActive(true); //MaggiesTb3
          break;
       case 4:
-         Findables[4].SetActive(true);
-         Findables[5].SetActive(true);
+         Findables[4].SetActive(true); //Aufnahmebericht
+         Findables[5].SetActive(true); //Verlaufsbericht1
+         chatController.ChatToStoryLogic("Verlaufsbericht");
       break;
         case 5: 
-          Debug.Log("I'm flying 5");
+          Debug.Log("I'm flying 5"); 
          break;
       case 6: 
          Findables[6].SetActive(true); //MaggieTB4
+         chatController.ChatToStoryLogic("MaggiesTagebucheintrag4");
          Findables[7].SetActive(true); //ElliesBrief2
          break;
       case 7:
         Debug.Log("I'm flying 7");
+        chatController.ChatToStoryLogic("universalHelp");
          break;
       case 8: 
        if(  collectedObjects.Contains("LieselottesTagebucheintrag3")){
          Findables[8].SetActive(true); //Verlaufsbericht2
+         chatController.ChatToStoryLogic("universalHelp");
            };  
          break;
       case 9: 
-        Findables[9].SetActive(true); //MaggiesBrief
+        Findables[9].SetActive(true); //Fragezeichen
+        chatController.ChatToStoryLogic("universalHelp");
          break;
          case 10:
-         Findables[10].SetActive(true);
-         Findables[11].SetActive(true);
+         Findables[10].SetActive(true); //Verlaufsbericht3
+         chatController.ChatToStoryLogic("universalHelp");
+         Findables[11].SetActive(true); //Leichenschein
          break;
    }
 }

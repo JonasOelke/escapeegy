@@ -1217,7 +1217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 119910242}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MiniMapQuestionmarks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,7 +2189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237161623}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QVerlaufsbericht2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2481,7 +2481,7 @@ GameObject:
   - component: {fileID: 291498408}
   - component: {fileID: 291498410}
   - component: {fileID: 291498409}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,7 +3432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358426082}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QMaggiesTagebucheintrag3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3466,7 +3466,7 @@ GameObject:
   - component: {fileID: 385254101}
   - component: {fileID: 385254103}
   - component: {fileID: 385254102}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5571,7 +5571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594647807}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MiniMapQuestionmarks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7459,7 +7459,7 @@ GameObject:
   - component: {fileID: 770340753}
   - component: {fileID: 770340755}
   - component: {fileID: 770340754}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7923,7 +7923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788476458}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QElliesBrief2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8639,7 +8639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858949344}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QMaggiesTagebucheintrag1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9063,7 +9063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887470028}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MiniMapQuestionmarks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9439,7 +9439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 974910753}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QVerlaufsbericht1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9689,7 +9689,7 @@ GameObject:
   - component: {fileID: 1010378215}
   - component: {fileID: 1010378217}
   - component: {fileID: 1010378216}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10323,7 +10323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1077371437}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QFragezeichen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10357,7 +10357,7 @@ GameObject:
   - component: {fileID: 1090500524}
   - component: {fileID: 1090500526}
   - component: {fileID: 1090500525}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10438,7 +10438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116906619}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QMaggiesTagebucheintrag2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11019,7 +11019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1213048394}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QMaggiesTagebucheintrag4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12557,7 +12557,7 @@ GameObject:
   - component: {fileID: 1436687540}
   - component: {fileID: 1436687542}
   - component: {fileID: 1436687541}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12851,7 +12851,7 @@ GameObject:
   - component: {fileID: 1481536561}
   - component: {fileID: 1481536563}
   - component: {fileID: 1481536562}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13117,7 +13117,7 @@ GameObject:
   - component: {fileID: 1536963590}
   - component: {fileID: 1536963592}
   - component: {fileID: 1536963591}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14627,7 +14627,7 @@ GameObject:
   - component: {fileID: 1669321139}
   - component: {fileID: 1669321141}
   - component: {fileID: 1669321140}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16045,7 +16045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1838621941}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QElliesBrief1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16176,7 +16176,7 @@ GameObject:
   - component: {fileID: 1845039887}
   - component: {fileID: 1845039889}
   - component: {fileID: 1845039888}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16972,7 +16972,7 @@ GameObject:
   - component: {fileID: 1879731254}
   - component: {fileID: 1879731256}
   - component: {fileID: 1879731255}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18168,7 +18168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056039888}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QAufnahmebericht
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18966,7 +18966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126950098}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QVerlaufsbericht3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19268,7 +19268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2146238829}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: EG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19343,7 +19343,7 @@ GameObject:
   - component: {fileID: 2090396611005693828}
   - component: {fileID: 2741831001622258308}
   - component: {fileID: 3829566581993686129}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19417,7 +19417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3762683135940158434}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: QLeichenschein
   m_TagString: Untagged
   m_Icon: {fileID: 0}

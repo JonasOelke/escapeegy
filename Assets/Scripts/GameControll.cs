@@ -11,6 +11,7 @@ public class GameControll : MonoBehaviour
 
    [SerializeField] GameObject[] QuestionMarks;
    [SerializeField] int activeSectionIndex;
+   [SerializeField] GameObject[] MiniMapQuestionMarks;
      StoredObject storedObject = DataPersistanceController.LoadData();
     
 
@@ -22,7 +23,6 @@ public class GameControll : MonoBehaviour
     "Verlaufsbericht1", "MaggiesTagebucheintrag4", "ElliesBrief2",  "Verlaufsbericht2", "Fragezeichen", "Verlaufsbericht3", 
     "Leichenschein"
 
-  
  };
   
 

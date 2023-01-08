@@ -121,9 +121,7 @@ public class GameControll : MonoBehaviour
         switch (activeSectionIndex)
         {
             case 0:
-                QuestionMarks[0].SetActive(false);
-
-                Findables[0].SetActive(true); //MaggieTb1
+            
                 chatController.ChatToStoryLogic("MaggiesTagebucheintrag1");
                 break;
             case 1:

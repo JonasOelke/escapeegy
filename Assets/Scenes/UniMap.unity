@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpindCodeUI: {fileID: 242712738}
-  SpindCollider: {fileID: 0}
+  SpindCollider: {fileID: 509174574}
 --- !u!114 &242712741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3582,7 +3582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388525029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4759,7 +4759,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0519b6cb9f05e4197998e8186ae9ae63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4797,7 +4797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509174574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.812, y: -0.017, z: -9.803}
+  m_LocalPosition: {x: -34.522, y: 0.776, z: -7.126}
   m_LocalScale: {x: 1, y: 1.5, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8263,7 +8263,7 @@ PositionConstraint:
   m_GameObject: {fileID: 800680400}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0, y: 1.6, z: 0}
   m_TranslationOffset: {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 0
@@ -8281,7 +8281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800680400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8679,7 +8679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &859394196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9480,7 +9480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &996363284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10070,7 +10070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1054820607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12199,7 +12199,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1396729987}
-  - component: {fileID: 1396729989}
   - component: {fileID: 1396729988}
   m_Layer: 0
   m_Name: "R\xE4tselManager"
@@ -12235,26 +12234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef3f69cc5d934c3193d3a9503c66ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyItems: []
-  colliderObject: {fileID: 0}
-  arCamera: {fileID: 0}
-  active: 0
---- !u!114 &1396729989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396729985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef3f69cc5d934c3193d3a9503c66ad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storyItems: []
-  colliderObject: {fileID: 0}
-  arCamera: {fileID: 0}
-  active: 0
+  SpindCodeUI: {fileID: 242712738}
+  ColliderObject: {fileID: 509174574}
+  arCamera: {fileID: 22732920}
+  active: 1
 --- !u!1 &1405743034
 GameObject:
   m_ObjectHideFlags: 0
@@ -13390,7 +13373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1542897643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19319,7 +19302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6672308126474732643}
   m_LocalRotation: {x: 0.00047163363, y: 0.7303856, z: 0.0005043292, w: 0.68303484}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

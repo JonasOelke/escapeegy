@@ -30159,42 +30159,6 @@ IL_0007:
 		return L_1;
 	}
 }
-// System.DateTime System.Convert::ToDateTime(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D Convert_ToDateTime_mE15C6E51579A9876015F9E295D5025B80BE73726 (String_t* ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		String_t* L_0 = ___value0;
-		if (L_0)
-		{
-			goto IL_000b;
-		}
-	}
-	{
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_1;
-		memset((&L_1), 0, sizeof(L_1));
-		DateTime__ctor_m64AFCE84ABB24698256EB9F635EFD0A221823441((&L_1), ((int64_t)0), /*hidden argument*/NULL);
-		return L_1;
-	}
-
-IL_000b:
-	{
-		String_t* L_2 = ___value0;
-		il2cpp_codegen_runtime_class_init_inline(CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
-		CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_3;
-		L_3 = CultureInfo_get_CurrentCulture_m8A4580F49DDD7E9DB34C699965423DB8E3BBA9A5(NULL);
-		il2cpp_codegen_runtime_class_init_inline(DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_il2cpp_TypeInfo_var);
-		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_4;
-		L_4 = DateTime_Parse_mC5B13ABDD2A2A2AC709D961EE959BBE26DB241AC(L_2, L_3, NULL);
-		return L_4;
-	}
-}
 // System.DateTime System.Convert::ToDateTime(System.String,System.IFormatProvider)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D Convert_ToDateTime_mA5FF0ECBE84ECB78B337E4E101423CC9AA95C8C3 (String_t* ___value0, RuntimeObject* ___provider1, const RuntimeMethod* method) 
 {

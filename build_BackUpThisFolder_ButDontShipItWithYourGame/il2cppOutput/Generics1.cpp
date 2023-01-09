@@ -284,16 +284,12 @@ struct Action_1_t10DCB0C07D0D3C565CEACADC80D1152B35A45F6C;
 struct Action_1_t676944A4ACFDAFCEF0AD8BE9C1AC84FAFD115094;
 // System.Action`1<System.Char>
 struct Action_1_tC95790E55CF4D5C803FAD201917F7CB367351E3F;
-// System.Action`1<Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory>
-struct Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9;
 // System.Action`1<UnityEngine.Color32>
 struct Action_1_tA0F10A9285403FFE399C24B340DC3300881DE735;
 // System.Action`1<UnityEngine.UIElements.ComputedTransitionProperty>
 struct Action_1_t24480214D72F0AC177421B2545F4FE4C9AED1370;
 // System.Action`1<UnityEngine.UIElements.EasingFunction>
 struct Action_1_t3E204FA623329DFBFF10BB7E8E724E7921C2DB19;
-// System.Action`1<Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory>
-struct Action_1_tD989697D842A2E8364B20B881A5A785E1710402C;
 // System.Action`1<UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord>
 struct Action_1_t3BF302B6415E5D57439BB7D0DC24EE7F49A5E269;
 // System.Action`1<UnityEngine.TextCore.GlyphRect>
@@ -2116,31 +2112,6 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___s_categoryForLatin1_3;
 };
 
-// Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory
-struct CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 
-{
-	// System.String Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory::Name
-	String_t* ___Name_0;
-	// System.String Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory::Id
-	String_t* ___Id_1;
-	// System.String Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory::SerializedTime
-	String_t* ___SerializedTime_2;
-};
-// Native definition for P/Invoke marshalling of Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory
-struct CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320_marshaled_pinvoke
-{
-	char* ___Name_0;
-	char* ___Id_1;
-	char* ___SerializedTime_2;
-};
-// Native definition for COM marshalling of Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory
-struct CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320_marshaled_com
-{
-	Il2CppChar* ___Name_0;
-	Il2CppChar* ___Id_1;
-	Il2CppChar* ___SerializedTime_2;
-};
-
 // UnityEngine.Color
 struct Color_tD001788D726C3A7F1379BEED0260B9591F440C1F 
 {
@@ -2325,39 +2296,6 @@ struct FontDefinition_t65281B0E106365C28AD3F2525DE148719AEEA30C_marshaled_com
 {
 	Font_tC95270EA3198038970422D78B74A7F2E218A96B6* ___m_Font_0;
 	FontAsset_t61A6446D934E582651044E33D250EA8D306AB958* ___m_FontAsset_1;
-};
-
-// Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory
-struct GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C 
-{
-	// System.String Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory::SerializedTime
-	String_t* ___SerializedTime_0;
-	// System.Double Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory::Latitude
-	double ___Latitude_1;
-	// System.Double Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory::Longitude
-	double ___Longitude_2;
-	// System.Double Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory::Altitude
-	double ___Altitude_3;
-	// System.Double Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory::Heading
-	double ___Heading_4;
-};
-// Native definition for P/Invoke marshalling of Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory
-struct GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C_marshaled_pinvoke
-{
-	char* ___SerializedTime_0;
-	double ___Latitude_1;
-	double ___Longitude_2;
-	double ___Altitude_3;
-	double ___Heading_4;
-};
-// Native definition for COM marshalling of Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory
-struct GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C_marshaled_com
-{
-	Il2CppChar* ___SerializedTime_0;
-	double ___Latitude_1;
-	double ___Longitude_2;
-	double ___Altitude_3;
-	double ___Heading_4;
 };
 
 // UnityEngine.TextCore.GlyphRect
@@ -5736,11 +5674,6 @@ struct Action_1_tC95790E55CF4D5C803FAD201917F7CB367351E3F  : public MulticastDel
 {
 };
 
-// System.Action`1<Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory>
-struct Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9  : public MulticastDelegate_t
-{
-};
-
 // System.Action`1<UnityEngine.Color32>
 struct Action_1_tA0F10A9285403FFE399C24B340DC3300881DE735  : public MulticastDelegate_t
 {
@@ -5753,11 +5686,6 @@ struct Action_1_t24480214D72F0AC177421B2545F4FE4C9AED1370  : public MulticastDel
 
 // System.Action`1<UnityEngine.UIElements.EasingFunction>
 struct Action_1_t3E204FA623329DFBFF10BB7E8E724E7921C2DB19  : public MulticastDelegate_t
-{
-};
-
-// System.Action`1<Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory>
-struct Action_1_tD989697D842A2E8364B20B881A5A785E1710402C  : public MulticastDelegate_t
 {
 };
 
@@ -10360,84 +10288,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1_Invoke_m2D463A02A40BD8F16A42B9E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_Multicast(Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method)
-{
-	il2cpp_array_size_t length = __this->___delegates_13->max_length;
-	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
-	for (il2cpp_array_size_t i = 0; i < length; i++)
-	{
-		Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* currentDelegate = reinterpret_cast<Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9*>(delegatesToInvoke[i]);
-		typedef void (*FunctionPointerType) (RuntimeObject*, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320, const RuntimeMethod*);
-		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
-	}
-}
-void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_OpenInst(Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method)
-{
-	typedef void (*FunctionPointerType) (CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320, const RuntimeMethod*);
-	((FunctionPointerType)__this->___method_ptr_0)(___obj0, method);
-}
-void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_OpenStatic(Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method)
-{
-	typedef void (*FunctionPointerType) (CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320, const RuntimeMethod*);
-	((FunctionPointerType)__this->___method_ptr_0)(___obj0, method);
-}
-void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_OpenStaticInvoker(Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 >::Invoke(__this->___method_ptr_0, method, NULL, ___obj0);
-}
-void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_ClosedStaticInvoker(Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___obj0);
-}
-// System.Void System.Action`1<Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m08541DDD8B26C4ECFD2662E3B06F94E50EAABFA6_gshared (Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
-{
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
-	__this->___method_3 = ___method1;
-	__this->___m_target_2 = ___object0;
-	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
-	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
-	__this->___method_code_6 = (intptr_t)__this;
-	if (MethodIsStatic((RuntimeMethod*)___method1))
-	{
-		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_ClosedStaticInvoker;
-		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
-	}
-	else
-	{
-		if (___object0 == NULL)
-			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
-		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-	}
-	__this->___extra_arg_5 = (intptr_t)&Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_Multicast;
-}
-// System.Void System.Action`1<Google.XR.ARCoreExtensions.Samples.PersistentCloudAnchors.CloudAnchorHistory>::Invoke(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1_Invoke_m50C7542CB4C9B83646AAD0C8A0A2441FEFFBE2E5_gshared (Action_1_tEB224A9DE193FEA8128CA9B0D45B00C3C2559FE9* __this, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320 ___obj0, const RuntimeMethod* method) 
-{
-	typedef void (*FunctionPointerType) (RuntimeObject*, CloudAnchorHistory_tA21D6D9AC5D05A1B4F6712889E0DC05DAD01C320, const RuntimeMethod*);
-	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
 void Action_1_Invoke_m85DAE826CA357D0983BCC4F60DC807727254AC42_Multicast(Action_1_tA0F10A9285403FFE399C24B340DC3300881DE735* __this, Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B ___obj0, const RuntimeMethod* method)
 {
 	il2cpp_array_size_t length = __this->___delegates_13->max_length;
@@ -10662,84 +10512,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m0D2CD2B8FE6DEED0E616C97A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1_Invoke_mF5590B0B43248C9BF52F3C719329C89A512E5EDB_gshared (Action_1_t3E204FA623329DFBFF10BB7E8E724E7921C2DB19* __this, EasingFunction_t5197D3B06056326A8B5C96032CDEBD5D3BDCA7A4 ___obj0, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, EasingFunction_t5197D3B06056326A8B5C96032CDEBD5D3BDCA7A4, const RuntimeMethod*);
-	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_Multicast(Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method)
-{
-	il2cpp_array_size_t length = __this->___delegates_13->max_length;
-	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
-	for (il2cpp_array_size_t i = 0; i < length; i++)
-	{
-		Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* currentDelegate = reinterpret_cast<Action_1_tD989697D842A2E8364B20B881A5A785E1710402C*>(delegatesToInvoke[i]);
-		typedef void (*FunctionPointerType) (RuntimeObject*, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C, const RuntimeMethod*);
-		((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
-	}
-}
-void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_OpenInst(Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method)
-{
-	typedef void (*FunctionPointerType) (GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C, const RuntimeMethod*);
-	((FunctionPointerType)__this->___method_ptr_0)(___obj0, method);
-}
-void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_OpenStatic(Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method)
-{
-	typedef void (*FunctionPointerType) (GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C, const RuntimeMethod*);
-	((FunctionPointerType)__this->___method_ptr_0)(___obj0, method);
-}
-void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_OpenStaticInvoker(Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker1< GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C >::Invoke(__this->___method_ptr_0, method, NULL, ___obj0);
-}
-void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_ClosedStaticInvoker(Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method)
-{
-	InvokerActionInvoker2< RuntimeObject*, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C >::Invoke(__this->___method_ptr_0, method, NULL, __this->___m_target_2, ___obj0);
-}
-// System.Void System.Action`1<Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory>::.ctor(System.Object,System.IntPtr)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1__ctor_m35CDCC19223B36F668B5865B2CA6EC0984E79C7F_gshared (Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, RuntimeObject* ___object0, intptr_t ___method1, const RuntimeMethod* method) 
-{
-	__this->___method_ptr_0 = il2cpp_codegen_get_virtual_call_method_pointer((RuntimeMethod*)___method1);
-	__this->___method_3 = ___method1;
-	__this->___m_target_2 = ___object0;
-	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___object0);
-	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___method1);
-	__this->___method_code_6 = (intptr_t)__this;
-	if (MethodIsStatic((RuntimeMethod*)___method1))
-	{
-		bool isOpen = parameterCount == 1;
-		if (il2cpp_codegen_call_method_via_invoker((RuntimeMethod*)___method1))
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_OpenStaticInvoker;
-			else
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_ClosedStaticInvoker;
-		else
-			if (isOpen)
-				__this->___invoke_impl_1 = (intptr_t)&Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_OpenStatic;
-			else
-				{
-					__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-					__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-				}
-	}
-	else
-	{
-		if (___object0 == NULL)
-			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
-		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
-		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
-	}
-	__this->___extra_arg_5 = (intptr_t)&Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_Multicast;
-}
-// System.Void System.Action`1<Google.XR.ARCoreExtensions.Samples.Geospatial.GeospatialAnchorHistory>::Invoke(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Action_1_Invoke_m1593C365BE680A3D21DD5A6D35B3EC5C9C8C6168_gshared (Action_1_tD989697D842A2E8364B20B881A5A785E1710402C* __this, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C ___obj0, const RuntimeMethod* method) 
-{
-	typedef void (*FunctionPointerType) (RuntimeObject*, GeospatialAnchorHistory_t6908A396462F1450B5999D2948632194CD812A5C, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___obj0, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 #ifdef __clang__

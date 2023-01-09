@@ -18,6 +18,10 @@ public class SpindCodeController : MonoBehaviour
 
     public GameObject SpindCollider;
 
+    public GameObject gameObject1;
+
+    public GameObject gameObject2;
+
     private Button _0;
 
     private Button _1;
@@ -164,6 +168,8 @@ public class SpindCodeController : MonoBehaviour
             if (joinedString == solution)
             {
                 Destroy (SpindCollider);
+                gameObject1.SetActive(true);
+                gameObject2.SetActive(true);
                 SpindCodeUI.SetActive(false);
             }
             else

@@ -22,6 +22,7 @@ public class QRCodeRecenter : MonoBehaviour
 
     private Texture2D cameraImageTexture;
     private IBarcodeReader reader = new BarcodeReader();
+    public bool scanningEnabled = false;
 
     // Update is called once per frame
     private void Update()
@@ -45,6 +46,11 @@ public class QRCodeRecenter : MonoBehaviour
 
     private void OnCameraFrameReceived(ARCameraFrameEventArgs eventArgs)
     {
+        if (!scanningEnabled)
+        {
+            return;
+        }
+
         if (!cameraManager.TryAcquireLatestCpuImage(out XRCpuImage image))
         {
             return;
@@ -103,6 +109,7 @@ public class QRCodeRecenter : MonoBehaviour
         if (result != null)
         {
             SetQrCodeRecenterTarget(result.Text);
+            ToggleScanning();
         }
     }
 
@@ -122,8 +129,8 @@ public class QRCodeRecenter : MonoBehaviour
         }
     }
 
-    public void ChangeActiveFloor(string floorEntrance)
+    public void ToggleScanning()
     {
-        SetQrCodeRecenterTarget(floorEntrance);
+        //GameObject.Find("MainMenuUI").GetComponent<MainMenuController>().SetQrCodeButtonAction( () = { scanningEnabled = !scanningEnabled });
     }
 }

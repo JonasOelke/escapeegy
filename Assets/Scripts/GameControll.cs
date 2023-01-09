@@ -148,11 +148,11 @@ public class GameControll : MonoBehaviour
                 Debug.Log("I'm flying 5");
                 break;
             case 6:
-                QuestionMarks[6].SetActive(false);
-                QuestionMarks[7].SetActive(false);
-                Findables[6].SetActive(true); //MaggieTB4
+                //Spindrätsel
+                //TODO: Löschen Questionmarks für 6/7
+               
                 chatController.ChatToStoryLogic("MaggiesTagebucheintrag4");
-                Findables[7].SetActive(true); //ElliesBrief2
+              
                 break;
             case 7:
                 Debug.Log("I'm flying 7");

@@ -11,36 +11,56 @@ public class MainMenuController : MonoBehaviour
     private Button _chatButton;
     VisualElement root;
     public GameObject minimapCanvas;
-    
+    public GameObject qrCodeOverlayUI;
 
-
-    public void SetDisplayCollectedButton(bool onOrOff){
-       VisualElement button = root.Q<VisualElement>("CollectButtonContainer");
-       button.style.display= onOrOff? DisplayStyle.Flex : DisplayStyle.None;
+    public void SetDisplayCollectedButton(bool onOrOff)
+    {
+        VisualElement button = root.Q<VisualElement>("CollectButtonContainer");
+        button.style.display = onOrOff ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
-    public void SetCollectedButtonAction(Action action) {
+    public void SetCollectedButtonAction(Action action)
+    {
         Button button = root.Q<Button>("CollectButton");
         button.clicked += action;
-        button.clicked+=()=>{SetDisplayCollectedButton(false); 
+        button.clicked += () =>
+        {
+            SetDisplayCollectedButton(false);
         };
-       
     }
 
-     public void SetResetButtonAction() {
+    public void SetResetButtonAction()
+    {
         Button button2 = root.Q<Button>("ResetButton");
-        button2.clicked+=()=>{DataPersistanceController.DeleteData();};
+        button2.clicked += () =>
+        {
+            DataPersistanceController.DeleteData();
+        };
+    }
+
+    public void SetQrCodeButtonAction(Action action)
+    {
+        Button button = root.Q<Button>("QrCodeButton");
+        button.clicked += action;
+    }
+
+    public void SetQrCodeOverlay(bool value)
+    {
+        qrCodeOverlayUI.SetActive(value);
     }
 
     private void OnEnable()
     {
-         root = GetComponent<UIDocument>().rootVisualElement;
+        root = GetComponent<UIDocument>().rootVisualElement;
         Button resetButton = root.Q<Button>("ResetButton");
         Button inventoryButton = root.Q<Button>("InventoryButton");
         Button chatButton = root.Q<Button>("ChatButton");
         Button floorButton = root.Q<Button>("FloorButton");
         Button mapButton = root.Q<Button>("MapButton");
-        
+
+        Button qrCodeButton = root.Q<Button>("QrCodeButton");
+        qrCodeButton.clicked += () => SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
+
         VisualElement floorMenu = root.Q<VisualElement>("FloorMenu");
         floorMenu.style.display = DisplayStyle.None;
 
@@ -58,8 +78,9 @@ public class MainMenuController : MonoBehaviour
         {
             UIController.OpenChat();
         };
-        
-        resetButton.clicked+=()=>{
+
+        resetButton.clicked += () =>
+        {
             DataPersistanceController.DeleteData();
         };
 

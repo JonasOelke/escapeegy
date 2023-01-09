@@ -13,6 +13,7 @@ public class StoredObject
 
     public StoredObject(List<string> collectedObjects)
     {
+        
         collectedObjects.Add("Bildschnipsel1");
         collectedObjects.Add("Bildschnipsel2");
         collectedObjects.Add("Bildschnipsel3");

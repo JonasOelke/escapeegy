@@ -95,7 +95,7 @@ public class ChatController : MonoBehaviour
         chatMessagesContainer = root.Q<ScrollView>("ChatMessagesContainer");
         messageSuggestionsContainer = root.Q<VisualElement>("MessageSuggestionsContainer");
         var backButton = root.Q<Button>("BackButton");
-        AddMessagetoSuggestionsContainer(51);
+        //AddMessagetoSuggestionsContainer(51);
         //Sektion für stored Object bei Start
         try
         {
@@ -195,10 +195,10 @@ public class ChatController : MonoBehaviour
                   StartCoroutine(
                     Wait(() =>
                     {
-                    Debug.Log("Navigation to Outro");
+                    Debug.Log("Navigation to Outro ID: "+chatMessage.id);
                     SceneManager.LoadScene("Outro");
                      })
-        );
+                    );
             }
         }
         else if (chatMessage.photo)

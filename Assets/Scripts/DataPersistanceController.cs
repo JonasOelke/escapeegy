@@ -34,7 +34,7 @@ public class DataPersistanceController : MonoBehaviour
 
     static StoredObjectSerializable LoadFromFile()
     {
-        string data = FileManager.LoadFromFile("escepeegy.json");
+        string data = FileManager.LoadFromFile("escepeegy2.json");
         StoredObjectSerializable storedObjectSerializable =
             data != ""
                 ? JsonUtility.FromJson<StoredObjectSerializable>(data)
@@ -45,7 +45,7 @@ public class DataPersistanceController : MonoBehaviour
 
     public static void DeleteData()
     {
-        FileManager.DeleteFile("escepeegy.json");
+        FileManager.DeleteFile("escepeegy2.json");
         SceneManager.LoadScene("UniMap");
     }
 
@@ -55,6 +55,6 @@ public class DataPersistanceController : MonoBehaviour
             storedObject
         );
         Debug.Log(ToJson(storedObjectSerializable));
-        return FileManager.WriteToFile("escepeegy.json", ToJson(storedObjectSerializable));
+        return FileManager.WriteToFile("escepeegy2.json", ToJson(storedObjectSerializable));
     }
 }

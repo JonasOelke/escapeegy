@@ -6567,6 +6567,8 @@ MonoBehaviour:
   qrCodeTargetObjects:
   - Name: StartPoint
     PositionObject: {fileID: 1768969010}
+  qrCodeScanningPanel: {fileID: 40991828}
+  scanningEnabled: 0
 --- !u!1 &684191450
 GameObject:
   m_ObjectHideFlags: 0

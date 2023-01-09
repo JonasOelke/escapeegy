@@ -20,6 +20,9 @@ public class QRCodeRecenter : MonoBehaviour
     [SerializeField]
     private List<Target> qrCodeTargetObjects = new List<Target>();
 
+    [SerializeField]
+    private GameObject qrCodeScanningPanel;
+
     private Texture2D cameraImageTexture;
     private IBarcodeReader reader = new BarcodeReader();
     public bool scanningEnabled = false;
@@ -131,6 +134,7 @@ public class QRCodeRecenter : MonoBehaviour
 
     public void ToggleScanning()
     {
-        //GameObject.Find("MainMenuUI").GetComponent<MainMenuController>().SetQrCodeButtonAction( () = { scanningEnabled = !scanningEnabled });
+        scanningEnabled = !scanningEnabled;
+        qrCodeScanningPanel.SetActive(scanningEnabled);
     }
 }

@@ -38,12 +38,7 @@ public class MainMenuController : MonoBehaviour
         };
     }
 
-    public void SetQrCodeButtonAction(Action action)
-    {
-        Button button = root.Q<Button>("QrCodeButton");
-        button.clicked += action;
-    }
-
+   
     public void SetQrCodeOverlay(bool value)
     {
         qrCodeOverlayUI.SetActive(value);
@@ -56,10 +51,17 @@ public class MainMenuController : MonoBehaviour
         Button inventoryButton = root.Q<Button>("InventoryButton");
         Button chatButton = root.Q<Button>("ChatButton");
         Button floorButton = root.Q<Button>("FloorButton");
+        string currentFloor = "EG";
         Button mapButton = root.Q<Button>("MapButton");
 
         Button qrCodeButton = root.Q<Button>("QrCodeButton");
-        qrCodeButton.clicked += () => SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
+        qrCodeButton.clicked += () => {
+            SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
+            if (qrCodeOverlayUI.activeSelf)
+            {
+
+            }
+        };
 
         VisualElement floorMenu = root.Q<VisualElement>("FloorMenu");
         floorMenu.style.display = DisplayStyle.None;
@@ -106,17 +108,21 @@ public class MainMenuController : MonoBehaviour
 
         atticButton.clicked += () =>
         {
-            Debug.Log("Move Player to Attic");
+            //ChangeFloor.FloorChange(currentFloor, "DG");
         };
 
         secondFloorButton.clicked += () =>
         {
             Debug.Log("Move Player to Second Floor");
+            currentFloor = "2OG";
+            Debug.Log(currentFloor);
         };
 
         groundFloorButton.clicked += () =>
         {
             Debug.Log("Move Player to Ground Floor");
+            currentFloor = "EG";
+            Debug.Log(currentFloor);
         };
     }
 }

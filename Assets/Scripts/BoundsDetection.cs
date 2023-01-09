@@ -8,4 +8,9 @@ public class BoundsDetection : MonoBehaviour
     {
         Debug.Log("Detected");
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Left Detection");
+    }
 }

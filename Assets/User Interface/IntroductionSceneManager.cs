@@ -29,7 +29,7 @@ public class IntroductionSceneManager : MonoBehaviour
         {
             nextIndicator.SetActive(false);
         }
-        else if (currentSlide > 7)
+        else if (currentSlide > 8)
         {
             Debug.Log("Change szene");
             SceneManager.LoadScene(sceneToLoad);

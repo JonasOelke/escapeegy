@@ -8,7 +8,6 @@ using UnityEngine;
 public class OutroManager : MonoBehaviour
 {
     public GameObject[] screenArray;
-    public GameObject nextIndicator;
     public GameObject readableDeathAnnouncement;
     public GameObject readableDiary;
     public GameObject tap;
@@ -26,11 +25,8 @@ public class OutroManager : MonoBehaviour
         Debug.Log(currentSlide + "currentSlide");
         screenArray[currentSlide - 1].SetActive(false);
         screenArray[currentSlide].SetActive(true);
-        if (currentSlide == 1)
-        {
-            nextIndicator.SetActive(false);
-        }
-        else if (currentSlide == 18)
+      
+        if (currentSlide == 18)
         {
             Debug.Log("Change szene");
             
@@ -91,21 +87,7 @@ public class OutroManager : MonoBehaviour
     {
         //This is used to show the next-Indicator at the first screen after 10 seconds. To change this time, use the float timeremaining at the top
 
-        if (nextIndicator.active == false)
-        {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                if (currentSlide == 0)
-                {
-                    nextIndicator.SetActive(true);
-                    timeRemaining = 0;
-                }
-            }
-        }
+       
         if (StartTapTimer == 1)
         {
             if (timeRemainingShowTap >= 0.0)

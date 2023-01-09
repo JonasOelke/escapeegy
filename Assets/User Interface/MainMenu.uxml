@@ -13,7 +13,7 @@
             <ui:VisualElement class="mainMenuButtonContainer" style="opacity: 0.9;">
                 <ui:Button display-tooltip-when-elided="true" name="InventoryButton" class="button mainMenuButton mainButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/box.png?fileID=21300000&amp;guid=0f6bb84556d004343bc8fd7dafe2be8a&amp;type=3#box&apos;); width: 100px; height: 100px;" />
             </ui:VisualElement>
-            <ui:VisualElement class="mainMenuButtonContainer" style="opacity: 0.9;">
+            <ui:VisualElement name="MapButtonContainer" class="mainMenuButtonContainer" style="opacity: 0.9; display: flex;">
                 <ui:Button display-tooltip-when-elided="true" name="MapButton" class="button mainMenuButton mainButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/map_light.png?fileID=21300000&amp;guid=449446279536a0c46a7aa504fbb25da4&amp;type=3#map_light&apos;); width: 100px; height: 100px;" />
             </ui:VisualElement>
             <ui:VisualElement>

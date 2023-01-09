@@ -13,13 +13,7 @@ public class Messages : MonoBehaviour
         //Message to put in Responses Array if the Message should not have a response
         ChatResponse noResponse = new ChatResponse("NEE", "");
         // Start Message and responses
-          ChatMessage startMessage = new ChatMessage(
-            0,
-            new[] { 0 },
-            "",//HIer startbild das man aufm Dachboden gefunden hatte
-            "",
-            new[] { startMessageResponse1, startMessageResponse2 }
-        );
+        ChatMessage startPicture = new ChatMessage(0, new[] { 0 }, "", "", new[] { noResponse });
         ChatResponse startMessageResponse1 = new ChatResponse(
             "Hey du, schön von dir zu hören! Ich schau mal kurz.",
             ""
@@ -72,7 +66,7 @@ public class Messages : MonoBehaviour
         ChatMessage message4 = new ChatMessage(4, new[] { 0 }, "", "", new[] { message3Response });
 
         //-------------help 14. April-----------------
-               
+
 
         ChatResponse message12Response = new ChatResponse(
             "Guck doch mal obs n schwarzes Brett gibt ",
@@ -88,7 +82,7 @@ public class Messages : MonoBehaviour
         ChatResponse message5Response = new ChatResponse("Scan doch mal die Tür ein?", "");
         ChatMessage message5 = new ChatMessage(
             5,
-            new[] { 6,12 },
+            new[] { 6, 12 },
             "Bin angekommen, was kann ich tun?",
             "",
             new[] { message5Response }
@@ -116,7 +110,7 @@ public class Messages : MonoBehaviour
             "Oh das ist ja nett von Ellie. Vielleicht solltest du dir erstmal einen Überblick verschaffen. Guck mal nach einem Gebäudeplan",
             ""
         );
-        ChatMessage message8 = new ChatMessage(8, new[] { 0 }, "", "", new[] { message8Response });//HIEr muss auch ein bild verknüpft sein? ist es das?------------------------------
+        ChatMessage message8 = new ChatMessage(8, new[] { 0 }, "", "", new[] { message8Response }); //HIEr muss auch ein bild verknüpft sein? ist es das?------------------------------
 
         //-------------Bild gefundenhelp 16. April-----------------
         ChatResponse message10Response = new ChatResponse("Vielleicht ist das der Vater?", "");
@@ -144,8 +138,6 @@ public class Messages : MonoBehaviour
             "",
             new[] { message11Response }
         );
-
-
 
         //-------------HELP am 20. April-----------------
 
@@ -523,8 +515,11 @@ public class Messages : MonoBehaviour
             "Ich glaube, ich habe noch ein Buch darüber. Gib mir einen Moment",
             ""
         );
-        ChatResponse message47Response2 = new ChatResponse("", "decryptedLetter",
-            Resources.Load<Sprite>("InventoryPictures/BriefEntschluesselt"));
+        ChatResponse message47Response2 = new ChatResponse(
+            "",
+            "decryptedLetter",
+            Resources.Load<Sprite>("InventoryPictures/BriefEntschluesselt")
+        );
 
         ChatResponse message47Response3 = new ChatResponse(
             "Das ist 2 tage vor ihrem Todestag!!",
@@ -739,7 +734,7 @@ public class Messages : MonoBehaviour
             new[] { message62Response }
         );
 
-          // Universelle Help- Nachricht
+        // Universelle Help- Nachricht
         ChatResponse message63Response = new ChatResponse(
             "Schick mir doch mal, was du so gefunden hast!",
             ""
@@ -747,7 +742,7 @@ public class Messages : MonoBehaviour
         ChatMessage message63 = new ChatMessage(
             63,
             new[] { 0 },
-            "Ich weiß nicht weiter", 
+            "Ich weiß nicht weiter",
             "",
             new[] { message62Response }
         );

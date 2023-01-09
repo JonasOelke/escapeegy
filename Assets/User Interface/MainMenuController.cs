@@ -64,6 +64,14 @@ public class MainMenuController : MonoBehaviour
         VisualElement floorMenu = root.Q<VisualElement>("FloorMenu");
         floorMenu.style.display = DisplayStyle.None;
 
+        // Show the minimap button only if the Grundgriss Object was collected
+        StoredObject storedObject = DataPersistanceController.LoadData();
+        var collectedObjects = storedObject.collectedObjects;
+        VisualElement mapButtonContainer = root.Q<VisualElement>("MapButtonContainer");
+        mapButtonContainer.style.display = collectedObjects.Contains("Grundriss")
+            ? DisplayStyle.Flex
+            : DisplayStyle.None;
+
         inventoryButton.clicked += () =>
         {
             UIController.OpenInventory();

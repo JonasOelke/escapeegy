@@ -46,7 +46,7 @@ public class ChatController : MonoBehaviour
             GetComponentInParent<UIController>().BackToMenu();
         };
 
-        ClearChat();
+        // ClearChat();
         firstStart = true;
         AddMessagetoSuggestionsContainer(1); //------------------------------------------------------------------------------evtl ungut
         OnEnable();
@@ -64,7 +64,7 @@ public class ChatController : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
-       IEnumerator Wait2(Action Callback)
+    IEnumerator Wait2(Action Callback)
     {
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
@@ -75,7 +75,8 @@ public class ChatController : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
-        IEnumerator Wait3(Action Callback)
+
+    IEnumerator Wait3(Action Callback)
     {
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
@@ -204,14 +205,17 @@ public class ChatController : MonoBehaviour
             );
             chatMessagesContainer.Add(msg);
         }
-        
 
-       StartCoroutine(Wait3(() => {
-                
-                        
-                        chatMessagesContainer.scrollOffset = new Vector2(0,chatMessagesContainer.contentContainer.layout.max[1]);
-        } ));
-        Debug.Log("Autoscrollen: "+chatMessagesContainer.contentViewport.layout.size[1] );
+        StartCoroutine(
+            Wait3(() =>
+            {
+                chatMessagesContainer.scrollOffset = new Vector2(
+                    0,
+                    chatMessagesContainer.contentContainer.layout.max[1]
+                );
+            })
+        );
+        Debug.Log("Autoscrollen: " + chatMessagesContainer.contentViewport.layout.size[1]);
         foreach (ChatResponse chatResponse in chatMessage.responses)
         {
             if (chatResponse.text != "NEE")
@@ -248,21 +252,19 @@ public class ChatController : MonoBehaviour
                 else
                 {
                     StartCoroutine(Wait(() => chatMessagesContainer.Add(responseContainer)));
-                    
-                    StartCoroutine(Wait2(() => 
-                
-                        
-                        chatMessagesContainer.scrollOffset = new Vector2(0,chatMessagesContainer.contentContainer.layout.max[1])
-                    
-                        
-                ));
+
+                    StartCoroutine(
+                        Wait2(
+                            () =>
+                                chatMessagesContainer.scrollOffset = new Vector2(
+                                    0,
+                                    chatMessagesContainer.contentContainer.layout.max[1]
+                                )
+                        )
+                    );
                 }
             }
-            
-        
-            
         }
-
 
         if (reLoading)
         {
@@ -272,7 +274,7 @@ public class ChatController : MonoBehaviour
         {
             StartCoroutine(Wait(() => AddMessageToContainerAndSetNextSuggestion(chatMessage)));
         }
-        
+
         //chatMessagesContainer.scrollOffset = chatMessagesContainer.contentContainer.layout.max - chatMessagesContainer.contentViewport.layout.size;
     }
 
@@ -286,8 +288,8 @@ public class ChatController : MonoBehaviour
                 AddMessagetoSuggestionsContainer(nextSuggestion);
             }
         }
-        
-           // chatMessagesContainer.scrollOffset = chatMessagesContainer.contentContainer.layout.max - chatMessagesContainer.contentViewport.layout.size;
+
+        // chatMessagesContainer.scrollOffset = chatMessagesContainer.contentContainer.layout.max - chatMessagesContainer.contentViewport.layout.size;
     }
 
     void AddMessagetoSuggestionsContainer(int id)
@@ -318,7 +320,9 @@ public class ChatController : MonoBehaviour
     {
         //TODO: hier aus dem storedObject den state int rausziehen und dann an den GameControll übergeben-----------------------------------------------------------------------------------------------------
         // FunktionUmEsInGameControl(myObject.state)
-        GameControll myGameController = GameObject.Find("StateControl").GetComponent<GameControll>();
+        GameControll myGameController = GameObject
+            .Find("StateControl")
+            .GetComponent<GameControll>();
         Debug.Log("Loading Score, reloading:" + reLoading);
 
         myGameController.setIndex(myObject.state);

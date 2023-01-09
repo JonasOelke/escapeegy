@@ -20260,7 +20260,7 @@ IL_0017:
 		L_11 = VisualElement_get_parent_m80978E6D0A928AB4885EE4CD0E2295C72AA73000(L_10, NULL);
 		NullCheck(L_11);
 		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_12;
-		L_12 = VirtualFuncInvoker0< VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* >::Invoke(94 /* UnityEngine.UIElements.VisualElement UnityEngine.UIElements.VisualElement::get_contentContainer() */, L_11);
+		L_12 = VirtualFuncInvoker0< VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* >::Invoke(95 /* UnityEngine.UIElements.VisualElement UnityEngine.UIElements.VisualElement::get_contentContainer() */, L_11);
 		G_B4_0 = ((((RuntimeObject*)(VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115*)L_9) == ((RuntimeObject*)(VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115*)L_12))? 1 : 0);
 		goto IL_0041;
 	}
@@ -24703,7 +24703,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TextElement_ElideText_mF95161E8B1CF
 		L_0 = VisualElement_get_resolvedStyle_m3885B7534A94E0BCE024A9621465A0F273DA0AEB(__this, NULL);
 		NullCheck(L_0);
 		float L_1;
-		L_1 = InterfaceFuncInvoker0< float >::Invoke(29 /* System.Single UnityEngine.UIElements.IResolvedStyle::get_paddingRight() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_0);
+		L_1 = InterfaceFuncInvoker0< float >::Invoke(30 /* System.Single UnityEngine.UIElements.IResolvedStyle::get_paddingRight() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_0);
 		V_0 = L_1;
 		float L_2 = V_0;
 		bool L_3;
@@ -25273,7 +25273,7 @@ IL_0012:
 	}
 	{
 		String_t* L_4;
-		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(101 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
+		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(102 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
 		VisualElement_set_tooltip_mD392FEBD1C4F97E4FEE2FEE3E92937D355B7FA61(__this, L_4, NULL);
 		__this->___m_WasElided_75 = (bool)1;
 		goto IL_004b;
@@ -25323,7 +25323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextElement_UpdateVisibleText_m7F0346F28
 	TextElement_tD56C5044CCC5552285DC8A9950CC60448C80FEE0* G_B13_1 = NULL;
 	{
 		String_t* L_0;
-		L_0 = VirtualFuncInvoker0< String_t* >::Invoke(101 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
+		L_0 = VirtualFuncInvoker0< String_t* >::Invoke(102 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
 		TextParams_t943244753F8E3A49632BBEC7272DAEAA8E10546F L_1;
 		L_1 = TextParams_MakeStyleBased_mDF20795C3A27408BAD96FB1FCF077694FFB05124(__this, L_0, NULL);
 		V_0 = L_1;
@@ -25445,7 +25445,7 @@ IL_0062:
 		TextParams_t943244753F8E3A49632BBEC7272DAEAA8E10546F* L_25 = (&__this->___m_TextParams_77);
 		String_t* L_26 = L_25->___text_1;
 		String_t* L_27;
-		L_27 = VirtualFuncInvoker0< String_t* >::Invoke(101 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
+		L_27 = VirtualFuncInvoker0< String_t* >::Invoke(102 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
 		bool L_28;
 		L_28 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_26, L_27, NULL);
 		G_B13_0 = ((int32_t)(L_28));
@@ -25627,7 +25627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		String_t* L_0;
-		L_0 = VirtualFuncInvoker0< String_t* >::Invoke(101 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
+		L_0 = VirtualFuncInvoker0< String_t* >::Invoke(102 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
 		float L_1 = ___desiredWidth0;
 		int32_t L_2 = ___widthMode1;
 		float L_3 = ___desiredHeight2;
@@ -25721,7 +25721,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextElement_UnityEngine_UIElements_INoti
 	}
 	{
 		String_t* L_6;
-		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(101 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(102 /* System.String UnityEngine.UIElements.TextElement::get_text() */, __this);
 		String_t* L_7 = ___value0;
 		ChangeEvent_1_tC8920B8153267870361787158B3897821AA4522F* L_8;
 		L_8 = ChangeEvent_1_GetPooled_mF8F78E2DFC01AE418EFCD2AC9A74536DADCC1D83(L_6, L_7, ChangeEvent_1_GetPooled_mF8F78E2DFC01AE418EFCD2AC9A74536DADCC1D83_RuntimeMethod_var);
@@ -25913,7 +25913,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UxmlTraits_Init_m4B83762DB7A1B5D10F76BC1
 		String_t* L_8;
 		L_8 = VirtualFuncInvoker2< String_t*, RuntimeObject*, CreationContext_t9C57B5BE551CCE200C0A2C72711BFF9DA298C257 >::Invoke(4 /* T UnityEngine.UIElements.TypedUxmlAttributeDescription`1<System.String>::GetValueFromBag(UnityEngine.UIElements.IUxmlAttributes,UnityEngine.UIElements.CreationContext) */, L_5, L_6, L_7);
 		NullCheck(L_4);
-		VirtualActionInvoker1< String_t* >::Invoke(102 /* System.Void UnityEngine.UIElements.TextElement::set_text(System.String) */, L_4, L_8);
+		VirtualActionInvoker1< String_t* >::Invoke(103 /* System.Void UnityEngine.UIElements.TextElement::set_text(System.String) */, L_4, L_8);
 		TextElement_tD56C5044CCC5552285DC8A9950CC60448C80FEE0* L_9 = V_0;
 		UxmlBoolAttributeDescription_t86EA1242C539B39911E63699A4AE0C47918701CE* L_10 = __this->___m_EnableRichText_14;
 		RuntimeObject* L_11 = ___bag1;
@@ -36707,7 +36707,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VisualElement_t2667F9D19E62C7A315927506C06F22
 		L_1 = VisualElement_get_resolvedStyle_m3885B7534A94E0BCE024A9621465A0F273DA0AEB(L_0, NULL);
 		NullCheck(L_1);
 		int32_t L_2;
-		L_2 = InterfaceFuncInvoker0< int32_t >::Invoke(15 /* UnityEngine.UIElements.DisplayStyle UnityEngine.UIElements.IResolvedStyle::get_display() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_1);
+		L_2 = InterfaceFuncInvoker0< int32_t >::Invoke(16 /* UnityEngine.UIElements.DisplayStyle UnityEngine.UIElements.IResolvedStyle::get_display() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_1);
 		V_4 = (bool)((((int32_t)L_2) == ((int32_t)1))? 1 : 0);
 		bool L_3 = V_4;
 		if (!L_3)
@@ -36795,7 +36795,7 @@ IL_006c:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_19 = V_0;
 		NullCheck(L_18);
 		bool L_20;
-		L_20 = VirtualFuncInvoker1< bool, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 >::Invoke(92 /* System.Boolean UnityEngine.UIElements.VisualElement::ContainsPoint(UnityEngine.Vector2) */, L_18, L_19);
+		L_20 = VirtualFuncInvoker1< bool, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 >::Invoke(93 /* System.Boolean UnityEngine.UIElements.VisualElement::ContainsPoint(UnityEngine.Vector2) */, L_18, L_19);
 		V_1 = L_20;
 		bool L_21 = V_1;
 		if (L_21)

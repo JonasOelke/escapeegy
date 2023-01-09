@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Pictures/QrCodeOverlay.psd?fileID=21300000&amp;guid=1ba4f5c719a01e3499f5ae9f16ae61bf&amp;type=3#QrCodeOverlay&apos;);" />
+</ui:UXML>

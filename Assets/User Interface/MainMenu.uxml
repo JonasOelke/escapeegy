@@ -32,8 +32,13 @@
                     <ui:Button display-tooltip-when-elided="true" name="FloorButton" class="button mainButton mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/layer.png?fileID=2800000&amp;guid=45cf3e5480185c7469071c7583d4653b&amp;type=3#layer&apos;);" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement class="mainMenuButtonContainer">
-                <ui:Button display-tooltip-when-elided="true" name="ChatButton" class="button mainButton mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/chat.png?fileID=21300000&amp;guid=a2e59a16241cadc4385636a9322036c7&amp;type=3#chat&apos;);" />
+            <ui:VisualElement>
+                <ui:VisualElement class="mainMenuButtonContainer" style="margin-bottom: 37px;">
+                    <ui:Button display-tooltip-when-elided="true" name="QrCodeButton" class="button mainButton mainMenuButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/qr-code-scan.png?fileID=21300000&amp;guid=72bc293656a8c7c4f9a31115f416d94e&amp;type=3#qr-code-scan&apos;); width: 130px; height: 130px;" />
+                </ui:VisualElement>
+                <ui:VisualElement class="mainMenuButtonContainer" style="opacity: 0.9;">
+                    <ui:Button display-tooltip-when-elided="true" name="ChatButton" class="button mainMenuButton mainButton" style="background-image: url(&apos;project://database/Assets/Pictures/Icons/chat.png?fileID=21300000&amp;guid=a2e59a16241cadc4385636a9322036c7&amp;type=3#chat&apos;); width: 100px; height: 100px;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

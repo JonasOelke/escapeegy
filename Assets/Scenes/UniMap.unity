@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2229,7 +2229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &242712739
 Transform:
   m_ObjectHideFlags: 0
@@ -2259,6 +2259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpindCodeUI: {fileID: 242712738}
   SpindCollider: {fileID: 509174574}
+  gameObject1: {fileID: 0}
+  gameObject2: {fileID: 0}
 --- !u!114 &242712741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8679,7 +8681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &859394196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9480,7 +9482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &996363284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10070,7 +10072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1054820607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13373,7 +13375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1542897643
 MonoBehaviour:
   m_ObjectHideFlags: 0

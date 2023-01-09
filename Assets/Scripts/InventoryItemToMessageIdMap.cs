@@ -4,6 +4,7 @@ public class InventoryItemToMessageIdMap
 {
     public static Dictionary<string, int> Map = new Dictionary<string, int>()
     {
+         { "BildVonMaggie", 0 },
         { "Lochkarte", 16 },
         { "Fragezeichen", 20 },
         { "MaggiesTagebucheintrag2", 9 },

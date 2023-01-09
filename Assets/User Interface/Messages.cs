@@ -13,6 +13,13 @@ public class Messages : MonoBehaviour
         //Message to put in Responses Array if the Message should not have a response
         ChatResponse noResponse = new ChatResponse("NEE", "");
         // Start Message and responses
+          ChatMessage startMessage = new ChatMessage(
+            0,
+            new[] { 0 },
+            "",//HIer startbild das man aufm Dachboden gefunden hatte
+            "",
+            new[] { startMessageResponse1, startMessageResponse2 }
+        );
         ChatResponse startMessageResponse1 = new ChatResponse(
             "Hey du, schön von dir zu hören! Ich schau mal kurz.",
             ""

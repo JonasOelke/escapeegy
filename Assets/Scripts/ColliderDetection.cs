@@ -10,6 +10,12 @@ public class ColliderDetection : MonoBehaviour
     [SerializeField]
     private GameObject ColliderObject;
 
+    [SerializeField]
+    private GameObject ChatUI;
+
+    [SerializeField]
+    private GameObject InventoryUI;
+
     // Kamera
     [SerializeField]
     private Camera arCamera;
@@ -32,7 +38,7 @@ public class ColliderDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        if (active && !ChatUI.activeSelf && !InventoryUI.activeSelf)
         {
             if (Input.touchCount > 0)
             {

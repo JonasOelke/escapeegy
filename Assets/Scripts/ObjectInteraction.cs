@@ -12,6 +12,12 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField]
     private Camera arCamera;
 
+    [SerializeField]
+    private GameObject ChatUI;
+
+    [SerializeField]
+    private GameObject InventoryUI;
+
     //Position wo der Finger touched
     private Vector2 touchPosition = default;
 
@@ -28,43 +34,56 @@ public class ObjectInteraction : MonoBehaviour
 
     void Update()
     {
-        // checkt ob Screen getouched wird
-        if (Input.touchCount > 0)
+        if (!ChatUI.activeSelf && !InventoryUI.activeSelf)
         {
-            // Referenz für den Touch
-            Touch touch = Input.GetTouch(0);
-
-            // Position wo getouched wurde
-            touchPosition = touch.position;
-
-            // touch.phase beschreibt die Phase des Touches in der wir grade sind
-            if (touch.phase == TouchPhase.Began)
+            // checkt ob Screen getouched wird
+            if (Input.touchCount > 0)
             {
-                print("Touched!");
+                // Referenz für den Touch
+                Touch touch = Input.GetTouch(0);
 
-                // Erstellt einen Strahl, der von der Kamera durch touch-punkt geht
-                Ray ray = arCamera.ScreenPointToRay(touch.position);
+                // Position wo getouched wurde
+                touchPosition = touch.position;
 
-                // RaycastHit: Gets information from a raycast (z.B. RaycastHit.collider)
-                RaycastHit hitObject;
-                if (Physics.Raycast(ray, out hitObject))
+                // touch.phase beschreibt die Phase des Touches in der wir grade sind
+                if (touch.phase == TouchPhase.Began)
                 {
-                    //Wir gucken, ob das getroffene Object das Findables - Script attached hat
-                    Findables findable = hitObject.transform.GetComponent<Findables>();
+                    print("Touched!");
 
-                    //Wenn nicht, schauen ob das Parent Element das Skript hat
-                    if(findable==null){
-                        findable = hitObject.collider.gameObject.transform.parent.GetComponent<Findables>();
-                    }
-                    // wenn das getroffene Objekt/oder das Parent das Script hat dann...
-                    if (findable != null)
+                    // Erstellt einen Strahl, der von der Kamera durch touch-punkt geht
+                    Ray ray = arCamera.ScreenPointToRay(touch.position);
+
+                    // RaycastHit: Gets information from a raycast (z.B. RaycastHit.collider)
+                    RaycastHit hitObject;
+                    if (Physics.Raycast(ray, out hitObject))
                     {
-                        // ...ruf ich die Interaktions-Funktion auf
-                        ChangeSelectedObject(findable);
-                    }
-                    else
-                    {
-                        print("Object is not a findable "+hitObject.transform);
+                        //Wir gucken, ob das getroffene Object das Findables - Script attached hat
+                        Findables findable =
+                            hitObject.transform.GetComponent<Findables>();
+
+                        //Wenn nicht, schauen ob das Parent Element das Skript hat
+                        if (findable == null)
+                        {
+                            findable =
+                                hitObject
+                                    .collider
+                                    .gameObject
+                                    .transform
+                                    .parent
+                                    .GetComponent<Findables>();
+                        }
+
+                        // wenn das getroffene Objekt/oder das Parent das Script hat dann...
+                        if (findable != null)
+                        {
+                            // ...ruf ich die Interaktions-Funktion auf
+                            ChangeSelectedObject (findable);
+                        }
+                        else
+                        {
+                            print("Object is not a findable " +
+                            hitObject.transform);
+                        }
                     }
                 }
             }

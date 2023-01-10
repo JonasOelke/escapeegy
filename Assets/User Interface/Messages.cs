@@ -13,7 +13,6 @@ public class Messages : MonoBehaviour
         //Message to put in Responses Array if the Message should not have a response
         ChatResponse noResponse = new ChatResponse("NEE", "");
         // Start Message and responses
-        ChatMessage startPicture = new ChatMessage(0, new[] { 0 }, "", "", new[] { noResponse });
         ChatResponse startMessageResponse1 = new ChatResponse(
             "Hey du, schön von dir zu hören! Ich schau mal kurz.",
             ""
@@ -22,12 +21,28 @@ public class Messages : MonoBehaviour
             "Ich habe diese Todesanzeige gefunden und einen Tagebucheintrag von einer Lieselotte",
             ""
         );
+        ChatResponse startMessageResponse3 = new ChatResponse(
+            "",
+            "",
+            Resources.Load<Sprite>("InventoryPictures/Todesanzeige")
+        );
+        ChatResponse startMessageResponse4 = new ChatResponse(
+            "",
+            "",
+            Resources.Load<Sprite>("InventoryPictures/LieselottesTagebucheintrag1")
+        );
         ChatMessage startMessage = new ChatMessage(
             1,
             new[] { 2 },
             "Hallo du, ich habe ein Foto gefunden, zu dem Papa meinte, dass du mehr wissen könntest. Ich interessiere mich für unsere Familiengeschichte, weil ich das für die Schule machen muss. Hast du noch mehr Infos dazu? Wer waren die beiden?",
             "Ich habe ein Foto gefunden!",
-            new[] { startMessageResponse1, startMessageResponse2 }
+            new[]
+            {
+                startMessageResponse1,
+                startMessageResponse2,
+                startMessageResponse3,
+                startMessageResponse4
+            }
         );
 
         // Second Message

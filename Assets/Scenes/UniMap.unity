@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4440221, g: 0.49316514, b: 0.5722316, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8892,7 +8892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &859394196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9726,7 +9726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &996363284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9742,6 +9742,7 @@ MonoBehaviour:
   UIController: {fileID: 159195413}
   minimapCanvas: {fileID: 507627491}
   qrCodeOverlayUI: {fileID: 40991828}
+  hasNotBeenOpenedBefore: 1
 --- !u!114 &996363285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10419,7 +10420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1054820607
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,10 @@ public class MainMenuController : MonoBehaviour
     public GameObject minimapCanvas;
     public GameObject qrCodeOverlayUI;
 
+    // This variable is to indicate if the MainMenu has been opened before in the session or not
+    // this is important to determine, if the initial QR code scan should be shown or not
+    public bool hasNotBeenOpenedBefore = true;
+
     public void SetDisplayCollectedButton(bool onOrOff)
     {
         VisualElement button = root.Q<VisualElement>("CollectButtonContainer");
@@ -59,6 +63,11 @@ public class MainMenuController : MonoBehaviour
             SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
             if (qrCodeOverlayUI.activeSelf)
             {
+                GameObject
+                    .Find("QrCodeOverlayUI")
+                    .GetComponent<UIDocument>()
+                    .rootVisualElement.Q<Label>("Title")
+                    .text = "";
                 if (minimapCanvas.activeSelf)
                 {
                     minimapCanvas.SetActive(!minimapCanvas.activeSelf);
@@ -66,6 +75,13 @@ public class MainMenuController : MonoBehaviour
                 GameObject.Find("QRCodeRecenter").GetComponent<QRCodeRecenter>().ToggleScanning();
             }
         };
+
+        if (hasNotBeenOpenedBefore)
+        {
+            qrCodeOverlayUI.SetActive(true);
+            GameObject.Find("QRCodeRecenter").GetComponent<QRCodeRecenter>().ToggleScanning();
+            hasNotBeenOpenedBefore = false;
+        }
 
         VisualElement floorMenu = root.Q<VisualElement>("FloorMenu");
         floorMenu.style.display = DisplayStyle.None;
@@ -110,7 +126,8 @@ public class MainMenuController : MonoBehaviour
         Button secondFloorButton = root.Q<Button>("SecondFloorButton");
         Button groundFloorButton = root.Q<Button>("GroundFloorButton");
 
-        atticButton.clicked += () => {
+        atticButton.clicked += () =>
+        {
             GetComponent<ChangeFloor>().FloorChange(currentFloor, "DG");
             currentFloor = "DG";
             Debug.Log(currentFloor);

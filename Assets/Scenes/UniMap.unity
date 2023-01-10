@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4440221, g: 0.49316514, b: 0.5722316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4439403, g: 0.4931519, b: 0.5722083, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2244,8 +2244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpindCodeUI: {fileID: 242712738}
   SpindCollider: {fileID: 509174574}
-  gameObject1: {fileID: 0}
-  gameObject2: {fileID: 0}
+  gameObject1: {fileID: 2025880646}
+  gameObject2: {fileID: 399285059}
+  MainMenuUI: {fileID: 996363283}
 --- !u!114 &242712741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3764,6 +3765,8 @@ MonoBehaviour:
   - {fileID: 1811650288}
   - {fileID: 404739723}
   arCamera: {fileID: 22732920}
+  ChatUI: {fileID: 1542897642}
+  InventoryUI: {fileID: 1054820606}
 --- !u!1 &399210857
 GameObject:
   m_ObjectHideFlags: 0
@@ -12497,6 +12500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpindCodeUI: {fileID: 242712738}
   ColliderObject: {fileID: 509174574}
+  ChatUI: {fileID: 1542897642}
+  InventoryUI: {fileID: 1054820606}
   arCamera: {fileID: 22732920}
   active: 1
 --- !u!1 &1405743034

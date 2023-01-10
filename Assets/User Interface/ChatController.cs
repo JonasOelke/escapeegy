@@ -24,11 +24,11 @@ public class ChatController : MonoBehaviour
         Debug.Log("Start Chatcontroller");
         _messages = messagesScript.GetChatMessages();
         _items = itemsScript.getItems();
+        
         //Sektion für stored Object bei Start
         try
         {
             storedObject = DataPersistanceController.LoadData();
-            // LoadScore(storedObject);
         }
         catch (FileNotFoundException e)
         {

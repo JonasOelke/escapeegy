@@ -38,7 +38,6 @@ public class MainMenuController : MonoBehaviour
         };
     }
 
-   
     public void SetQrCodeOverlay(bool value)
     {
         qrCodeOverlayUI.SetActive(value);
@@ -55,11 +54,12 @@ public class MainMenuController : MonoBehaviour
         Button mapButton = root.Q<Button>("MapButton");
 
         Button qrCodeButton = root.Q<Button>("QrCodeButton");
-        qrCodeButton.clicked += () => {
+        qrCodeButton.clicked += () =>
+        {
             SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
             if (qrCodeOverlayUI.activeSelf)
             {
-
+                GameObject.Find("QRCodeRecenter").GetComponent<QRCodeRecenter>().ToggleScanning();
             }
         };
 
@@ -106,8 +106,7 @@ public class MainMenuController : MonoBehaviour
         Button secondFloorButton = root.Q<Button>("SecondFloorButton");
         Button groundFloorButton = root.Q<Button>("GroundFloorButton");
 
-        atticButton.clicked += () =>
-        {
+        atticButton.clicked += () => {
             //ChangeFloor.FloorChange(currentFloor, "DG");
         };
 

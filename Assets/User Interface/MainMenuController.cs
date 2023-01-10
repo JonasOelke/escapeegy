@@ -130,21 +130,18 @@ public class MainMenuController : MonoBehaviour
         {
             GetComponent<ChangeFloor>().FloorChange(currentFloor, "DG");
             currentFloor = "DG";
-            Debug.Log(currentFloor);
         };
 
         secondFloorButton.clicked += () =>
         {
             GetComponent<ChangeFloor>().FloorChange(currentFloor, "2OG");
             currentFloor = "2OG";
-            Debug.Log(currentFloor);
         };
 
         groundFloorButton.clicked += () =>
         {
             GetComponent<ChangeFloor>().FloorChange(currentFloor, "EG");
             currentFloor = "EG";
-            Debug.Log(currentFloor);
         };
     }
 }

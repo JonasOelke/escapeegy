@@ -59,7 +59,10 @@ public class MainMenuController : MonoBehaviour
             SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
             if (qrCodeOverlayUI.activeSelf)
             {
-                minimapCanvas.SetActive(!minimapCanvas.activeSelf);
+                if (minimapCanvas.activeSelf)
+                {
+                    minimapCanvas.SetActive(!minimapCanvas.activeSelf);
+                }
                 GameObject.Find("QRCodeRecenter").GetComponent<QRCodeRecenter>().ToggleScanning();
             }
         };

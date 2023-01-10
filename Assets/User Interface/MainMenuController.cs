@@ -59,6 +59,7 @@ public class MainMenuController : MonoBehaviour
             SetQrCodeOverlay(!qrCodeOverlayUI.activeSelf);
             if (qrCodeOverlayUI.activeSelf)
             {
+                minimapCanvas.SetActive(!minimapCanvas.activeSelf);
                 GameObject.Find("QRCodeRecenter").GetComponent<QRCodeRecenter>().ToggleScanning();
             }
         };
@@ -107,19 +108,21 @@ public class MainMenuController : MonoBehaviour
         Button groundFloorButton = root.Q<Button>("GroundFloorButton");
 
         atticButton.clicked += () => {
-            //ChangeFloor.FloorChange(currentFloor, "DG");
+            GetComponent<ChangeFloor>().FloorChange(currentFloor, "DG");
+            currentFloor = "DG";
+            Debug.Log(currentFloor);
         };
 
         secondFloorButton.clicked += () =>
         {
-            Debug.Log("Move Player to Second Floor");
+            GetComponent<ChangeFloor>().FloorChange(currentFloor, "2OG");
             currentFloor = "2OG";
             Debug.Log(currentFloor);
         };
 
         groundFloorButton.clicked += () =>
         {
-            Debug.Log("Move Player to Ground Floor");
+            GetComponent<ChangeFloor>().FloorChange(currentFloor, "EG");
             currentFloor = "EG";
             Debug.Log(currentFloor);
         };

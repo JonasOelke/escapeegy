@@ -22,6 +22,8 @@ public class SpindCodeController : MonoBehaviour
 
     public GameObject gameObject2;
 
+    public GameObject MainMenuUI;
+
     private Button _0;
 
     private Button _1;
@@ -56,6 +58,7 @@ public class SpindCodeController : MonoBehaviour
 
     private void OnEnable()
     {
+        MainMenuUI.SetActive(false);
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         _0 = root.Q<Button>("0");
         _1 = root.Q<Button>("1");
@@ -170,6 +173,7 @@ public class SpindCodeController : MonoBehaviour
                 Destroy (SpindCollider);
                 gameObject1.SetActive(true);
                 gameObject2.SetActive(true);
+                MainMenuUI.SetActive(true);
                 SpindCodeUI.SetActive(false);
             }
             else
@@ -180,6 +184,7 @@ public class SpindCodeController : MonoBehaviour
         _back.clicked += () =>
         {
             CodeAufräumen();
+            MainMenuUI.SetActive(true);
             SpindCodeUI.SetActive(false);
         };
     }

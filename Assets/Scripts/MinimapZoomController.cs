@@ -7,9 +7,16 @@ public class MinimapZoomController : MonoBehaviour
     // source: https://stackoverflow.com/questions/59030399/zooming-in-unity-mobile
 
     float MouseZoomSpeed = 15.0f;
-    float TouchZoomSpeed = 0.1f;
-    float ZoomMinBound = 2.0f;
-    float ZoomMaxBound = 25.0f;
+    float TouchZoomSpeed = 0.001f;
+    float ZoomMinBound = 0.4f;
+    float ZoomMaxBound = 2.5f;
+
+    RectTransform rectTransform;
+
+    void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,25 +38,25 @@ public class MinimapZoomController : MonoBehaviour
 
                 // get offset value
                 float deltaDistance = oldTouchDistance - currentTouchDistance;
-                Vector3 scale = GetComponent<RectTransform>().localScale;
+                Vector3 scale = rectTransform.localScale;
                 Vector3 offset =
                     new Vector3(deltaDistance, deltaDistance, deltaDistance) * TouchZoomSpeed;
                 scale -= offset;
                 if (scale.x > ZoomMinBound && scale.x < ZoomMaxBound)
                 {
-                    GetComponent<RectTransform>().localScale = scale;
+                    rectTransform.localScale = scale;
                 }
             }
         }
         else
         {
             float scroll = Input.GetAxis("Mouse ScrollWheel");
-            Vector3 scale = GetComponent<RectTransform>().localScale;
+            Vector3 scale = rectTransform.localScale;
             Vector3 offset = new Vector3(scroll, scroll, scroll) * MouseZoomSpeed;
             scale += offset;
             if (scale.x > ZoomMinBound && scale.x < ZoomMaxBound)
             {
-                GetComponent<RectTransform>().localScale = scale;
+                rectTransform.localScale = scale;
             }
         }
     }

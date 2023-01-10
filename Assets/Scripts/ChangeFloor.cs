@@ -6,10 +6,10 @@ using UnityEngine.XR.ARFoundation;
 public class ChangeFloor : MonoBehaviour
 {
     [SerializeField]
-    private ARSession session;
+    ARSession session;
 
     [SerializeField]
-    private ARSessionOrigin sessionOrigin;
+    ARSessionOrigin sessionOrigin;
 
     public void FloorChange(string currentFloor, string chosenFloor)
     {
@@ -21,30 +21,42 @@ public class ChangeFloor : MonoBehaviour
         {
             if (chosenFloor.Equals("2OG"))
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                sessionOrigin.transform.position += new Vector3(150, 0, 0);
+            } 
+            if (chosenFloor.Equals("DG"))
+            {
+                sessionOrigin.transform.position += new Vector3(300, 0, 0);
             } else
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                return;
             }
         }
         if (currentFloor.Equals("2OG"))
         {
+            if (chosenFloor.Equals("EG"))
+            {
+                sessionOrigin.transform.position -= new Vector3(150, 0, 0);
+            }
             if (chosenFloor.Equals("DG"))
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                sessionOrigin.transform.position += new Vector3(150, 0, 0);
             } else
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                return;
             }
         }
         if (currentFloor.Equals("DG"))
         {
             if (chosenFloor.Equals("EG"))
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                sessionOrigin.transform.position -= new Vector3(300, 0, 0);
+            } 
+            if (chosenFloor.Equals("2OG"))
+            {
+                sessionOrigin.transform.position -= new Vector3(150, 0, 0);
             } else
             {
-                sessionOrigin.transform.position += new Vector3(0, 2, 0);
+                return;
             }
            
         }
